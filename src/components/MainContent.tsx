@@ -8,6 +8,18 @@ import Typography from '@mui/material/Typography';
 import { styled } from '@mui/material/styles';
 import { cardData } from "../data/ProjectData";
 import { useWindowSize } from '@uidotdev/usehooks';
+import { useEffect } from 'react';
+
+
+function preloadImages()
+{
+  cardData.forEach((card) => {
+    let img = new Image();
+    img.src = card.img;
+    img = new Image();
+    img.src = card.icon;
+  });  
+}
 
 
 const StyledCard = styled(Card)(({ theme }) => ({
@@ -55,6 +67,9 @@ export default function MainContent(props: { breakWidth?: number}) {
     setFocusedCardIndex(index);
   };
 
+  useEffect(()=> {
+    preloadImages();
+  });
   const handleBlur = () => {
     setFocusedCardIndex(null);
   };
@@ -87,6 +102,8 @@ export default function MainContent(props: { breakWidth?: number}) {
                 >
                   <CardMedia
                     component="img"
+                    className="imgLoad"
+                    onLoad={(e)=>{ e.currentTarget.style.opacity = "1"; }}
                     alt={card.title}
                     image={card.img}
                     sx={{
@@ -105,7 +122,9 @@ export default function MainContent(props: { breakWidth?: number}) {
                   >
                     <div style={{ display: 'flex', flexFlow: 'row nowrap', columnGap: 16 }}>
                       <div>
-                        <img src={card.icon} style={{ width: '48px', height: '48px' }} />
+                        <img className="imgLoad" src={card.icon} style={{ width: '48px', height: '48px' }} 
+                          onLoad={(e)=>{ e.currentTarget.style.opacity = "1"; }}
+                        />
                       </div>
                       <div style={{ flex: "1 1 auto" }}>
                         <h3 className="project_card_title" >

@@ -43,17 +43,17 @@ export default function Sponsorship() {
                 </p>
                 <p>I have worked in the software industry for over 45 years. My first job was writing assembler code for 8080/Z80 microprocessors. 
                     I developed software for the first IBM PC, and for the first MacIntoshes. And since then, have worked on a wide variety of 
-                    processors and operating systems and hardware platforms. And much of that work involved writing system software 
+                    processors and operating systems and hardware platforms. Much of that work involved writing system software 
                     or device drivers for custom hardware. I briefly managed the advanced graphics driver development teams for 
-                    ATI Technologies (which was subsequently acquired by AMD to form the core of their graphics adapter division). 
+                    ATI Technologies Inc. (which was subsequently acquired by AMD to form the core of their graphics adapter division). 
                 </p>
                 <p>The unifying theme throughout my career has been a deep interest in the intersection of software and hardware, 
                     and a passion for creating software that is both useful and beautiful. Generally, I have been drawn to 
                     projects that explore the limits of what high-performance software can achieve on commercial processors and
                     hardware.
                 </p>
-                <p>I also play jazz guitar, and have played semi-professionally for the last ten years or so.</p>
-                <p>Computer music gives me an opportunity to combine both of passions. Over the years, I have written a number of software synthesizers and effects 
+                <p>I also play jazz guitar, and have played professionally for the last ten years or so.</p>
+                <p>Computer music gives me an opportunity to combine both of my passions. Over the years, I have written a number of software synthesizers and effects 
                 and and even one computer music language compiler. My interest in computer music has most 
                     recently manifested itself in the PiPedal project &mdash; a guitar effects stomp box that runs on a Raspberry 
                     Pi &mdash; and the TooB Amp project &mdash; a foundation set of LV2 guitar effects plugins for use with PiPedal. The TooB Amp project 
@@ -61,8 +61,9 @@ export default function Sponsorship() {
                     and very usable emulations of classic guitar effects like the Boss CS-2 chorus and Boss BF-1 flanger pedals.
                 </p>
                 <p>I would very much like to work full-time on the PiPedal project, particularly. So I am therefore currently seeking 
-                    sponsorships for the PiPedal project. You can <a href="https://github.com/sponsors/rerdavies">sponsor the project</a> by making a donation (either one time, or ongoing) 
-                    through my Github Sponsors page. Or you can contact me directly to discuss other sponsorship arrangements.
+                    sponsorships for the PiPedal project. You can sponsor the project by making a donation (either one time, or ongoing) 
+                    through my <a href="https://github.com/sponsors/rerdavies">Github Sponsors page</a>. Or you can contact me directly to discuss other sponsorship arrangements.
+                    Your support means more than you would think.
                 </p>
             </Container>
         </div>

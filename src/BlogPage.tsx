@@ -27,6 +27,7 @@ import { getArticleInfo } from './data/BlogData';
 import { useWindowSize } from '@uidotdev/usehooks'; 
 import { isVerticalToolbar } from './Breakpoints';
 import Typography from '@mui/material/Typography';
+import Footer from './components/Footer';
 
 export default function BlogPage(props: { route: string, children: React.ReactNode} ) {
 
@@ -40,7 +41,9 @@ export default function BlogPage(props: { route: string, children: React.ReactNo
             <Container
                 maxWidth="md"
                 component="main"
-                style={{ paddingLeft: hMargin, paddingRight: hMargin, marginTop: hMargin }}
+                style={{ paddingLeft: hMargin, paddingRight: hMargin, marginTop: hMargin,
+                    marginBottom: hMargin
+                 }}
                 >
                 <Typography variant="h2" style={{
                     fontWeight: 300,
@@ -54,6 +57,7 @@ export default function BlogPage(props: { route: string, children: React.ReactNo
 
                 {props.children}
             </Container>
+            <Footer />
         </div>
     );
     

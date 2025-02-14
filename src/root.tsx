@@ -41,7 +41,7 @@ export function Layout({
 
             <head>
                 <meta charSet="UTF-8" />
-                <link rel="icon" type="image/svg+xml" href="/yyy_vite.svg" />
+                <link rel="icon" type="image/svg+xml" href="/favicon.png" />
 
                 <link rel="preconnect" href="https://fonts.googleapis.com" />
                 <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />

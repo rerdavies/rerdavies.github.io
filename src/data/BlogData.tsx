@@ -71,28 +71,28 @@ export const getArticleInfo = (route: string): ArticleInfo => {
     },
     */
     {
-      tag: 'Product',
-      thumbnail: '/thumb/playbot.jpg',
-      thumbnailAttribution: (<span>Image by Dall-E from OpenAI</span>),
-      date: "2024-2-5",
-      title: 'What PiPedal Is',
-      description:
-        `Successful projects often end up becoming something other than what they started as. This is a feature, not a bug.`,
-      authors: [{ name: 'Robin E.R. Davies', avatar: '/static/images/avatar/6.jpg' }],
-      route: '/WhatPiPedalIs',
-    },
-    {
       tag: 'Development',
       thumbnail: '/thumb/brasserie.jpg',
       thumbnailAttribution: (<span>Albert-Emile Artigue, Public domain, via Wikimedia Commons</span>),
       
-      date: "2024-2-5",
+      date: "2025-2-5",
       title: "Free Like Air and Sunlight",
       description:
         "Why my projects do not use GPL.",
       route: "/FreeAsInSunlight",
       authors: [{ name: 'Robin E.R. Davies', avatar: '/static/images/avatar/6.jpg' }],
             
+    },
+    {
+      tag: 'Product',
+      thumbnail: '/thumb/playbot.jpg',
+      thumbnailAttribution: (<span>Image by Dall-E from OpenAI</span>),
+      date: "2024-10-13",
+      title: 'What PiPedal Is',
+      description:
+        `Successful projects often end up becoming something other than what they started as. This is a feature, not a bug.`,
+      authors: [{ name: 'Robin E.R. Davies', avatar: '/static/images/avatar/6.jpg' }],
+      route: '/WhatPiPedalIs',
     },
   ];
   
