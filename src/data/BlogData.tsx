@@ -87,7 +87,7 @@ export const getArticleInfo = (route: string): ArticleInfo => {
       tag: 'Product',
       thumbnail: '/thumb/playbot.jpg',
       thumbnailAttribution: (<span>Image by Dall-E from OpenAI</span>),
-      date: "2024-10-13",
+      date: "2024-10-14",
       title: 'What PiPedal Is',
       description:
         `Successful projects often end up becoming something other than what they started as. This is a feature, not a bug.`,
