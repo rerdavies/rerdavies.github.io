@@ -26,11 +26,4 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 
 
-Portions of this code are licensed under other licenses (none of them GPL).
-
-See the file debian/copyright for an enumeration of open-source files licensed
-under other terms. A complete list of notices for both source code and dependent
-libraries can be viewed in PiPedal's About page.
-
-
 [Robin E.R. Davies Website](https://rerdavies.github.io) ©  2025 by Robin Davies is licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/?ref=chooser-v1) 
