@@ -1,0 +1,227 @@
+.roboto-900 {
+  font-family: "Oxygen", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 900;
+  font-style: normal;
+  font-variation-settings: "wdth" 100;
+}
+
+html {
+  background: ##F9F9F9;
+}
+
+
+.dm-serif-text-semi {
+  font-family: "EB Garamond", serif;
+font-weight: 600;
+font-style: normal;
+}
+.dm_button {
+  font-family: "EB Garamond", serif ! important;
+font-weight: 600;
+font-size: 12pt ! important;
+font-style: normal;
+}
+
+
+
+:root {
+  font-family: Oxygen, Roboto, system-ui, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  font-optical-sizing: auto;
+  font-style: normal;
+  
+  font-variation-settings: "wdth" 100;
+
+  color-scheme: light;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  font-weight: 500;
+  color: #646cff;
+  text-decoration: inherit;
+}
+a:hover {
+  color: #535bf2;
+}
+
+li {
+  padding-bottom: 0.5rem;
+}
+ul li {
+  margin-bottom: 0.5rem;
+}
+
+body {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 400;
+
+  overflow: hidden;
+  position: absolute;
+  top: 0px; left: 0px; right: 0px; bottom: 0px;
+  display: flex;
+  place-items: center;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+  font-weight: 900;
+  opacity: 0.6;
+}
+
+h2 {
+  font-size: 30px;
+  line-height: 1.0;
+  font-weight: 400;
+  opacity: 0.66;
+  font-family: 'Oxygen', sans-serif;
+}
+h3 {
+  font-size: 24px;
+  line-height: 1.0;
+  font-weight: 400;
+  opacity: 0.66;
+  font-family: 'Oxygen', sans-serif;
+}
+
+no_top_padding {
+  margin-top: 0px;
+  padding-top: 0px;
+}
+
+.project_card_title {
+  margin-top: 0px;
+  margin-top: 0px;
+  font-size: 24px;
+  padding-top: 0px;
+  margin-bottom: 0px;
+  padding-bottom: 8px;
+  line-height: 1.2;
+  font-weight: 700;
+  opacity: 0.6;
+  font-family: 'Oxygen', sans-serif;
+}
+
+
+p {
+  font-size: 16px;
+  line-height: 1.6;
+  font-weight: 400;
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+}   
+:root {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  background-color: #f9f9f9
+
+}
+
+a:hover {
+  color: #747bff;
+}
+
+.AppFrame {
+  position: absolute;
+  top: 0px; right: 0px; left: 0px; bottom: 0px;
+  flex: 0 0 100vh;
+  width: 100vw;
+  display: flex;
+  overflow: hidden;
+  flex-flow: column nowrap;
+}
+.AppFrameV {
+  position: absolute;
+  top: 0px; right: 0px; left: 0px; bottom: 0px;
+  flex: 0 0 100vh;
+  width: 100vw;
+  display: flex;
+  overflow: hidden;
+  flex-flow: row nowrap;
+}
+
+.AppFrame-header {
+  flex: 0 0 54px;
+  display: flex;
+  flex-flow: row nowrap;
+  z-index: 5;
+  box-shadow: 0px 0px 0px 0px #0002;
+
+}
+.AppFrame-vHeader {
+  flex: 0 0 auto;
+  display: flex;
+  flex-flow: row nowrap;
+  z-index: 5;
+  padding-top: 88px;
+  box-shadow: 0px 2px 8px 2px #0002;
+
+}
+
+
+.AppFrame-header-x {
+  flex: 0 0 54px;
+  display: flex;
+  flex-flow: row nowrap;
+  z-index: 5;
+  box-shadow: 0px 2px 4px 3px #0002;
+
+}
+
+.AppFrame-content {
+  flex: 1 1 1px;
+  overflow: auto;
+}
+
+.AppFrame-footer {
+  flex: 0 0 auto;
+  display: flex;
+  flex-flow: row nowrap;
+}
+
+
+.image_attribution {
+  font-size: 0.8rem;
+  color: #666;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  padding-top: 0px;
+  align-self: flex-end;
+}
+
+.mono {
+  font-family: 'Courier New', Courier, monospace;
+  font-weight: 700;
+  font-size: 0.95em;
+  color: #333;
+  background: #D0D0D0
+}
+
+.quote {
+  padding-left: 16px;
+  padding-right: 16px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  margin-left: 64px;
+  margin-right: 64px;
+}
+
+.x-imgLoad {
+  opacity: 0;
+  -webkit-transition: all 0.75s ease; 
+  -moz-transition: all 0.75s ease; 
+  -ms-transition: all 0.75s ease; 
+  -o-transition: all 0.75s ease; 
+}

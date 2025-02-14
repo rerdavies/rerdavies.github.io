@@ -1,0 +1,1 @@
+import{a as i}from"./chunk-IR6S3I6Y-D5lYOIaz.js";function s(){const[e,n]=i.useState({width:null,height:null});return i.useLayoutEffect(()=>{const t=()=>{n({width:window.innerWidth,height:window.innerHeight})};return t(),window.addEventListener("resize",t),()=>{window.removeEventListener("resize",t)}},[]),e}const r=650;function a(e){return e?e>=r:!0}export{a as i,s as u};
