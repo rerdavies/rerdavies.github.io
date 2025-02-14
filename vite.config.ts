@@ -6,6 +6,7 @@ export default defineConfig({
   plugins: [
      reactRouter()
     ],
+    
     ssr: {
       noExternal: [/^@mui\//, /^@emotion\//],
     },    

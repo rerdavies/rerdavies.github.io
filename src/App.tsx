@@ -78,7 +78,8 @@ export default function App(props: {children: React.ReactNode,  disableCustomThe
     return (
       <AppTheme {...props}  >
         <CssBaseline enableColorScheme />
-        <div className="AppFrame">
+        <div className="AppFrame"
+          >
           <div className="AppFrame-header" id="app_frame_header"
             style={{
             }}

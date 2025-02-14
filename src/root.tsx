@@ -37,11 +37,11 @@ export function Layout({
     children: React.ReactNode;
 }) {
     return (
-        <html lang="en">
+        <html lang="en" data-theme="light">
 
             <head>
                 <meta charSet="UTF-8" />
-                <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+                <link rel="icon" type="image/svg+xml" href="/yyy_vite.svg" />
 
                 <link rel="preconnect" href="https://fonts.googleapis.com" />
                 <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
@@ -71,8 +71,8 @@ export function Layout({
                 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
                 <title>Robin E. R. Davies</title>
             </head>
-            <body style={{background: "#F8F8F8"}}>
-                <App> {children}</App>
+            <body style={{}}>
+                <App > {children}</App>
                 <ScrollRestoration />
                 <Scripts/>
             </body>

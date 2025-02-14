@@ -29,7 +29,6 @@ import Typography from '@mui/material/Typography';
 
 
 import { getArticleInfo } from "../data/BlogData";
-import React from 'react';
 
 function M(props: { children: React.ReactNode }) {
     return (<span className="mono">{props.children}</span>);
@@ -134,7 +133,7 @@ export default function WhatPiPedalIs() {
                     <li>How to use the package. A description of how the package is supposed to be used in normal use, omitting advanced details
                         that are not necessary for ordinary use of the package.</li>
                     <li>Sections that cover advance use and customization of the package, as appropriate.</li>
-                    <li>API Documentation. Well-indexed documentation on every public declared type, constant, class, method, enumaration, structure, &c in the entire package,
+                    <li>API Documentation. Well-indexed documentation on every public declared type, constant, class, method, enumeration, structure, &c in the entire package,
                         as well as the same for all protected declarations that are intended for use by consumers of the package.
                     </li>
                     <li>
@@ -146,7 +145,7 @@ export default function WhatPiPedalIs() {
                     beginning and read through to the end; journalistic form, on the other hand, is written assuming that readers will not read to the end. 
                     The most important ideas come first, with less important ideas following in descending order of importance, with the expectation that 
                     some if not most readers will stop reading somewhere before they get to the end. Writing this way allows readers to read only
-                    what they need to read. And the form for good technical documentation is even more diabolocial than that. A good technical documentation 
+                    what they need to read. And the form for good technical documentation is even more diabolical than that. A good technical documentation 
                     set has to make allowances for the fact that readers will not read the documentation, and may not even read the documentation at 
                     all until something goes wrong.  This often means that the same information may need to be repeated in multiple
                     locations in the documentation, and may need to be presented in ways that fit the purpose of the section in which 
@@ -215,7 +214,7 @@ export default function WhatPiPedalIs() {
                     conventions across classes in the library.
                 </p>
                 <p>By stepping back to take a larger perspective while writing overview sections of the documentation, I was able to identify and
-                    correct inconsistencies in naming and implementation across classes that would not have occured while writing strictly
+                    correct inconsistencies in naming and implementation across classes that would not have occurred while writing strictly
                     API-driven documentation.</p>
                 <p>While writing the <a href="https://rerdavies.github.io/nwindows/using/fundamentals">General Principles</a> section of the
                     documentation, I wrote about the use of <M>std::shard_ptr</M>s in the NWindows APIs, which forced me to consider the question of
@@ -230,7 +229,7 @@ export default function WhatPiPedalIs() {
                     reference that would occur in normal use of the NWindows APIs. It's a fairly technical problem, and in practice, a simple problem
                     to avoid. Generally, the solution is to convert shared pointers to weak pointers if they are going to have any significant lifetime
                     (for example, as lambda capture variables). Or to obtain a reference to the object you're interested in for one of <M>source</M> argument
-                    of the event handler. So, in search of an uncontrived example, I spent some time reviewing the design of event handlers in NWindows.
+                    of the event handler. So, in search of an un-contrived example, I spent some time reviewing the design of event handlers in NWindows.
                     And while doing so, I noticed that even in cases where users of the library are doing things they should not, I could cut
                     off most circular references, even deliberately inflicted circular references by having windows release references to their visual
                     tree when they are closed. A trivial code change that ends up significantly reduces the risk of leaking memory that arose out
@@ -249,7 +248,7 @@ export default function WhatPiPedalIs() {
                 <p>I used a Coding AI while generating the documentation for NWindows. It would not have been possible to do so without one.
                 </p>
                 <p>One of the big challenge with the NWindow documentation was indexing of C++ classes and methods. Doing so requires at least 
-                    partial parsing of C++ declartions, and requires doing it in typscript. 
+                    partial parsing of C++ declarations, and requires doing it in typescript. 
 
                     </p>
 
@@ -282,7 +281,7 @@ export default function WhatPiPedalIs() {
                     results are grouped by index keyword. Sorting of search results, is pretty similar. Although search entries are grouped by keyword in the
                     index page, search box results actually end up being sorted in a very similar way, because search results get a substantial sorting bonus if a search term
                     matches the associated keyword of a potential search result candidate. A significant difference, however is how search results that
-                    appear in different sections of the documentation are sorted. When sorting search results, NWindows chooses to give a significiant sort order bonus
+                    appear in different sections of the documentation are sorted. When sorting search results, NWindows chooses to give a significant sort order bonus
                     to search results that appear in the API documentation. This is because the API documentation is the most likely
                     place that a user will want to go to. Because the Index sorting algorithm groups search results by keyword, search results for declared
                     items  in different sections of the documentation are all grouped together.

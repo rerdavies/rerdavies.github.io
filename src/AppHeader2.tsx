@@ -23,12 +23,11 @@
 
 import Button from "@mui/material/Button";
 import { useNavigate } from "react-router";
-import { styled } from '@mui/material/styles';
+import { styled, useTheme } from '@mui/material/styles';
 import { useWindowSize } from "@uidotdev/usehooks";
 
-
 const BButton = styled(Button)(({ theme }) => ({
-    backgroundColor: (theme).palette.background.paper,
+    color: theme.palette.text.secondary,
     '&:hover': {
         backgroundColor: (theme).palette.action.hover,
         cursor: 'pointer',
@@ -48,17 +47,20 @@ const BButton = styled(Button)(({ theme }) => ({
 
 export default function AppHeader2(props: { vertical: boolean }) {
     let { width } = useWindowSize();
+    let theme = useTheme();
     const navigate = useNavigate();
     const handleNavigate = (e: React.MouseEvent, path: string) => {
         e.preventDefault();
         navigate(path);
         return true;
     }
-    let buttonStyle = { flex: "0 1 auto", color: "rgb(85,85,85)", fontSize: 18};
-    let buttonStyle2 = { flex: "0 1 auto", color: "rgb(85,85,85)", fontSize: 18 };
+    let buttonStyle = { flex: "0 1 auto", color: "rgb(85,85,85)", 
+         fontSize: 18};
+    let buttonStyle2 = buttonStyle;
     if (props.vertical ?? true) {
         return (
             <div style={{
+                background: theme.palette.background.default,
                 position: "relative", width: "100%", display: "flex", 
                 flexFlow: "column nowrap", paddingLeft: 24, paddingRight: 24,
                 alignItems: "start",
@@ -69,7 +71,7 @@ export default function AppHeader2(props: { vertical: boolean }) {
                 <BButton disableFocusRipple={true} style={{
                     fontWeight: 500,
                     marginTop: 16, fontSize: 30,
-                    color: "rgb(85,85,85)"
+                    
                 }}
                     onClick={(e) => handleNavigate(e, '/')}
                 >◼ rerdavies</BButton>
@@ -98,7 +100,9 @@ export default function AppHeader2(props: { vertical: boolean }) {
     if ((width ?? 0) < 600) {
         // ultra compact horizontal layout.
         return (
-            <div style={{ position: "relative", width: "100%",  paddingLeft: 24, paddingRight: 24, borderBottom: "1px solid rgb(85,85,85)"
+            <div style={{ 
+                background: theme.palette.background.default,
+                position: "relative", width: "100%",  paddingLeft: 24, paddingRight: 24, borderBottom: "1px solid rgb(85,85,85)"
             }}>
 
                 <BButton disableFocusRipple={true} style={{

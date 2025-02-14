@@ -38,6 +38,7 @@ export default function Sponsorship() {
             >
                 <h1 style={{fontWeight: 300}}
                 >Robin E.R. Davies</h1>
+                <img src="/img/headshot-sm.jpg" alt="Robin E.R. Davies" style={{float: "right", marginLeft: "1em", marginRight: "1em", marginTop: "0.5em", marginBottom: "1em"}} />
                 <p>I am a professional software developer and semi-professional jazz guitarist.
                 </p>
                 <p>I have worked in the software industry for over 45 years. My first job was writing assembler code for 8080/Z80 microprocessors. 

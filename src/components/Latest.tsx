@@ -1,5 +1,6 @@
 import * as React from 'react';
 import Box from '@mui/material/Box';
+import Card from '@mui/material/Card';
 import Grid from '@mui/material/Grid2';
 import Typography from '@mui/material/Typography';
 import { styled } from '@mui/material/styles';
@@ -7,16 +8,14 @@ import articleInfo from '../data/BlogData';
 import { useNavigate } from "react-router";
 
 
-const StyledCard = styled(Box)(({ theme }) => ({
+
+const StyledCard = styled(Card)(({ theme }) => ({
   display: 'flex',
   flexDirection: 'column',
+  borderShadow: "0px 1px 3px rgba(0,0,0,0.1)",
   padding: 0,
-  borderThickness: 0,
-  boxShadow: 'none',
-  borderRadius: "8px",
   height: '100%',
   backgroundColor: (theme).palette.background.paper,
-
   '&:hover': {
     backgroundColor: (theme).palette.action.hover,
     cursor: 'pointer',
@@ -27,7 +26,6 @@ const StyledCard = styled(Box)(({ theme }) => ({
     outlineOffset: '2px',
   },
 }));
-
 
 export default function Latest() {
   const [focusedCardIndex, setFocusedCardIndex] = React.useState<number | null>(
@@ -63,6 +61,7 @@ export default function Latest() {
               className={focusedCardIndex === index ? 'Mui-focused' : ''}
               onFocus={() => handleFocus(index)}
               onBlur={handleBlur}
+              variant="outlined"
               tabIndex={0}
               style={{padding: 8}}
               onClick={(e) => {
@@ -80,14 +79,12 @@ export default function Latest() {
                   sx={{
                     display: 'flex',
                     flexDirection: 'column',
-                    justifyContent: 'space-between',
                     gap: 1,
                     height: '100%',
                   }}
                 >
                   <Typography
-                    gutterBottom
-                    variant="h6"
+                    variant="h6" color="text.secondary"
                   >
                     {article.title}
                   </Typography>

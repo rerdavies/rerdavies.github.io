@@ -7,14 +7,9 @@
 }
 
 html {
-  background: #1A1A1A;
+  background: ##F9F9F9;
 }
 
-@media (prefers-color-scheme: light) {  
-  html {
-  background-color: #F9F9F9;
-  }
-}
 
 .dm-serif-text-semi {
   font-family: "EB Garamond", serif;
@@ -40,7 +35,7 @@ font-style: normal;
   
   font-variation-settings: "wdth" 100;
 
-  color-scheme: light dark;
+  color-scheme: light;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -130,21 +125,12 @@ p {
   width: 100vw;
   height: 100vh;
   overflow: hidden;
-  background-color: #1A1A1A;
+  background-color: #f9f9f9
 
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    background-color: #f9f9f9;
-
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
+a:hover {
+  color: #747bff;
 }
 
 .AppFrame {

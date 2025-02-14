@@ -22,7 +22,16 @@ export default function AppTheme(props: AppThemeProps) {
   const theme = React.useMemo(() => {
     return disableCustomTheme
       ? {}
-      : createTheme({
+      : createTheme(
+        {
+          colorSchemes: { light: true, dark: false },
+          palette: {
+            mode: 'light',
+            background: {
+              default: '#FFFFFF',
+              paper: '#ffffff'
+            }
+          },
           // For more details about CSS variables configuration, see https://mui.com/material-ui/customization/css-theme-variables/configuration/
           cssVariables: {
             colorSchemeSelector: 'data-mui-color-scheme',
@@ -34,10 +43,10 @@ export default function AppTheme(props: AppThemeProps) {
           shape,
           components: {
             ...inputsCustomizations,
-            // // ...dataDisplayCustomizations,
-            // // ...feedbackCustomizations,
+            ...dataDisplayCustomizations,
+            ...feedbackCustomizations,
             ...navigationCustomizations,
-            // ...surfacesCustomizations,
+            ...surfacesCustomizations,
             ...themeComponents,
           },
         });
@@ -46,7 +55,7 @@ export default function AppTheme(props: AppThemeProps) {
     return <React.Fragment>{children}</React.Fragment>;
   }
   return (
-    <ThemeProvider theme={theme} disableTransitionOnChange>
+    <ThemeProvider theme={theme} disableTransitionOnChange defaultMode="light" noSsr>
       {children}
     </ThemeProvider>
   );

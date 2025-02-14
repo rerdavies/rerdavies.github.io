@@ -77,7 +77,7 @@ export const getArticleInfo = (route: string): ArticleInfo => {
       date: "2024-2-5",
       title: 'What PiPedal Is',
       description:
-        'Successful projects often end up becoming something they were not. This is a feature, not a bug.',
+        `Successful projects often end up becoming something other than what they started as. This is a feature, not a bug.`,
       authors: [{ name: 'Robin E.R. Davies', avatar: '/static/images/avatar/6.jpg' }],
       route: '/WhatPiPedalIs',
     },

@@ -37,7 +37,7 @@ export const cardData = [
     },
     {
       img: '/img/ToobAmp.png',
-      icon: "/img/ToobAmpLogoLight.png",
+      icon: "/img/ToobAmpLogo.png",
       tag: 'Product',
       title: 'TooB Lv2 Plugins',
       description:

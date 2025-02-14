@@ -24,8 +24,8 @@ import type { Config } from "@react-router/dev/config";
 
 export default {
   appDirectory: "src",
-  ssr: false,
+  // ssr: true,
   async prerender() {
-    return ["/", "/essays", "/projects"];
+     return ["/", "/essays", "/projects"];
   },
 } satisfies Config;
