@@ -60,7 +60,7 @@ export default function AppHeader() {
                 <Button className="dm_button" variant="text" color="primary" onClick={(e) => handleNavigate(e,'/essays')}>
                     Blog
                 </Button>
-                <Button className="dm_button" variant="text" color="primary" onClick={(e) => handleNavigate(e,'/sponsorship')}>
+                <Button className="dm_button" variant="text" color="primary" onClick={(e) => handleNavigate(e,'/about')}>
                     Sponsorship
                 </Button>
             </div>

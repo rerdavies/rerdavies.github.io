@@ -31,7 +31,7 @@ import {
     index("./pages/Home.tsx"),
     route("projects", "./pages/Projects.tsx"),
     route("essays","./pages/Essays.tsx"),
-    route("sponsorship","./pages/Sponsorship.tsx"),
+    route("about","./pages/About.tsx"),
 
     route("WhatPiPedalIs","./essays/WhatPiPedalIs.tsx"),
     route("FieryCrucible","./essays/FieryCrucible.tsx"),

@@ -5,10 +5,13 @@ import Typography from '@mui/material/Typography';
 
 function Copyright() {
   return (
+    <div>
     <Typography variant="body2" sx={{ color: 'text.secondary'}}>
       {'Copyright © 2025 '}
         Robin E.R. Davies
     </Typography>
+    </div>
+
   );
 }
 

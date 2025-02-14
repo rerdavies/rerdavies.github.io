@@ -51,8 +51,8 @@ export default function FreeAsInSunlight() {
                 I have been told that I should use the GPL because it is "Free Like Freedom". But it seems to me to
                 be a less than noble thing to give my software away using a license that prevents it from being used by serious developers who cannot afford to be infected by the GPL.
             </p>
-            <p>I want something much simpler. I want to give it away. I want people to use my software. And yet I am given to understand that "Free Like Beer" is somehow a less noble thing than
-                "Free Like Freedom". The choice of the word Beer in all of this seems needlessly pejorative; and the the
+            <p>I want something much simpler. I want to give it away. I want people to use my software. And yet I am given to understand that "Free Like Beer" is 
+                not as good as "Free Like Freedom". The choice of the word Beer in all of this seems needlessly pejorative; and the the
                 choice of the word Freedom seems suspect as well.</p>
             <p>I think it is therefore time to reclaim the narrative. I want my software to be Free Like Air and Sunlight (FLAS). 
                 This happens to be completely compatible with Free Like Beer, but unfortunately withers and dies whenever 
@@ -109,6 +109,11 @@ export default function FreeAsInSunlight() {
             <p style={{ marginBottom: 4 }}>
                 Q: But the GPL licenses don't really.... </p>
             <p style={{ marginTop: 0 }}>A: Seriously? Only on the barest of technicalities. For all practical purposes, they actually do.</p>
+
+            <p style={{marginTop: 32}}> 
+                <a href="https://github.com/rerdavies/rerdavies.github.io/discussions/1">🗨 COMMENTS</a>
+            </p>
+            <p style={{fontSize: "0.8rem"}}>Copyright © 2025 Robin E.R. Davies</p> 
         </BlogPage>
 
     );

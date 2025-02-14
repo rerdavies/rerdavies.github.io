@@ -227,6 +227,12 @@ export default function WhatPiPedalIs() {
             <p>
                 That's what PiPedal is.
             </p>
+
+            <p style={{marginTop: 32}}> 
+                <a href="https://github.com/rerdavies/rerdavies.github.io/discussions/2">🗨 COMMENTS</a>
+            </p>
+            <p style={{fontSize: "0.8rem"}}>Copyright © 2025 Robin E.R. Davies</p> 
+
         </BlogPage>
     );
 }

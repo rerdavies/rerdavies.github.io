@@ -25,7 +25,7 @@ import Container from '@mui/material/Container';
 import { useWindowSize } from '@uidotdev/usehooks';
 import { isVerticalToolbar } from '../Breakpoints';
 
-export default function Sponsorship() {
+export default function About() {
     let { width } = useWindowSize();
     let hMargin = isVerticalToolbar(width) ? 64 : 40;
 
@@ -34,14 +34,18 @@ export default function Sponsorship() {
             <Container
                 maxWidth="md"
                 component="main"
-                style={{paddingLeft: hMargin, paddingRight: hMargin, paddingTop: hMargin}}
+                style={{paddingLeft: hMargin, paddingRight: hMargin, paddingTop: hMargin,
+                    paddingBottom: hMargin
+
+                }}
             >
-                <h1 style={{fontWeight: 300}}
+                <h1 style={{fontWeight: 300, marginBottom: 0}}
                 >Robin E.R. Davies</h1>
+                <p style={{marginTop: 0, marginBottom: 16}}>rerdavies@gmail.com</p>
                 <img src="/img/headshot-sm.jpg" alt="Robin E.R. Davies" style={{float: "right", marginLeft: "1em", marginRight: "1em", marginTop: "0.5em", marginBottom: "1em"}} />
                 <p>I am a professional software developer and semi-professional jazz guitarist.
                 </p>
-                <p>I have worked in the software industry for over 45 years. My first job was writing assembler code for 8080/Z80 microprocessors. 
+                <p>I have worked as a software developer or software development manager for over 45 years. My first job was writing assembler code for 8080/Z80 microprocessors. 
                     I developed software for the first IBM PC, and for the first MacIntoshes. And since then, have worked on a wide variety of 
                     processors and operating systems and hardware platforms. Much of that work involved writing system software 
                     or device drivers for custom hardware. I briefly managed the advanced graphics driver development teams for 
@@ -65,6 +69,7 @@ export default function Sponsorship() {
                     through my <a href="https://github.com/sponsors/rerdavies">Github Sponsors page</a>. Or you can contact me directly to discuss other sponsorship arrangements.
                     Your support means more than you would think.
                 </p>
+                
             </Container>
         </div>
     );

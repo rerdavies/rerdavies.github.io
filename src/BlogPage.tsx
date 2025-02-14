@@ -27,7 +27,6 @@ import { getArticleInfo } from './data/BlogData';
 import { useWindowSize } from '@uidotdev/usehooks'; 
 import { isVerticalToolbar } from './Breakpoints';
 import Typography from '@mui/material/Typography';
-import Footer from './components/Footer';
 
 export default function BlogPage(props: { route: string, children: React.ReactNode} ) {
 
@@ -57,7 +56,6 @@ export default function BlogPage(props: { route: string, children: React.ReactNo
 
                 {props.children}
             </Container>
-            <Footer />
         </div>
     );
     

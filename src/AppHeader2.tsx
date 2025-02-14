@@ -88,7 +88,7 @@ export default function AppHeader2(props: { vertical: boolean }) {
                     blog
                 </BButton>
                 <BButton disableFocusRipple={true} style={buttonStyle}
-                    onClick={(e) => handleNavigate(e, '/sponsorship')}
+                    onClick={(e) => handleNavigate(e, '/about')}
                 >
                     about me
                 </BButton>
@@ -127,7 +127,7 @@ export default function AppHeader2(props: { vertical: boolean }) {
                         blog
                     </BButton>
                     <BButton disableFocusRipple={true} style={{ flex: "0 0 auto", color: "rgb(85,85,85)", fontSize: 18 }} 
-                        onClick={(e) => handleNavigate(e, '/sponsorship')}
+                        onClick={(e) => handleNavigate(e, '/about')}
                     >
                         about me
                     </BButton>
@@ -165,7 +165,7 @@ export default function AppHeader2(props: { vertical: boolean }) {
                 blog
             </BButton>
             <BButton disableFocusRipple={true} style={buttonStyle} 
-                                onClick={(e) => handleNavigate(e, '/sponsorship')}
+                                onClick={(e) => handleNavigate(e, '/about')}
             >
                 about me
             </BButton>
