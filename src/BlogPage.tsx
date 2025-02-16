@@ -44,15 +44,15 @@ export default function BlogPage(props: { route: string, children: React.ReactNo
                     marginBottom: hMargin
                  }}
                 >
+                <Typography variant="caption"
+                    style={{ fontSize: 14 }}
+                > {new Date(articleInfo.date).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })}</Typography>
                 <Typography variant="h2" style={{
                     fontWeight: 300,
                     fontSize: 42,
                     opacity: 0.66, borderBottom:
                         "1px solid black"
                 }}>{articleInfo.title}</Typography>
-                <Typography variant="caption"
-                    style={{ fontSize: 14 }}
-                > {articleInfo.authors[0].name} &mdash; {new Date(articleInfo.date).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })}</Typography>
 
                 {props.children}
             </Container>
