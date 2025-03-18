@@ -73,7 +73,7 @@ export const getArticleInfo = (route: string): ArticleInfo => {
     {
       tag: 'Development',
       thumbnail: '/thumb/brasserie.jpg',
-      thumbnailAttribution: (<span>Albert-Emile Artigue, Public domain, via Wikimedia Commons</span>),
+      thumbnailAttribution: (<span>Demeter. Albert-Emile Artigue, Public domain, via Wikimedia Commons</span>),
       
       date: "2025-2-5",
       title: "Free Like Air and Sunlight",
