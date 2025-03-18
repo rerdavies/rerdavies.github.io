@@ -28,6 +28,7 @@
 
 import { getArticleInfo } from "../data/BlogData";
 import BlogPage from '../BlogPage';
+import FloatImage from "../FloatImage";
 
 
 export default function FreeAsInSunlight() {
@@ -41,14 +42,8 @@ export default function FreeAsInSunlight() {
             <p className="quote">Freedom is the open window through which pours the sunlight of the human spirit and of human dignity.<br />
                 &mdash; Herbert Hoover</p>
 
-            <div style={{
-                width: 200, display: "flex", flexDirection: "column", float: "right",
-                marginLeft: 32, marginBottom: 0, marginRight: 16, marginTop: 16
+            <FloatImage floatPosition="right" src={articleInfo.thumbnail} alt="Demeter" attribution={articleInfo.thumbnailAttribution} />
 
-            }}>
-                <div><img style={{ width: 200 }} alt="thumbnail" src={articleInfo.thumbnail} /></div>
-                <p className="image_attribution">{articleInfo.thumbnailAttribution}</p>
-            </div>
 
             <p>
                 I have been told that I should use the GPL because it is "Free Like Freedom". But it seems to me to
@@ -105,7 +100,7 @@ export default function FreeAsInSunlight() {
             <p>The GPL was written by hackers, for the benefit of hackers. It caters to a very specific meaning of Freedom that it is generally 
              only useful to hackers. For the vast overwhelming majority of actual professional software developers, the terms of a the GPL are detrimental, and 
              a signfiicant majority of professional software developers are unable to use GPL-licensed software in their projects. 
-</p>
+            </p>
              <p>Even worse, the "Freedom" that GPL is supposed to provide seems to have turned out to not be that useful in practice. Of the 
               11 devices in my immediate vincinity that can or do run Linux, only four of them are actually user-patchable; and one of those four will immediately 
               and irrevocably lose access to Netflix (and a bunch of other security-related functionality) if its bootloader is ever unlocked; 

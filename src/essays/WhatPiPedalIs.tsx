@@ -22,6 +22,7 @@
  */
 
 import BlogPage from '../BlogPage';
+import FloatImage, {FloatT} from '../FloatImage';
 
 
 import { getArticleInfo } from "../data/BlogData";
@@ -32,20 +33,16 @@ export default function WhatPiPedalIs() {
     const route = "/WhatPiPedalIs";
 
     const articleInfo = getArticleInfo(route);
-
+    
     return (
         <BlogPage route={route}>
 
             <div />
-            <div style={{
-                width: 200, display: "flex", flexDirection: "column", float: "left",
-                marginBottom: 16, marginRight: 32, marginTop: 16
-
-            }}>
-                <div><img style={{ width: 200 }} alt="thumbnail" src={articleInfo.thumbnail} /></div>
-                <p className="image_attribution">{articleInfo.thumbnailAttribution}</p>
-
-            </div>
+            <FloatImage 
+                floatPosition={"left"} 
+                src={articleInfo.thumbnail} 
+                alt="Psychedelic Guitarist" 
+                attribution={articleInfo.thumbnailAttribution} />
             <p>
                 A friend of mine once told me that most successful products end up not being what they were when they started. At the time, I didn't believe him. I
                 had a very good idea of what our product was going to be. And, to be fair, this took place
