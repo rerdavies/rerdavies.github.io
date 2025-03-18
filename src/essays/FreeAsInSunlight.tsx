@@ -20,6 +20,9 @@
  *   LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
  *   OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  *   SOFTWARE.
+ *
+ *  Text content is dual-licensed under CC BY 4.0 SA, or MIT license, whichever you 
+ *  find more convenient. 
  */
 
 
@@ -49,7 +52,8 @@ export default function FreeAsInSunlight() {
 
             <p>
                 I have been told that I should use the GPL because it is "Free Like Freedom". But it seems to me to
-                be a less than noble thing to give my software away using a license that prevents it from being used by serious developers who cannot afford to be infected by the GPL.
+                be a less than noble thing to give my software away using a license that prevents it from being freely used by serious developers 
+                who cannot afford to be infected by the GPL.
             </p>
             <p>I want something much simpler. I want to give it away. I want people to use my software. And yet I am given to understand that "Free Like Beer" is 
                 not as good as "Free Like Freedom". The choice of the word Beer in all of this seems needlessly pejorative; and the the
@@ -59,16 +63,17 @@ export default function FreeAsInSunlight() {
                 it comes in contact with Free Like Freedom.
             </p>
             <p>What is a Free Like Air and Sunlight license? It is pretty much any open source license that does not infect other peoples'
-                source code with its own license terms, like the GPL licenses do. So MIT, BSD, Apache (with some caveats for those 
-                who own large patent libraries), Mozilla and many others are Free Like Sunshine and Air. 
-                I therefore generally prefer MIT licenses for open-source software that I write myself, because it is short and direct 
-                and to the point.
+                source code with its own license terms, like the GPL Libre licenses do. So MIT, BSD, Apache (with some caveats for those 
+                who own large patent libraries), Mozilla and many others are Free Like Air and Sunshine. 
+                I generally prefer MIT licenses for open-source software that I write myself, because the MIT license is short 
+               and uncomplicated;  and it's a standard license whose terms and consequences and risks are relatively well understood; and it has slightly 
+               fewer variants than BSD licenses (which are fine FLAS licenses too). 
             </p>
             <p>The general intent of a Free Like Air and Sunlight license is that it allows anyone to use software for
                 any purpose at all, including commercial purposes. 
                 It allows anyone to modify my software, and to distribute it in source or binary
                 form (subject only to the very modest requirements of an MIT license).  And &mdash;  most importantly of all *&mdash; it does not require people who use my code to redistribute their code if
-                they do not want to. There are many licenses that meet this criteria, but the MIT license because of its directness
+                they do not want to. There are many licenses that meet this criteria, but I generally use the MIT license because of its directness
                 and simplicity.
             </p>
             <p>And so, in the spirit of Free Like Air and Sunlight, I release all of my open-source projects under a Free Like Air and Sunlight MIT license.
@@ -95,14 +100,24 @@ export default function FreeAsInSunlight() {
                 Q: But what about Freedom!!??</p>
             <p style={{ marginTop: 0 }}>A: There are about 195 countries in the world. About 160 of them have freedom. So far,
                 the GPL has not affected those numbers one way or another. And, quite frankly, the convoluted and horrible ways 
-                that FLOSS-licensed software often uses to restrict your actual freedom seems to me to be far worse than any 
-                abstract benefit that Free Like Freedom might theoretically confer. And as a professional software 
-                developer, the odd Utopia that GPL strives for is not really something I really want to support.
+                that FLOSS-licensed software often uses to restrict your actual concrete material freedom to use GPL software seems to me to 
+                be far worse than any abstract benefit that Free Like Freedom might theoretically confer.</p>
+            <p>The GPL was written by hackers, for the benefit of hackers. It caters to a very specific meaning of Freedom that it is generally 
+             only useful to hackers. For the vast overwhelming majority of actual professional software developers, the terms of a the GPL are detrimental, and 
+             a signfiicant majority of professional software developers are unable to use GPL-licensed software in their projects. 
+</p>
+             <p>Even worse, the "Freedom" that GPL is supposed to provide seems to have turned out to not be that useful in practice. Of the 
+              11 devices in my immediate vincinity that can or do run Linux, only four of them are actually user-patchable; and one of those four will immediately 
+              and irrevocably lose access to Netflix (and a bunch of other security-related functionality) if its bootloader is ever unlocked; 
+              one of them (running Ubuntu 22.04) withholds critical security patches to FOSS software if you don't pay for a license; and a third 
+              (a Raspberry Pi device) relies on closed-source device drivers to access pretty much every device on its SBC. Plus there are another three Linux-based 
+              devices (an Ouya, and two Android TV devices) sitting in a box on my bookshelf that are no longer useful because the cloud services they relied 
+              on are no longer accessible.
             </p>
             <p style={{ marginBottom: 4 }}>
                 Q: Why? Why would you do that?</p>
-            <p style={{ marginTop: 0 }}>A: We are evolved herd animals, and therefore (for evolutionary reasons) are programmed to experience deep
-                satisfaction when we feel like we are making contributions to our community, and when we feel like our
+            <p style={{ marginTop: 0 }}>A: Why would I want to give my softare away? We are evolved herd animals, and therefore (for 
+                evolutionary reasons) are programmed to experience deep satisfaction when we feel like we are making contributions to our community, and when we feel like our
                 community appreciates what we do. It makes me happy. And, as a pleasant side-effect FLAS licenses also means that I can 
                 easily recycle code that I have written for personal use in professional projects should I ever choose to do so.
             </p>
