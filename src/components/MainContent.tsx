@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React from 'react';
 import Box from '@mui/material/Box';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
@@ -9,6 +9,7 @@ import { styled } from '@mui/material/styles';
 import { cardData } from "../data/ProjectData";
 import { useWindowSize } from '@uidotdev/usehooks';
 import { useEffect } from 'react';
+//import ReactSvg from "../assets/react.svg?react";
 
 
 function preloadImages()
@@ -78,7 +79,6 @@ export default function MainContent(props: { breakWidth?: number}) {
 
   return (
     <Box sx={{ display: 'flex', flexDirection: 'column', marginTop: 0}}>
-
       <h2 className="no_top_padding">
         My Open-Source Projects
       </h2>
