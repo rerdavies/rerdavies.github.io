@@ -29,7 +29,6 @@ font-style: normal;
   font-family: Oxygen, Roboto, system-ui, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
-
   font-optical-sizing: auto;
   font-style: normal;
   
@@ -75,23 +74,23 @@ body {
 
 h1 {
   font-size: 3.2em;
-  line-height: 1.1;
+  line-height: 1.8;
   font-weight: 900;
   opacity: 0.6;
 }
 
 h2 {
-  font-size: 30px;
-  line-height: 1.0;
+  font-size: 2.4em;
+  line-height: 1.8;
   font-weight: 400;
   opacity: 0.66;
   font-family: 'Oxygen', sans-serif;
 }
 h3 {
   font-size: 24px;
-  line-height: 1.0;
+  line-height: 2.0;
   font-weight: 400;
-  opacity: 0.66;
+  opacity: 0.80;
   font-family: 'Oxygen', sans-serif;
 }
 
@@ -115,12 +114,21 @@ no_top_padding {
 
 
 p {
-  font-size: 16px;
-  line-height: 1.6;
+  font-size: 1.3em;
+  line-height: 1.8;
   font-weight: 400;
-  margin-top: 0.5em;
-  margin-bottom: 0.5em;
-}   
+  margin-top: 0.75em;
+  margin-bottom: 0.75em;
+} 
+
+li {
+  font-size: 1.3em;
+  line-height: 1.8;
+  font-weight: 400;
+  margin-top: 0.75em;
+  margin-bottom: 0.75em;
+}
+
 :root {
   width: 100vw;
   height: 100vh;
@@ -209,6 +217,7 @@ a:hover {
   background: #D0D0D0
 }
 
+
 .quote {
   padding-left: 16px;
   padding-right: 16px;
@@ -217,6 +226,17 @@ a:hover {
   margin-left: 64px;
   margin-right: 64px;
 }
+@media (max-width: 470px) {
+  .quote {
+    padding-left: 16px;
+    padding-right: 0px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    margin-left: 0px;
+    margin-right: 0px;
+  }
+}
+
 
 .x-imgLoad {
   opacity: 0;
