@@ -1,32 +1,19 @@
 .roboto-900 {
-  font-family: "Oxygen", sans-serif;
+  font-family: "Inter", system-ui, Helvetica, Arial, sans-serif;
   font-optical-sizing: auto;
-  font-weight: 900;
+  font-weight: 700;
   font-style: normal;
-  font-variation-settings: "wdth" 100;
 }
 
 html {
-  background: ##F9F9F9;
+  background: #F9F9F9;
 }
 
-
-.dm-serif-text-semi {
-  font-family: "EB Garamond", serif;
-font-weight: 600;
-font-style: normal;
-}
-.dm_button {
-  font-family: "EB Garamond", serif ! important;
-font-weight: 600;
-font-size: 12pt ! important;
-font-style: normal;
-}
 
 
 
 :root {
-  font-family: Oxygen, Roboto, system-ui, Helvetica, Arial, sans-serif;
+  font-family: Inter, system-ui, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
   font-optical-sizing: auto;
@@ -75,8 +62,9 @@ body {
 h1 {
   font-size: 3.2em;
   line-height: 1.8;
-  font-weight: 900;
+  font-weight: 400;
   opacity: 0.6;
+  font-family: 'Inter', sans-serif;
 }
 
 h2 {
@@ -84,14 +72,14 @@ h2 {
   line-height: 1.8;
   font-weight: 400;
   opacity: 0.66;
-  font-family: 'Oxygen', sans-serif;
+  font-family: 'Inter', sans-serif;
 }
 h3 {
   font-size: 24px;
   line-height: 2.0;
   font-weight: 400;
   opacity: 0.80;
-  font-family: 'Oxygen', sans-serif;
+  font-family: 'Inter', sans-serif;
 }
 
 no_top_padding {
@@ -109,7 +97,7 @@ no_top_padding {
   line-height: 1.2;
   font-weight: 700;
   opacity: 0.6;
-  font-family: 'Oxygen', sans-serif;
+  font-family: 'Inter', sans-serif;
 }
 
 
@@ -240,8 +228,30 @@ a:hover {
 
 .x-imgLoad {
   opacity: 0;
+  transition: all 0.75s ease;
   -webkit-transition: all 0.75s ease; 
   -moz-transition: all 0.75s ease; 
   -ms-transition: all 0.75s ease; 
   -o-transition: all 0.75s ease; 
 }
+
+.mobile-only-img {
+    display: none;
+}
+
+@media (max-width: 1024px) {
+    .mobile-only-img {
+        display: block;
+    }
+}
+.not-mobile-img {
+    display: block;
+}
+
+@media (max-width: 1024px) {
+    .not-mobile-img {
+        display: none;
+    }
+}
+
+
