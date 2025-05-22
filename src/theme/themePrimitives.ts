@@ -183,7 +183,7 @@ export const getDesignTokens = (mode: PaletteMode) => {
       },
     },
     typography: {
-      fontFamily: 'Oxygen, sans-serif',
+      fontFamily: 'Inter, sans-serif',
       h1: {
         fontSize: defaultTheme.typography.pxToRem(48),
         fontWeight: 300,
@@ -345,7 +345,7 @@ export const colorSchemes = {
 };
 
 export const typography = {
-  fontFamily: 'Oxygen, sans-serif',
+  fontFamily: 'Inter, sans-serif',
   h1: {
     fontSize: defaultTheme.typography.pxToRem(48),
     fontWeight: 700,
@@ -353,7 +353,7 @@ export const typography = {
   },
   h2: {
     fontSize: defaultTheme.typography.pxToRem(24),
-    fontWeight: 900,
+    fontWeight: 700,
     lineHeight: 1.2,
   },
   h3: {
@@ -372,7 +372,7 @@ export const typography = {
   },
   h6: {
     fontSize: defaultTheme.typography.pxToRem(18),
-    fontWeight: 900,
+    fontWeight: 700,
   },
   subtitle1: {
     fontSize: defaultTheme.typography.pxToRem(18),

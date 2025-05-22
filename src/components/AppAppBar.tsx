@@ -46,7 +46,7 @@ export default function AppAppBar() {
         <Box sx={{ flexGrow: 1, display: 'flex', alignItems: 'center', px: 0 }}>
           <Box sx={{ display: { xs: 'none', md: 'flex', alignItems: 'baseline'} }}>
             <Typography variant="caption" component="div" 
-            sx={{ fontWeight: 900, opacity: 0.6, marginLeft: 4 }}
+            sx={{ fontWeight: 700, opacity: 0.6, marginLeft: 4 }}
             >______ <span style={{fontSize: "3.25em", opacity: 0.6}}>Robin E.R. Davies</span> ____________</Typography>
 
             <Button variant="text" color="info" size="small" sx={{ minWidth: 0 }}>

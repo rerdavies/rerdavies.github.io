@@ -47,24 +47,32 @@ export function Layout({
                 <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
 
 
-                <link href="//fonts.googleapis.com/css?family=Oxygen:400,700,300|Crimson+Text:400,400italic&amp;subset=latin,latin-ext" media="screen" rel="stylesheet" type="text/css"
+                <link href="https://fonts.googleapis.com/css?family=Inter:300,400,700,400italic|Crimson+Text:400,400italic&amp;subset=latin,latin-ext" media="screen" rel="stylesheet" type="text/css"
+                />
+
+                <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" media="screen" rel="stylesheet" type="text/css"
+                />
+
+                {/*
+
+                <link href="https://fonts.googleapis.com/css?family=Inter:300,400,700,400italic|Crimson+Text:400,400italic&amp;subset=latin,latin-ext" media="screen" rel="stylesheet" type="text/css"
                 />
 
 
-                {/*
+
                 <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400..900;1,400..900&display=swap"
                     rel="preload"  as="style"/>
 
                 <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400..900;1,400..900&display=swap"
                     rel="stylesheet" />
-                */}
-
+                
                 <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400..900;1,400..900&display=swap"
                     rel="preload" as="style" />
                 <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Text&family=EB+Garamond:ital,wght@0,600&family=Roboto:wght@600&display=swap" 
                  rel="stylesheet"
                 />
-                
+                */}
+
                 <link href="/App.css" rel="stylesheet" />
 
 

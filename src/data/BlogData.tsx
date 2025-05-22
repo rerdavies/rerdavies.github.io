@@ -71,6 +71,19 @@ export const getArticleInfo = (route: string): ArticleInfo => {
     },
     */
     {
+        tag: 'Development',
+        thumbnail: '/thumb/DialThumb.png',
+        thumbnailAttribution: (<span>Demeter. Albert-Emile Artigue, Public domain, via Wikimedia Commons</span>),
+        
+        date: "2025-5-21",
+        title: "What If There Were No Knobs at All?",
+        description:
+          "Minimalist user interfaces.",
+        route: "/NoKnobs",
+        authors: [{ name: 'Robin E.R. Davies', avatar: '/static/images/avatar/6.jpg' }],
+              
+      },
+      {
       tag: 'Development',
       thumbnail: '/thumb/brasserie.jpg',
       thumbnailAttribution: (<span>Demeter. Albert-Emile Artigue, Public domain, via Wikimedia Commons</span>),

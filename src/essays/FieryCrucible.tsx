@@ -72,7 +72,7 @@ export default function WhatPiPedalIs() {
 
                 <Typography variant="caption">February 5, 2025</Typography>
 
-                <p style={{fontFamily:"'Oxygen',serif" }}>I had an opportunity to write a from-scratch utility library, and from-scratch documentation for that library recently.
+                <p>I had an opportunity to write a from-scratch utility library, and from-scratch documentation for that library recently.
                     One of the particularly things I learned about while writing the project and its associated documentation is that
                     the process of writing documentation can be used as a powerful quality control procedure for the design and implementation
                     of Application Programming Interfaces.
