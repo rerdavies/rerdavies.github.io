@@ -270,7 +270,7 @@ export default function NoKnobs() {
                 a chance to do so.
             </p>
             <p style={{ marginTop: 32 }}>
-                <a href="https://github.com/rerdavies/rerdavies.github.io/discussions/1">🗨 COMMENTS</a>
+                <a href="https://github.com/rerdavies/rerdavies.github.io/discussions/3">🗨 COMMENTS</a>
             </p>
             <p style={{ fontSize: "0.8rem" }}>Copyright © 2025 Robin E.R. Davies</p>
         </BlogPage>
