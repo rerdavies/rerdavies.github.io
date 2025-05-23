@@ -204,12 +204,11 @@ export default function NoKnobs() {
                 and yet I wasn't able to find one, so the ToobAmp project now includes the TooB Volume plugin. And the two neural-network-based amp 
                 modellers were written because nobody was providing debian packages for use on Raspberry Pi OS. And many of the goto LV2 effect libraries 
                 were written in an era when UX was based on a completely 
-                different aesthetic (where more controls was considered better, and skeumorphic interfaces were considered to be a good thing, so they 
-                tend toward being too clever, and having an unmanageable number of not-always useful controls to the detriment of usability 
-                in ordinary use cases when they are placed on a guitar pedalboard. That's not to say 
+                different aesthetic where it was considered to be a good thing to have an unmanageable number of 
+                not-always-useful controls to the detriment of usability in ordinary use cases. That's not to say 
                 there aren't all sorts of great LV2 effects; just that 
-                I wasn't able to find a bundle of effects that were consistently designed specifically for use as guitar effects 
-                pedals. So I wrote ToobAmp. 
+                I wasn't able to find a bundle of effects that were consistently designed with the kind of minimalist user interface 
+                that is appropriate for guitar effects pedals. That's why I wrote ToobAmp. 
             </p>
             <p>
                  I've certainly always been aware of the Rule of Knobs throughout the development of the ToobAmp library. 
@@ -255,9 +254,13 @@ export default function NoKnobs() {
                 <img src="/img/ReaperFreezeSmall.png" className="mobile-only-img" style={{width: "100%"}} />
             <p>There are four menu commands that deliver functionality which could have been provided with only one menu item! I have no 
                 idea why anyone would want to freeze a stereo track to mono, or a mono track to stereo. But you can. 
-                Yes, there is more functionality; but it's hardly compelling functionality. All four menu commands could have been replaced with 
-                one single menu item named <span style={{fontFamily: "Inter",fontStyle: "italic", fontWeight: 700}}>Freeze Track(s)</span> which displays a checkmark when the track has been frozen, and unfreezes the track 
-                when you select the menu item a second time. And if there were one menu command, then the Freeze menu item could have been moved up into the 
+                Yes, there is more functionality; but it's hardly compelling functionality. And all that UI text about saving the 
+                contents of the effect chain when you freeze the track&mdash;as if there might be a case where you would want Reaper to 
+                discard your frozen effect chain when you unfreeze a track. All four menu commands could have been replaced with 
+                one single menu item named <span style={{fontFamily: "Inter",fontStyle: "italic", fontWeight: 700}}>Freeze Track(s)</span> which 
+                displays a checkmark when the track has been frozen, and unfreezes the track 
+                when you select the menu item a second time. A 75% reduction in UI complexity, at the expense of functionality that nobody 
+                would ever want! And if there were one menu command, then the Freeze menu item could have been moved up into the 
                 main menu, and could even be displayed as a button in the graphical track user interface. Unfortunately, this is not an isolated 
                 case. Reaper is jam-packed with incredibly complicated user interface that delivers dubiously useful 
                 functionality. And the cognitive cost of all that additional UI complexity is that Reaper is the most difficult DAW to 
