@@ -38,13 +38,13 @@ export default function NoKnobs() {
             <p>
                 So I shipped a piece of UI that I am genuinely proud of a couple of days ago.
             </p>
-            <img src="thumb/ToobPhaserSm.png" style={{ display: "block", marginLeft: "64px", maxWidth: "50%" }} />
+            <img src="/thumb/ToobPhaserSm.png" style={{ display: "block", marginLeft: "64px", maxWidth: "50%" }} />
             <p>That's it. One knob. And only one knob.</p>
             <p>You probably need a little context. The knob is a control on the TooB Phaser LV2 audio effect plugin (part of
                 the <a href="https://github.com/rerdavies/ToobAmp">ToobAmp project</a>). It is not a direct 
                 clone, but it is definitely inspired by a classic guitar 
                 effect&mdash;the MXR Phase 90&mdash;which looks like this:</p>
-            <img src="img/mxr90.webp" style={{ display: "block", maxWidth: "50%", marginLeft: "30%" }} />
+            <img src="/img/mxr90.webp" style={{ display: "block", maxWidth: "50%", marginLeft: "30%" }} />
             <p>
                 The MXR Phase 90 also only has one knob.
             </p>
@@ -251,8 +251,8 @@ export default function NoKnobs() {
                 To freeze a track in Reaper, you have to use the Freeze Tracks menu commands which are on a
                 nested submenu. 
             </p>
-            <img src="img/ReaperFreeze.png" className="not-mobile-img" style={{width: "100%"}} />
-                <img src="img/ReaperFreezeSmall.png" className="mobile-only-img" style={{width: "100%"}} />
+            <img src="/img/ReaperFreeze.png" className="not-mobile-img" style={{width: "100%"}} />
+                <img src="/img/ReaperFreezeSmall.png" className="mobile-only-img" style={{width: "100%"}} />
             <p>There are four menu commands that deliver functionality which could have been provided with only one menu item! I have no 
                 idea why anyone would want to freeze a stereo track to mono, or a mono track to stereo. But you can. 
                 Yes, there is more functionality; but it's hardly compelling functionality. All four menu commands could have been replaced with 
