@@ -21,11 +21,14 @@
  *   SOFTWARE.
  */
 import type { Config } from "@react-router/dev/config";
-
+import routes from "./src/routes"
 export default {
   appDirectory: "src",
   // ssr: true,
   async prerender() {
-     return ["/", "/essays", "/projects","/about","/FreeAsInSunlight","/WhatPiPedalIs"];
+     for (var rout of routes) {
+
+     }
+     return ["/", "/essays", "/projects","/about","/FreeAsInSunlight","/WhatPiPedalIs","/NoKnobs"];
   },
 } satisfies Config;
