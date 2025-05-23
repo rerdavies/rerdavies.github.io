@@ -2,14 +2,12 @@ import * as React from 'react';
 import Box from '@mui/material/Box';
 import Container from '@mui/material/Container';
 import Typography from '@mui/material/Typography';
+import CopyrightSlug from '../Copyrightslug';
 
 function Copyright() {
   return (
     <div>
-    <Typography variant="body2" sx={{ color: 'text.secondary'}}>
-      {'Copyright © 2025 '}
-        Robin E.R. Davies
-    </Typography>
+        <CopyrightSlug />
     </div>
 
   );
@@ -37,7 +35,7 @@ export default function Footer() {
           }}
         >
           <div>
-            <Copyright />
+            <Copyright/>
           </div>
         </Box>
       </Container>

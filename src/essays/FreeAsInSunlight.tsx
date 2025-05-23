@@ -29,6 +29,7 @@
 import { getArticleInfo } from "../data/BlogData";
 import BlogPage from '../BlogPage';
 import FloatImage from "../FloatImage";
+import CopyrightSlug from "../Copyrightslug";
 
 
 export default function FreeAsInSunlight() {
@@ -123,7 +124,7 @@ export default function FreeAsInSunlight() {
             <p style={{marginTop: 32}}> 
                 <a href="https://github.com/rerdavies/rerdavies.github.io/discussions/1">🗨 COMMENTS</a>
             </p>
-            <p style={{fontSize: "0.8rem"}}>Copyright © 2025 Robin E.R. Davies</p> 
+            <CopyrightSlug/>
         </BlogPage>
 
     );

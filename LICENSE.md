@@ -1,6 +1,6 @@
 Source code licensed under an MIT License. 
 
-Content is dual-licensed under either an MIT License, or under a CC BY 4.0 Creative Commons Attribution 4.0 International license, whichever you find more convenient.
+Content is dual-licensed under either an MIT License, or under a CC BY 4.0 Creative Commons Attribution-NoDerivatives 4.0 International, whichever you find more convenient.
 
 
 MIT License
@@ -26,4 +26,4 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 
 
-[Robin E.R. Davies Website](https://rerdavies.github.io) ©  2025 by Robin Davies is licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/?ref=chooser-v1) 
+[Robin E.R. Davies Website](https://rerdavies.github.io) © 2025 by Robin Davies is licensed under a [CC BY-ND 4.0](https://https://creativecommons.org/licenses/by-nd/4.0/) license.

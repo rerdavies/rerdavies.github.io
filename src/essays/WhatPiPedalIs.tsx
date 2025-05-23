@@ -22,6 +22,7 @@
  */
 
 import BlogPage from '../BlogPage';
+import CopyrightSlug from '../Copyrightslug';
 import FloatImage, {FloatT} from '../FloatImage';
 
 
@@ -228,7 +229,7 @@ export default function WhatPiPedalIs() {
             <p style={{marginTop: 32}}> 
                 <a href="https://github.com/rerdavies/rerdavies.github.io/discussions/2">🗨 COMMENTS</a>
             </p>
-            <p style={{fontSize: "0.8rem"}}>Copyright © 2025 Robin E.R. Davies</p> 
+            <CopyrightSlug/>
 
         </BlogPage>
     );

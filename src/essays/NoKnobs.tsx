@@ -27,6 +27,7 @@
 
 
 import BlogPage from '../BlogPage';
+import CopyrightSlug from '../Copyrightslug';
 
 
 export default function NoKnobs() {
@@ -106,9 +107,9 @@ export default function NoKnobs() {
                 too easy to turn sometimes very difficult choices over to users of our digital effects instead.
             </p>
             <p>
-                For digital implementations of phasers, kobs are free. So there's no financial cost to providing the extra knobs. However, I would like to 
+                For digital implementations of phaser effect plugins, knobs don't cost extra. So there's no financial cost to providing the extra knobs. However, I would like to 
                 make the case that there is a cognitive cost to having extra knobs. A phaser effect that has six knobs is going to be more difficult to 
-                use than one that has one knob. 
+                use, and therefore much less useful than one that has one knob. 
             </p>
             <p>
                 To take a concrete example, what LFO shape should I be using in my phaser implementation? I could offer my users a 
@@ -122,10 +123,10 @@ export default function NoKnobs() {
                 at 12 o'clock, after the waveform has been changed? Things get very complicated very quickly. And for what? The vast majority of 
                 possible settings are not particularly musical. There are a few useful islands of useful settings. But there just isn't that much difference. 
                 Adding three knobs in this case produces little substantial benefit, while making the effect much more difficult to use. The right choice, 
-                I think, is to pre-configure those settings to optimal fixed values, and have no knob at all.
+                I think, is to pre-configure those settings to optimal fixed values, and have not have the any of the extra knobs.
             </p>
             <p>
-                Personally, I am deeply discouraged when I load up a new digital effect only to be confronted with dozes of knobs, buttons, dropdowns, 
+                Personally, I am deeply discouraged when I load up a new digital effect only to be confronted with dozens of knobs, buttons, dropdowns, 
                 and tabs. In my mind, it's an indication that the designers of those digital plugins haven't done the hard work
                 of determining what the good values for their tunable parameters are. Almost invariably,
                 the 12 o'clock knob rule hasn't been respected either. So if you are trying to use that plugin
@@ -275,7 +276,7 @@ export default function NoKnobs() {
             <p style={{ marginTop: 32 }}>
                 <a href="https://github.com/rerdavies/rerdavies.github.io/discussions/3">🗨 COMMENTS</a>
             </p>
-            <p style={{ fontSize: "0.8rem" }}>Copyright © 2025 Robin E.R. Davies</p>
+            <CopyrightSlug/>
         </BlogPage>
 
     );
