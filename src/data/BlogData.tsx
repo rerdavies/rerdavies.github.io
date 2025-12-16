@@ -72,6 +72,19 @@ export const getArticleInfo = (route: string): ArticleInfo => {
     */
     {
         tag: 'Development',
+        thumbnail: '/thumb/DynaCompThumb.jpg',
+        thumbnailAttribution: (<span></span>),
+        
+        date: "2025-12-5",
+        title: "MXR Dyna Comp Circuit Analysis",
+        description:
+          "A circuit analysis of the MXR Dyna Comp.",
+        route: "/MxrDynaComp",
+        authors: [{ name: 'Robin E.R. Davies', avatar: '/static/images/avatar/6.jpg' }],
+              
+    },
+    {
+        tag: 'Development',
         thumbnail: '/thumb/DialThumb.png',
         thumbnailAttribution: (<span>Demeter. Albert-Emile Artigue, Public domain, via Wikimedia Commons</span>),
         

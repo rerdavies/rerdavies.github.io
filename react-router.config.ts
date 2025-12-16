@@ -29,6 +29,6 @@ export default {
      for (var rout of routes) {
 
      }
-     return ["/", "/essays", "/projects","/about","/FreeAsInSunlight","/WhatPiPedalIs","/NoKnobs"];
+     return ["/", "/essays", "MxrDynaComp", "/projects","/about","/FreeAsInSunlight","/WhatPiPedalIs","/NoKnobs"];
   },
 } satisfies Config;

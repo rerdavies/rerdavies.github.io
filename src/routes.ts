@@ -37,6 +37,7 @@ import {
     route("FieryCrucible","./essays/FieryCrucible.tsx"),
     route("FreeAsInSunlight","./essays/FreeAsInSunlight.tsx"),
     route("NoKnobs","./essays/NoKnobs.tsx"),
+    route("MxrDynaComp","./essays/MxrDynaComp.tsx"),
 
     route("*?","catchall.tsx"),
     // pattern ^           ^ module file
