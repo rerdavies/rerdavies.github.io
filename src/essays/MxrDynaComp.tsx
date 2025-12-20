@@ -31,8 +31,8 @@ import CopyrightSlug from '../Copyrightslug';
 
 
 const styles = {
-    floatImageRight: {display: "block", float: "right", marginTop: 16, marginLeft: 32, marginBottom: 32, width: 320, maxWidth: "50%" },
-    
+    floatImageRight: { display: "block", float: "right", marginTop: 16, marginLeft: 32, marginBottom: 32, width: 320, maxWidth: "50%" },
+
     grid2Col: {
         display: "grid",
         gridTemplateColumns: "auto 1fr",
@@ -95,40 +95,37 @@ export default function MxrDynaComp() {
 
     return (
         <BlogPage route={route}>
-            <img src="./thumb/DynaCompThumb.jpg" style={ styles.floatImageRight } />
+            <img src="./thumb/DynaCompThumb.jpg" style={styles.floatImageRight} />
             <p>
-                The MXR Dyna Comp is a classic 1970s compressor pedal, highly prized by guitarists and collectors. Unlike many compressors,
-                The effect is based around an OTA (Operational Transconductance Amplifier) rather than an op amp or photo-diode,
-                giving it a distinctive sound that OTA-based compressors are known for.
+                The MXR Dyna Comp is a classic 1970s compressor pedal, highly prized by guitarists and collectors of guitar effects pedals. Unlike many compressors,
+                the Dyna Comp is based on an OTA (Operational Transconductance Amplifier) rather than an op amp or photo-diode,
+                giving it the distinctive sound OTA-based compressors are known for.
             </p>
-            <p>This analysis focuses on how the circuit works at a component level, but it also attempts to draw 
-                conclusions about the overall behavior of the pedal when used by guitarist, in order to 
-                provide insight into how to use the pedal more effectively.
+            <p>This analysis examines how the circuit works at the component level while also drawing
+                conclusions about the pedal's high-level behavior in order to provide insight into how one might more 
+                effectively use the pedal in an actual guitar rig.
             </p>
             <p>
-                Non-technical readers are encouraged to enjoy the pretty pictures found along the way, 
-                and dwell lightly on the deep descriptions of how the circuit is implemented at the component level.
-                As it progresses, the analysis will provide insights into the high-level behavior of the pedal that 
-                are not adequately documented in the owners' manual (what does that Sensitivity knob really do, for example). 
-                In the final section of the analysis, there is a discussion of what exactly makes the 
-                Dyna Comp different and distinct from similar guitar pedal compressors, along with a discussion of 
-                what the Dyna Comp sound actually is that is based upon analysis rather than subjective descriptions, 
-                which the author hopes non-technical users may also find interesting and useful. 
+                Non-technical readers are encouraged to enjoy the graphs and diagrams, while dwelling lightly over
+                detailed component-level descriptions. The analysis provides insights into high-level pedal behavior
+                inadequately documented in the owner's manual (what does that Sensitivity knob really do?).
+                The final section discusses what makes the Dyna Comp distinctive among guitar compressors
+                and characterizes its sound through analysis rather than subjective descriptions.
             </p>
-            <p>This analysis is based on circuit analysis perform using LTSpice simulations of the MXR Dyna Comp circuitry. A link to the 
+            <p>This analysis is based on LTSpice simulations of the MXR Dyna Comp circuitry. A link to the
                 LTSpice model file is provided in the references section.
             </p>
             <h2>Circuit Overview</h2>
-            <p>The circuit can be separated into several functional blocks, each responsible for a specific aspect of the compression effect. Each of this blocks will be
+            <p>The circuit can be separated into several functional blocks, each responsible for a specific aspect of the compression effect. Each of these blocks will be
                 analyzed in more detail below.
             </p>
 
             <div style={{ display: "grid", gridTemplateColumns: "auto 1fr", gap: "16px", marginTop: "24px" }}>
                 <div><strong>Power supply:</strong></div>
-                <div>Provides power rails for the rest of the circuit.</div>
+                <div>Provides conditioned power rails for the rest of the circuit.</div>
 
                 <div><strong>Input buffer:</strong></div>
-                <div>Conditions the incoming guitar signal.</div>
+                <div>Buffers and conditions the incoming guitar signal.</div>
 
                 <div><strong>Transconductance amp:</strong></div>
                 <div>Applies the compressor envelope gain to the incoming signal.</div>
@@ -146,16 +143,15 @@ export default function MxrDynaComp() {
             </div>
 
             <h2>Signal Volume Measurements Conventions</h2>
-            <p>By industry convention, 
-                the voltage level of guitar signals from an electric guitar pickup are measured in units of dBu, which is an RMS
-                measurement of voltage given in decibels, relative to a reference voltage of 0.775 volts RMS. At various points in the analysis, it
-                will be more useful to use a non-RMS peak-to-peak measurement of signal volume. These measurements will be stated in units of "dBV(pp)",
-                defined as the peak-to-peak, non RMS voltage of a signal given in decibels relative to a signal of 1 Volt peak to peak.
+            <p>By industry convention,
+                guitar pickup voltage levels are measured in dBu, which is an RMS voltage measurement in decibels 
+                relative to 0.775 volts RMS. This analysis also uses peak-to-peak measurements stated in 
+                "dBV(pp)": decibels relative to 1 Volt peak-to-peak.
             </p>
-            <p>Converting between RMS and peak-to-peak measures is perilous. The conversion depends on the nature of the
-                waveform being measured, and potentially depends on both harmonic magnitude and phase of the signal content.
+            <p>Converting between RMS and peak-to-peak measurements is problematic, as the conversion depends 
+                on waveform shape, harmonic content, and phase relationships.
             </p>
-            <p>For reference, the following conversions are valid for the purpose of this document:</p>
+            <p>For reference, the following conversions apply to this document:</p>
             <table style={styles.table}>
                 <thead style={styles.thead}>
                     <tr>
@@ -175,66 +171,64 @@ export default function MxrDynaComp() {
                         <td style={styles.tableCell}>= -3.0dBu</td>
                     </tr>
                 </tbody>
-            </table> 
+            </table>
             <p style={styles.tableLegend}>
                 Table 1: Conversion between dBu and dBV(pp) for common waveforms.
             </p>
             <p>
-                Pickup voltage levels vary from guitar to guitar, and pickup to pickup. However, the following table 
-                gives some typical voltage levels for common pickup types, measured in both dBu and dbV(pp). The MXR Dyna Comp 
-                is conspicuously missing an input volume control. Instead, it just assumes that the voltage of the input signal will be 
-                in the range of the output of an electric guitar.  Since compressors are usually placed first in an effect chain, 
-                guitarists an adjust volumes by using the volume control on their guitar, if they must.</p>
-            <p>
-                This is perfectly reasonable, save for the fact that voltages 
-                vary considerably between pickups, and pickup type. There is a significant difference voltage levels coming from 
-                a modern humbucker pickup, and a vintage telecaster pickup. This will prove to be important later in the 
-                analysis, when the issue of envelope release points is discussed.
+                The MXR Dyna Comp lacks an input volume control, assuming input signals fall within 
+                typical guitar pickup ranges. Since compressors are usually placed first in an effect chain,
+                guitarists can adjust input levels using their guitar's volume control.
             </p>
             <p>
-                As a point of reference, the following table gives voltage output levels for various types of pickups. 
-                Theses are just rough guidelines. Actual voltages will vary considerably between different pickup models.
+                However, voltages vary considerably between pickup types—a modern humbucker outputs 
+                significantly higher voltages than a vintage Telecaster single-coil. These differences affect 
+                envelope release behavior, as will be discussed later.
+            </p>
+            <p>
+                The following table shows typical voltage levels by pickup type. These are rough 
+                guidelines; actual voltages vary considerably between pickup models.
             </p>
 
 
             <table style={styles.table}>
                 <thead style={styles.thead}>
                     <tr>
-                        <th style={styles.tableHeader}>Pickup<br/> Type</th>
-                        <th style={styles.tableHeader}>Attack<br/> (dBu)</th>
-                        <th style={styles.tableHeader}>Attack<br/> (dbV(pp))</th>
-                        <th style={styles.tableHeader}>Sustained<br/> (dBu)</th>
-                        <th style={{ ...styles.tableHeader, paddingRight: 0 }}>Sustained<br/> (dbV(pp))</th>
+                        <th style={styles.tableHeader}>Pickup<br /> Type</th>
+                        <th style={styles.tableHeader}>Attack<br /> (dBu)</th>
+                        <th style={styles.tableHeader}>Attack<br /> (dbV(pp))</th>
+                        <th style={styles.tableHeader}>Sustained<br /> (dBu)</th>
+                        <th style={{ ...styles.tableHeader, paddingRight: 0 }}>Sustained<br /> (dbV(pp))</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr style={styles.tableCellBorder}>
                         <td style={styles.tableCell}>Vintage Single-Coil</td>
-                        <td style={styles.tableCell}>-8 to<br/>-4 dBu</td>
-                        <td style={styles.tableCell}>-6 to<br/>-2 dbV(pp)</td>
-                        <td style={styles.tableCell}>-18 to<br/>-14 dBu</td>
-                        <td style={styles.tableCell}>-16 to<br/>-12 dbV(pp)</td>
+                        <td style={styles.tableCell}>-8 to<br />-4 dBu</td>
+                        <td style={styles.tableCell}>-6 to<br />-2 dbV(pp)</td>
+                        <td style={styles.tableCell}>-18 to<br />-14 dBu</td>
+                        <td style={styles.tableCell}>-16 to<br />-12 dbV(pp)</td>
                     </tr>
                     <tr style={styles.tableCellBorder}>
                         <td style={styles.tableCell}>Modern Single-Coil</td>
-                        <td style={styles.tableCell}>-4 to<br/>0 dBu</td>
-                        <td style={styles.tableCell}>-2 to<br/>+2 dbV(pp)</td>
-                        <td style={styles.tableCell}>-14 to<br/>-10 dBu</td>
-                        <td style={styles.tableCell}>-12 to<br/>-8 dbV(pp)</td>
+                        <td style={styles.tableCell}>-4 to<br />0 dBu</td>
+                        <td style={styles.tableCell}>-2 to<br />+2 dbV(pp)</td>
+                        <td style={styles.tableCell}>-14 to<br />-10 dBu</td>
+                        <td style={styles.tableCell}>-12 to<br />-8 dbV(pp)</td>
                     </tr>
                     <tr style={styles.tableCellBorder}>
                         <td style={styles.tableCell}>Humbucker</td>
-                        <td style={styles.tableCell}>0 to<br/>+4 dBu</td>
-                        <td style={styles.tableCell}>+2 to<br/>+6 dbV(pp)</td>
-                        <td style={styles.tableCell}>-10 to<br/>-6 dBu</td>
-                        <td style={styles.tableCell}>-8 to<br/>-4 dbV(pp)</td>
+                        <td style={styles.tableCell}>0 to<br />+4 dBu</td>
+                        <td style={styles.tableCell}>+2 to<br />+6 dbV(pp)</td>
+                        <td style={styles.tableCell}>-10 to<br />-6 dBu</td>
+                        <td style={styles.tableCell}>-8 to<br />-4 dbV(pp)</td>
                     </tr>
                     <tr>
                         <td style={styles.tableCell}>Active Pickup</td>
-                        <td style={styles.tableCell}>+4 to<br/>+8 dBu</td>
-                        <td style={styles.tableCell}>+6 to<br/>+10 dbV(pp)</td>
-                        <td style={styles.tableCell}>-6 to<br/>-2 dBu</td>
-                        <td style={styles.tableCell}>-4 to<br/>0 dbV(pp)</td>
+                        <td style={styles.tableCell}>+4 to<br />+8 dBu</td>
+                        <td style={styles.tableCell}>+6 to<br />+10 dbV(pp)</td>
+                        <td style={styles.tableCell}>-6 to<br />-2 dBu</td>
+                        <td style={styles.tableCell}>-4 to<br />0 dbV(pp)</td>
                     </tr>
                 </tbody>
             </table>
@@ -250,7 +244,8 @@ export default function MxrDynaComp() {
                 </a>
                 <p style={{ textAlign: "center" }}>Figure 2: Schematic of the power supply block.</p>
             </div>
-            <p>The power supply block does basic conditioning of input from the 9V battery (which actually supplies 8.5V or less).
+            <p>The power supply block does basic conditioning of input from the 9V battery (which may actually deliver anywhere between 9.6V and 7V depending on 
+                battery type, and how long the battery has been in use).
             </p>
             <p>Diode D3 provides protection against reverse connection of the battery. R2 and R17 are a voltage divider that generates
                 a 2.54V power rail which is  used to provide a bias voltage to transistors. Capacitors C6 and C11 ensures that power comes up
@@ -292,10 +287,12 @@ export default function MxrDynaComp() {
             </p>
             <p>
                 The CA3080 is no longer in production, and is available only as NOS. However, a commonly used substitute is the LM13700, which is
-                not pin-compatible, but is, apparently, otherwise almost an exact for the CA3080. The LM13700 has better linearity
-                over a wider range of input voltages, but an be degraded to match the linearity of the CA3080 by disconnecting the 
+                not pin-compatible, but is, apparently, otherwise almost an exact replacement for the CA3080. The LM13700 has better linearity
+                over a wider range of input voltages, but an be degraded to match the linearity of the CA3080 by disconnecting the
                 Diode Bias pin (pin 2). The Ross Compressor (another famous and highly-prized OTA-based compressor),
-                and many rebuilds of the MXR Dyna Comp uses the TI LM13700 instead of a CA3080.
+                and many rebuilds of the MXR Dyna Comp uses the TI LM13700 instead of a CA3080. The Ross compressor is, in fact, a functionally 
+                exact replica of the MXR Dyna Comp, with all the circuitry participating in processing of audio being identical (save for the 
+                replacement of the CA3080 with an LM13700, with the Diode Bias pin disconnected). 
             </p>
             <p>
                 The OTA's transconductance is controlled by the current flowing into its <em>abc</em> pin, which is
@@ -303,20 +300,20 @@ export default function MxrDynaComp() {
                 Somewhat unintuitively, the CA3080 keeps the voltage of the Iabc pin at a constant
                 voltage of slightly under 1.4V, so it's important to remember that it is the current flowing through <em>gmod</em>, not
                 the voltage that controls the gain of the OTA. 1.4V happens to be two transistor bias drops, which probably
-                accounts for the acronym: "abc" = "amplifier bias current", which perhaps encompasses the idea that the
-                pin provides current control at an a internal amplifier bias voltage level. 
+                accounts for the acronym: "abc" = "amplifier bias current", which encompasses the idea that the
+                pin provides current control at an a internal amplifier bias voltage.
             </p>
             <p>Instead of using a phase splitter, a passive resistor/capacitor network applies a high-pass filter to the V+ input of the
                 CA3080. The difference between the filtered V+ signal, and the unfiltered V- signal then provides the differential
-                input to the OTA. In the process, the 1dBU voltage swing of the guitar input is converted to a range of about +/-50mV for a 1kHz
+                input to the OTA. In the process, the 1dBU voltage swing of the guitar input is converted to a nominal range of about +/-50mV for a 1kHz
                 input signal across the differential inputs of the OTA, which puts the differential voltage in a range where
                 the OTA can operate linearly without significant distortion across several decades of magnitude.
             </p>
             <p>In the discussion that immediately follows, small-signal frequency response analysis is conducted by temporarily
-                connecting the <em>abc</em> to a constant 0.6&micron;A current source, which effectively disables the envelope generator.
-                Because <em>gmod</em> varies over time, it is impossible to do a meaningful small-signal static AC analysis of 
-                frequency response unless the envelope generator is temporarily disabled. Transient analysis of the spectral response of the circuit, 
-                with the envelope generator connected, will be deferred until later in the analysis.
+                pin to a constant 0.6µA current source, which effectively disables the envelope generator.
+                                Because <em>gmod</em> varies over time, it is impossible to do a meaningful small-signal static AC analysis of
+                frequency response unless the envelope generator is temporarily disabled. Transient analysis of the spectral response of the circuit,
+                with the envelope generator connected (which confirms the static AC small-signal analysis), will be deferred until later in the analysis.
             </p>
             <p>Figures 5 through 7 show small-signal frequency responses for signals going into and out of the OTA. Responses are
                 measured relative to the V(Vin) guitar input, so they include the low-cut filter applied in the input buffer block.
@@ -325,20 +322,21 @@ export default function MxrDynaComp() {
                 <a href="./img/DynaComp_spec_ota_pos.svg" target="_blank" rel="noopener noreferrer" style={{ display: "flex", justifyContent: "center" }}>
                     <img src="./img/DynaComp_spec_ota_pos.svg" style={{ marginTop: 32, marginBottom: 0, width: 800, maxWidth: "80%" }} />
                 </a>
-                <p style={{ textAlign: "center" }}>Figure 5: Small signal response, guitar input to the ota_pos input of the CA3080. Signal going to 
-                    the ota_neg input is not filtered (although both inputs inherit the low-cut filter from the input block. The filter network 
+                <p style={{ textAlign: "center" }}>Figure 5: Small signal response, guitar input to the ota_pos input of the CA3080. Signal going to
+                    the ota_neg input is not filtered (although both inputs inherit the low-cut filter from the input block. The filter network
                     before ota_pos applies a high-cut (low-pass) filter at about 10KHz.
                 </p>
             </div>
-            <p>More interesting is the frequency response of the difference between the V+ and V- inputs, which is the actual input to the OTA.</p>
+            <p>More interesting is the frequency response of the difference between the V+ and V- inputs, which is the actual differential voltage input to the OTA
+                (and therefore the frequency response of the OTA output current signal).</p>
             <div>
                 <a href="./img/DynaComp_spec_ota_diff.svg" target="_blank" rel="noopener noreferrer" style={{ display: "flex", justifyContent: "center" }}>
                     <img src="./img/DynaComp_spec_ota_diff.svg" style={{ marginTop: 32, marginBottom: 0, width: 800, maxWidth: "80%" }} />
                 </a>
                 <p style={{ textAlign: "center" }}>Figure 6: Small signal response of V(ota_pos) minus V(ota_neg).</p>
             </div>
-            <p>The net result of passive filters before the CA3080 is to apply a massive 15dB+ high-frequency boost to the signal
-                being fed to the OTA, and an additional low cut in addition to the input buffer filter, that brings the effective low-cut 
+            <p>The net result of the passive filter before the CA3080 is to apply a massive 15dB+ high-frequency boost to the signal
+                being fed to the OTA, and an additional low cut in addition to the input buffer low-cut, that brings the effective low-cut
                 cutoff frequency up to about 60Hz.
             </p>
             <div>
@@ -355,29 +353,30 @@ export default function MxrDynaComp() {
                 produces the same frequency response curve as shown in Figure 6, including the high-frequency boost.
             </p>
             <p>Taken together, the actual purpose of the filter networks before and after the OTA becomes clear. They provide
-                passive conversion of the OTA's output current signal to a voltage signal (with a low cut applied at a cutoff frequency of about 8.5kHz), 
-                which would normally require an active integrator circuit of some sort. The OTA does provide a convenient way to apply the compressor envelope  gain to the input 
-                signal via the <em>abc</em> pin. But, ironically, it produces an
-                inconvenient current output, since the transistor that follows (Q3) in the Envelope Generator section needs a voltage signal at its base.
-                With the C1/R6 filter network applied, the current on the connection between the OTA and the following transistor
+                passive conversion of the OTA's output current signal to a voltage signal (with an additional high cut (low pass) 
+                filter applied at a cutoff frequency of about 8.5kHz),
+                which would normally require an active integrator circuit of some sort. The high cut is more likely a side-effect of 
+                the fact that the passive integrator filter is an approximation, rather than being a deliberate design choice.
+                The OTA does provide a convenient way to apply the compressor envelope  gain to the input
+                signal via the <em>abc</em> pin over a wide range of values, with low noise rations. But, ironically, it produces an
+                inconvenient current output, since the transistor that follows (Q3) in the Envelope Generator section needs a voltage 
+                signal at its base. With the C1/R6 filter network applied, the current on the connection between the OTA and the following transistor
                 faithfully replicates the frequency boost of the OTA differential voltage input; but the voltage carries a
-                a signal without the frequency boost&mdash;in fact, it applies an 8.5kHz high-cut instead. 
+                a signal without the frequency boost&mdash;in fact, it applies an 8.5kHz high-cut instead.
             </p>
             <p> When the envelope generator is connected,
                 during normal circuit operation, the frequency response at <em>ota_out</em> is considerably more complicated. The
                 frequency response is no longer linear, because it depends on <em>gmod</em> which is varying over time,
                 and, depending on value of the Sensitivity control,  and signal input strength.
-                When the Sensitivity knob is set to less than 0.5, the OTA operates almost entirely within the linear range of the OTA amplifier. But the 
-                OTA does occasionally clip during transient picking attacks. Clipping behavior in the OTA will be analyzed in more detail, after we have complete 
-                analysis of the compression envelope generator. 
-                When the OT is operating in this more-or-less linear response range,
-                the frequency response of the circuit end to end follows the frequency response curve shown in Figure 7: a slightly dark tone with
-                a low cut at about 60hz, a high cut at about 8.5kHz, and flat response between the two cutoff frequencies.
+                When the Sensitivity knob is set to less than 0.5, the OTA operates almost entirely within the linear range of the OTA amplifier. But the
+                OTA does occasionally clip during transient picking attacks. Clipping behavior in the OTA will be analyzed in more detail, after we have complete
+                analysis of the compression envelope generator.
+                When the Dyna Comp is processing sustained notes, with the compression envelope fully attacked, the OTA will be operating 
+                in more-or-less linear response range, with more-or-less constant gain, and the frequency response curve will be the one show in 
+                Figure 7: a slightly dark tone with a low cut at about 60hz, a high cut at about 8.5kHz, and flat response between the two cutoff frequencies.
             </p>
             <p>The TRIM pot is used to adjust the balance of the V+ and V- inputs to the OTA. The official
-                position of MXR/Dunlop is that the TRIM pot should always be set to mid-position. There is some internet
-                lore of unknown provenance that suggest that the TRIM pot should be adjusted until the voltage across R14 is
-                zero with 0V input; however, this seems unlikely to be correct, or advisable.
+                position of MXR/Dunlop is that the TRIM pot should always be set to mid-position. 
             </p>
             <h2>Envelope Generator</h2>
             <div>
@@ -386,20 +385,24 @@ export default function MxrDynaComp() {
                 </a>
                 <p style={{ textAlign: "center" }}>Figure 8: Envelope generator block</p>
             </div>
-            <p>The envelope generator block is responsible for generating the the signal that controls the compressor envelope gain. The control signal is 
-                sent ack to the OTA amplifier section via the <em>gmod</em> connection.</p>
+            <p>The envelope generator block is responsible for generating the the signal that controls the compressor envelope gain. The control signal is
+                sent back to the OTA amplifier section via the <em>gmod</em> connection. Note that the sense of the compression envelope is inverted from that of 
+                an ADSR envelope generator. As the compressor attacks, it reduces overall gain in order to bring the picking transient in the input signal
+                to constant output level; and as it releases, it increases gain in order to maintain a constant output level of  sustained notes.
+            </p>
             <p>
                 Transistor Q3 is a phase splitter, which provides both inverted and non-inverted outputs of the signal coming from the
                 transconductance amplifier. Output voltages will not carry the high-frequency boost; but (by inspection) output
-                currents from the transistor do.
+                currents from the transistor do. However, that's more of a curiosity than a useful fact, since circuitry from this point 
+                on is more directly concerned with voltage levels than currents.
             </p>
             <p>The key to understanding how the envelope generator block works is to recognize that the Q4 and Q5 transistors are operating mostly reverse-biased.
                 When the voltage at the base of Q4 or Q5 exceeds the bias point (which occurs very briefly in normal operation), the transistors
                 open and allow charge to  drain from the C5 capacitor to ground via the Q4 and Q5 transistors.
             </p>
             <p>The charge on the C5 capacitor constitutes the state of the envelope generator. When the Dyna Comp powers up, C5 will start
-                consuming current from Vs through R3 until the voltage across C5 reaches Vs (~+8.5V), at which point, the voltage at <em>env_c</em> will
-                also be +8.5V.
+                consuming current from Vs through R3 until the voltage across C5 reaches Vs (~+9V), at which point, the voltage at <em>env_c</em> will
+                also be +9V.
             </p>
             <p>
                 Let's examine the circuitry around <em>det_p</em> first. Capacitor C4 is a DC blocker. The voltage on the det_p will have a DC offset of zero volts. When <em>Vin</em> (the guitar input signal) is zero,
@@ -415,8 +418,8 @@ export default function MxrDynaComp() {
                 which C5 discharges determines how quickly the compressor attacks.
             </p>
             <p>
-                When both Q5 and Q5 are non-conducting (when V(det_t) &lt; 0.7V, and V(det_p) &lt; 0.7V), C5 will start to charge again
-                through R3 to Vs, which causes V(env_c) to rise back +8.5V. The charging rate determines the release rate of the compressor.
+                When both Q4 and Q5 are non-conducting (when V(det_n) &lt; 0.7V, and V(det_p) &lt; 0.7V), C5 will start to charge again
+                through R3 to Vs, which causes V(env_c) to rise back +9V. The charging rate determines the release time of the compressor.
                 In the absence of input signal, it takes about 1.5 seconds for the C5 capacitor to
                 fully discharge, and thus for the compressor envelope to fully release.
             </p>
@@ -439,14 +442,11 @@ export default function MxrDynaComp() {
                 detector works to keep the gain of the OTA at the point where the input signal with envelope applied keeps the maximum
                 and minimum voltages being applied to Q4 and Q5  close to their bias points.
                 The signal is boosted to the threshold voltage levels after which the volume of the output will not increase any further.</p>
-                <p>As the envelope generator attacks, voltage drops, which reduces I(abc) current of the OTA, which reduces the gain of the OTA. When releasing, 
-                    voltage rises at the emitter of Q2, which increases the I(abc) current of the OTA, which increases the gain of the OTA. Keep in mind that 
-                    the sense of the compression envelope is the opposite of that of an ADSR envelope: when the envelope attacks, it reduces the gain of the input 
-                    signal until it comes to constant level. When the input volume decreases, the envelope gain increases in order to keep the output 
-                    signal at a sustained level. 
-                </p>
-            <p> Once C5 has fully discharged, and <em>det_c</em> has returned to +8.5V,
-                the gain of the OTA can no longer be increased. So, subsequent decreases in signal level will not increase the compressor gain any further. This determines 
+            <p>As the envelope generator attacks, voltage drops, which reduces I(abc) current of the OTA, which reduces the gain of the OTA. When releasing,
+                voltage rises at the emitter of Q2, which increases the I(abc) current of the OTA, which increases the gain of the OTA. 
+            </p>
+            <p> Once C5 has fully discharged, and <em>det_c</em> has returned to +9V,
+                the gain of the OTA can no longer be increased. So, subsequent decreases in signal level will not increase the compressor gain any further. This determines
                 the threshold of the compressor.</p>
 
             <p>
@@ -462,11 +462,11 @@ export default function MxrDynaComp() {
             <p>Figure 9(a) shows the input signal fed into the circuit simulation. In this case, a 1kHz pulse at 0.5dBU. 9(b) shows the voltage at <em>det_p</em>.
                 Clipping at the bottom of V(det_p) indicates the point at which diode D1 has begun to conduct and dump voltage to ground. Clipping at the
                 top of <em>det_p</em> indicates the point at which Q5 has started to open up and dump current from the C5 capacitor. 9(c) shows the current
-                passing from capacitor C5 to ground via Q5 when when V(dept_p) reaches the 0.7V transistor bias point.  9(d) indicates how the voltage at <em>env_c</em> decreases as capacitor C5 discharges. 
+                passing from capacitor C5 to ground via Q5 when when V(dept_p) reaches the 0.7V transistor bias point.  9(d) indicates how the voltage at <em>env_c</em> decreases as capacitor C5 discharges.
                 Note that Q4 is doing the same thing, but with an inverted signal of opposite phase, so steps are visible on the V(env_c) curve as Q4 and Q5 take turns
                 dumping charge from C5.
             </p>
-            <p>The potentiometer U1 (Sensitivity) and R14 convert the voltage at the emitter of Q2 to a current signal, which controls the gain of the OTA. The 
+            <p>The potentiometer U1 (Sensitivity) and R14 convert the voltage at the emitter of Q2 to a current signal, which controls the gain of the OTA. The
                 effect of the Sensitivity pot will be analyzed in detail in  a subsequent section.
             </p>
 
@@ -489,11 +489,11 @@ export default function MxrDynaComp() {
             </p>
             <div>
                 <a href="./img/DynaComp_env_attack_stepped.svg" target="_blank" rel="noopener noreferrer" style={{ display: "flex", justifyContent: "center" }}>
-                    <img src="./img/DynaComp_env_attack_stepped.svg" style={{ marginTop: 32, marginBottom: 0, width: 800, maxWidth: "80%" }} /> 
+                    <img src="./img/DynaComp_env_attack_stepped.svg" style={{ marginTop: 32, marginBottom: 0, width: 800, maxWidth: "80%" }} />
                 </a>
-                <p style={{ textAlign: "center" }}>Figure 10: Effect of the Sensitivity pot 
-                    on envelope attack. Input consists of a pulsed 480Hz sin wave at -12dbV(pp) or -9.8dBu. Panel (a) shows current 
-                    input to the OTA abc pin. Panel (b) shows the effect OTA gain in dB relative to 
+                <p style={{ textAlign: "center" }}>Figure 10: Effect of the Sensitivity pot
+                    on envelope attack. Input consists of a pulsed 480Hz sin wave at -12dbV(pp) or -9.8dBu. Panel (a) shows current
+                    input to the OTA abc pin. Panel (b) shows the effect OTA gain in dB relative to
                     the envelope sustain point.</p>
             </div>
             <div>
@@ -504,44 +504,46 @@ export default function MxrDynaComp() {
             </div>
             <p>Figure 10 shows how the gain of the OTA changes as the Sensitivity pot is adjusted during the attack of a 1kHz sin wave pulse
                 with a signal level of -12dBV(pp) (-9.8dBu). The attack of the compressor is visible as the gain of the OTA (controlled by <em>I(abc)</em>)drops over time. The gain of the
-                 OTA is directly linearly proportional to the current flowing into the OTA's IAbc pin. For each of the settings, the 
-                 attack time of the envelope is about 12ms, although this varies with the Sensitivity pot setting. For the given input, I(abc) eventually 
-                 settles at about 6µA, at which point, the envelope has fully attacked.
-                The actual settling point of I(abc) and the OTA gain varies depending on the voltage range (peak to peak) of the input signal; but regardless of the input 
-                signal level, the envelope generator will settle at a point where the final output of the effect is a consistent 0.3V, or about -4.4dbV(pp) (-7.6dBu), 
-                when the Volume pot is set to 1.0. The implication of this is that the Dyna Comp compressor has a compression ration of zero: it will 
-                always seek to a constant output volume when playing sustained notes, as long as the envelope generator is engaged. As a result, 
-                variations of expressive dynamics in the input are completely eliminated in the output signal. This occurs regardless of the setting 
+                OTA is directly linearly proportional to the current flowing into the OTA's IAbc pin. For each of the settings, the
+                attack time of the envelope is about 12ms, although this varies with the Sensitivity pot setting. For the given input, I(abc) eventually
+                settles at about 6µA, at which point, the envelope has fully attacked.
+                The actual settling point of I(abc) and the OTA gain varies depending on the voltage range (peak to peak) of the input signal; but regardless of the input
+                signal level, the envelope generator will settle at a point where the final output of the effect is a consistent 0.3V, or about -4.4dbV(pp) (-7.6dBu),
+                when the Volume pot is set to 1.0. The implication of this is that the Dyna Comp compressor has a compression ration of zero: it will
+                always seek to a constant output volume when playing sustained notes, as long as the envelope generator is engaged. As a result,
+                variations of expressive dynamics in the input are completely eliminated in the output signal. This occurs regardless of the setting
                 of the Sensitivity pot.
             </p>
-            <p>The general effect of the compressor attack is that, when presented with a transient increase in volume, the output voltage 
-                will increase before the envelope generator has a chance to compensate, and then the output signal level will decay back to 0.3V 
-                as the envelope generator catches up.  As a consequence, the OTA can and will be driven into overdrive and temporary clipping, 
-                particularly when sensitivity settings are high, and the envelope generator has substantially release back to maximum gain. Clipping behavior 
-                of the OTA in response to input volume spikes will be examined later on. The point at which the OTA current output clips, roughly corresponds 
+            <p>The general effect of the compressor attack is that, when presented with a transient increase in volume, the output voltage
+                will increase before the envelope generator has a chance to compensate, and then the output signal level will decay back to 0.3V
+                as the envelope generator catches up.  As a consequence, the OTA can and will be driven into overdrive and temporary clipping,
+                particularly when sensitivity settings are high, and the envelope generator has substantially release back to maximum gain. Clipping behavior
+                of the OTA in response to input volume spikes will be examined later on. The point at which the OTA current output clips, roughly corresponds
                 to an output signal level of +/-2V (about +7dBV(pp) or +4dBu). Technically, this is overvoltage for a standard Hi-Z effect or amplifier input,
-                so downstream effects and amplifiers may further clip the output signal of the Dyna Comp when this occurs. 
-            </p>
-            <p> 
-                Attack times do vary depending on the value of the Sensitivity pot, but for all sensitivity values, the envelope attack has substantially 
-                completed about 9ms after onset of the initial input signal. 
+                so downstream effects and amplifiers may further clip the output signal of the Dyna Comp when this occurs.
             </p>
             <p>
-                Figure 11 shows the behavior of the compression envelope when releasing. The release time is very long&mdash;it takes about 2 seconds 
-                for the envelope to generator to fully release. In the example shown in Figure 11, the envelope generator has only released about 1/4 of the 
-                way back to idle state when the next sin pulse arrives, 500ms later. 
-                The practical implication of this is that, when a guitarist plays a musical phrase, the gain excursion of the compressor envelope during picking attacks in the middle of the phrase will 
-                be considerably less than the initial gain excursion from fully-idle state. 
+                Attack times do vary depending on the value of the Sensitivity pot, but for all sensitivity values, the envelope attack has substantially
+                completed about 9ms after onset of the initial input signal. But because the total excursion of the envelope gain has been altered, the 
+                attack rates vary.
+            </p>
+            <p>
+                Figure 11 shows the behavior of the compression envelope when releasing. 
+                In the example shown in Figure 11, the envelope generator has only released about 1/4 of the
+                way back to idle state when the next sin pulse arrives, 500ms later.
+                The practical implication of this is that, when a guitarist plays a musical phrase, the gain excursion of the compressor envelope during picking attacks in the middle of the phrase will
+                be considerably less than the initial gain excursion from fully-idle state. Again, release times are more or less the same regardless of 
+                Sensitivity value, but because the total excursion of the envelope has been altered, the release rates vary.
             </p>
             <p>
                 The threshold of a compressor is the signal level below which the compressor will no longer compress input signals. For the Dyna Comp
-                the compressor threshold occurs when capacitor C5 has fully discharged, and the output of the envelope generator sits at +8.5V. 
-                At this point, OTA gain can no longer be increased, and the compressor is fully released. 
+                the compressor threshold occurs when capacitor C5 has fully discharged, and the output of the envelope generator sits at +9V.
+                At this point, OTA gain can no longer be increased, and the compressor is fully released.
             </p>
-            <p>The envelope threshold varies by Sensitivity value. It can be inferred by reading off the maximum gain levels on the left side of 
-                if figure 10 (b). The test signal used to generate Figure 10 (b) has a volume level of -12dBV(pp). Conveniently, voltage of the 
-                output signal, with the envelope fully attacked is 0.3dBV(pp)&mdash;close enough to unity gain for the back-of-the-envelope 
-                calculations that follow. Because the maximum gain is +32dB when Sensitivity is set to 1.0, we can infer that the 
+            <p>The envelope threshold varies by Sensitivity value. It can be inferred by reading off the maximum gain levels on the left side of
+                if figure 10 (b). The test signal used to generate Figure 10 (b) has a volume level of -12dBV(pp). Conveniently, voltage of the
+                output signal, with the envelope fully attacked is 0.3dBV(pp)&mdash;close enough to unity gain for the back-of-the-envelope
+                calculations that follow. Because the maximum gain is +32dB when Sensitivity is set to 1.0, we can infer that the
                 corresponding threshold is -32dB lower than the test input signal, which would be (-12dBV-32db) = -44dBV(pp), or about -41dBu.
             </p>
             <p>Similar calculations for other Sensitivity values give threshold values by Sensitivity settings, the results of which are given in Table 3.</p>
@@ -582,46 +584,53 @@ export default function MxrDynaComp() {
                 </tbody>
             </table>
             <p style={styles.tableLegend}>
-                    Table 3: Approximate envelope thresholds by Sensitivity.
+                Table 3: Approximate envelope thresholds by Sensitivity.
             </p>
-            <p>Table 3 figures are very approximate. 
-                Simulations were performed with an ideal C-Taper pot for the Sensitivity knob. In physical devices, the C-Taper pot is more 
+            <p>Table 3 figures are very approximate.
+                Simulations were performed with an ideal C-Taper pot for the Sensitivity knob. In physical devices, the C-Taper pot is more
                 likely a 2-segment approximation of an ideal taper. So while the range of thresholds is accurate,
                 intermediate threshold values should be considered very approximate indeed.
             </p>
-            <p>The envelope threshold when Sensitivity is set to 1.0 is generous, and may actually exceed the 
-                noise floor on particularly noisy guitar input signals. The envelope threshold when Sensitivity is 0.0, however, 
-                is fairly thin. When comparing voltage input levels by pickup type, given in Table 2, it 
-                seems that input voltage levels for single-coil pickups may be too low to meaningfully trigger 
-                the compression envelope, when Sensitivity is at a minimum value. Single-coil pickups will typically 
-                need higher Sensitivity settings to get compression comparable to a guitar with a humbucker pickup.
+            <p>The envelope threshold when Sensitivity is set to 1.0 is generous, and may actually exceed the
+                noise floor on particularly noisy guitar input signals. The envelope threshold when Sensitivity is 0.0, however,
+                is fairly thin. When comparing voltage input levels by pickup type, given in Table 2, it
+                seems that input voltage levels for some single-coil pickups may be too low to meaningfully trigger
+                the compression envelope at all, when Sensitivity is at a minimum value. Single-coil pickups will typically
+                need higher Sensitivity settings to get compression comparable to a guitar with a humbucker pickup and higher input voltages.
             </p>
-            <p>The general effect of the compressor attack is that, when presented with a transient volume spike in the input signal, 
-                the output signal will spike upward above 0.3V, and then decay back to 0.3V as the envelope generator catches up (Volume set to 1.0). 
+            <p>The overall effect of the compressor attack is that, when presented with a transient volume spike in the input signal,
+                the output signal will spike upward above 0.3V, and then decay back to 0.3V as the envelope generator catches up (Volume set to 1.0).
+                Peculiarly, the volume of the picking transient in the output signal depends less on expressive dynamics in the input signal than it 
+                does on the state of the envelope generator. For picking transients of the same volume, the volume of the picking transient in the 
+                output signal will be higher when the envelope generator is more fully released. And the envelope generator will be more fully released 
+                if the sustained input signal of the previous note prior to the picking transient was quieter (or completely silent). This might play a 
+                significant role when playing funk licks, where notes are alternately sustained or dampened which will translate in to picking 
+                attacks that are more likely to be squishy during portions of a phrase where notes are being damped, for instance. While the 
+                tendency to overdrive picking attacks is not be entirely logically predictable, it may perhaps be intuitively controllable, and 
+                therefore musically and creatively useful.
             </p>
             <p>
-                With the Sensitivity pot set to 1.0, and with the compression envelope fully released, the OTA has a gain of about 32dB relative to the gain 
-                when the compression envelope has fully attacked. There will, therefore be a significant jump in output volume at the moment the 
-                transient begins. Typically, from envelope-idle state, this causes the OTA to clip almost immediately. As the envelope generator starts to 
-                engage, the gain of the OTA drops toward the final sustained level, applying  a decay in the gain, and output volume over a period of about 
+                With the Sensitivity pot set to 1.0, and with the compression envelope fully released, the OTA has a gain of about 32dB relative to the gain
+                when the compression envelope has fully attacked. There will, therefore be a significant jump in output volume at the moment the
+                transient begins. Typically, from envelope-idle state, this causes the OTA to clip almost immediately. As the envelope generator starts to
+                engage, the gain of the OTA drops toward the final sustained level, applying  a decay in the gain, and output volume over a period of about
                 12ms. This effect will be analyzed further in a subsequent section.
             </p>
-            <p>When the Sensitivity pot is set below 0.5, the OTA seems to rarely, if ever, overdrive. And similarly, when the compression 
-                envelope has not fully released, picking transients will not usually overdrive the OTA.
+            <p>When the Sensitivity pot is set below 0.5, the OTA seems to rarely, if ever, overdrive. And similarly, when the compression
+                envelope has not fully released, picking transients will be much less likely to  overdrive the OTA during picking transients.
             </p>
 
-
-            <p>When considered together, the following conclusions can be drawn about the effect of the Sensitivity pot. The Sensitivity pot scales the effect that 
-                the envelope generator has on the gain of the OTA. Attack and release times remain more-or-less constant regardless of the Sensitivity 
-                pot. The Sensitivity pot scales the voltage coming out of the envelope generator, and therefore scales the overall excursion of 
-                the OTA gain. Increasing the Sensitivity pot decreases the envelope threshold, while also increasing the envelop attack and release rates. 
-                Decreasing the Sensitivity pot increases the envelope threshold, while also decreasing the envelope attack and release rates. 
+            <p>The following conclusions can be drawn about the effect of the Sensitivity pot. The Sensitivity pot scales the effect that
+                the envelope generator has on the gain of the OTA. Attack and release times remain more-or-less constant regardless of the Sensitivity
+                pot. The Sensitivity pot scales the voltage coming out of the envelope generator, and therefore scales the overall excursion of
+                the OTA gain. Increasing the Sensitivity pot decreases the envelope threshold, while also increasing the envelop attack and release rates.
+                Decreasing the Sensitivity pot increases the envelope threshold, while also decreasing the envelope attack and release rates.
             </p>
-        
+
             <h2>The Dyna in Dyna Comp?</h2>
             <p>As mentioned earlier, the Dyna Comp applies a significant high-frequency boost to the signal being fed into the OTA.
-                This section examines the question of whether that boost contributes audible frequency-dependent effects 
-                when the OTA clips. Intuitively, the OTA should be more likely to clip when present with high-frequency input signals. And this does, in fact 
+                This section examines the question of whether that boost contributes audible frequency-dependent effects
+                when the OTA clips. Intuitively, the OTA should be more likely to clip when present with high-frequency input signals. And this does, in fact
                 turn out to be the case.
             </p>
             <div>
@@ -631,11 +640,11 @@ export default function MxrDynaComp() {
                 <p style={{ textAlign: "center" }}>Figure 12: Magnitude response of a swept sin wave input signal, envelope generator enabled.</p>
             </div>
 
-            <p>Figure 12 shows the the  behavior of the circuit from Vin to Vout when a swept sine wave is used as input. Note that this plot is not equivalent 
-                in any way to a bode plot, and doesn't really say anything about frequency response. There is significant non-linear and time-dependent behavior at play, 
-                so the plotted responses are not linearly additive as they should be in a bode plot. 
-                What the plot does reveal, however, is frequency-dependent behavior in the overall circuit. The envelope generator 
-                should keep gain constant across the at least the part of the swept signal between 100hz and 8.5kHz, and it does. But the plot 
+            <p>Figure 12 shows the the  behavior of the circuit from Vin to Vout when a swept sine wave is used as input. Note that this plot is not equivalent
+                in any way to a bode plot, and doesn't really say anything about frequency response. There is significant non-linear and time-dependent behavior at play,
+                so the plotted responses are not linearly additive as they should be in a bode plot.
+                What the plot does reveal, however, is frequency-dependent behavior in the overall circuit. The envelope generator
+                should keep gain constant across the at least the part of the swept signal between 100hz and 8.5kHz, and it does. But the plot
                 of I(abc), unexpectedly starts rising slightly above 1kHz. Input volume is constant; output volume is constant, but the OTA gain is not!
             </p>
             <p>
@@ -643,20 +652,20 @@ export default function MxrDynaComp() {
             </p>
             <div>
                 <a href="./img/DynaComp_5kclipping.svg" target="_blank" rel="noopener noreferrer" style={{ display: "flex", justifyContent: "center" }}>
-                <img src="./img/DynaComp_5kclipping.svg" style={{ marginTop: 32, marginBottom: 0, width: 800, maxWidth: "80%" }} />
+                    <img src="./img/DynaComp_5kclipping.svg" style={{ marginTop: 32, marginBottom: 0, width: 800, maxWidth: "80%" }} />
                 </a>
                 <p style={{ textAlign: "center" }}>Figure 13: Circuit response to a 5kHz sustained sin wave (envelope fully attacked).</p>
             </div>
             <p>
-                This may be just a passing curiosity. In practice, guitars will never produce such tones in isolation, so these oddities are unlikely to show up 
+                This may be just a passing curiosity. In practice, guitars will never produce such tones in isolation, so these oddities are unlikely to show up
                 directly, in actual playing conditions, at least
-                for sustained tones. The range of fundamental frequencies in an actual guitar signal range from 87.44Hz (E1 fret 0) to 987.77Hz (E6 fret 20). Experimenting 
-                with signals that have plausible overtone series seems to suggest that the phenomenon does not occur with realistic guitar signals. Even for a 
-                signal that has been clipped before it enters the Dyn Comp, the envelope generator seems to lock in, substantially, on the magnitude of the fundamental harmonic, with overtones 
-                not making enough of a contribution to drive the OTA into clipping. Nor is the effect observed when running simulations that use actual 
+                for sustained tones. The range of fundamental frequencies in an actual guitar signal range from 87.44Hz (E1 fret 0) to 987.77Hz (E6 fret 20). Experimenting
+                with signals that have plausible overtone series seems to suggest that the phenomenon does not occur with realistic guitar signals. Even for a
+                signal that has been clipped before it enters the Dyn Comp, the envelope generator seems to lock in, substantially, on the magnitude of the fundamental harmonic, with overtones
+                not making enough of a contribution to drive the OTA into clipping. Nor is the effect observed when running simulations that use actual
                 recorded guitar signals as input.
             </p>
-            <p>A more productive way to investigate the frequency response characteristics is to perform spectral analysis of transient analysis of output of the Dyna Comp 
+            <p>A more productive way to investigate the frequency response characteristics is to perform spectral analysis of transient analysis of output of the Dyna Comp
                 circuitry in response to non-swept signals.
             </p>
             <div>
@@ -669,19 +678,43 @@ export default function MxrDynaComp() {
 
             <p>Figure 14 clearly shows the results of OTA clipping during an onset transient.
             </p>
-                
+
             <p>
-                The tonal effect of OTA clipping during picking transients is that the overall tone of picking attacks will be brightened, as clipping adds additional distortion product 
-                overtones (none of which are inharmonic). This is not a bad thing at all. In fact it's a highly desirable effect, generally, because it imparts a sort 
-                of edge-of-break-up brittleness to picking attacks that is very pleasant. Because the OTA is followed by an 8.5kHZ high-cut filter, the high-frequency boost that is generated by 
-                clipping in the OTA is somewhat limited. There is plenty of room between the fundamental frequency of the guitar signal (or the dominant tone of 
-                the pick attack), and the 8.5kHz high-cut of the following passive filter; so the picking attacks will brighten, but not to the sort of 
-                make-your-ears-itch brightness that distortion products in the 8.5kHz+ range can produce. 
+                The tonal effect of OTA clipping during picking transients is that the overall tone of picking attacks will be brightened, as clipping adds additional distortion product
+                overtones (none of which are inharmonic). This is not a bad thing at all. In fact it's a highly desirable effect, generally, because it imparts a sort
+                of edge-of-break-up brittleness to picking attacks that is very pleasant. In our limited vocabulary for describing guitar effects, 
+                overdriving of the OTA during transient offsets imparts "dynamic brightness" to picking attacks that is often described as either "snappy" or "squishy". With 
+                higher Sensitivity setting, the OTA overdrives through a significant portion of the envelope attack (as shown in the example above). With lower Sensitivity settings, 
+                there is still a transient spike, but the OTA doesn't overdrive, and the decay curve of the spike is more exponential.
             </p>
             <p>
-                As previously mentioned, when the OTA is clipping, the Dyna Comp will output overvoltage spikes in the output signal of up to +/- 2V. 
-                These transient signals may cause further clipping in downstream amps and effects, which may be more dramatically audible than 
-                those which the OTA introduces.
+                The asymmetry of the distortion produced by the OTA is also worth discussing. Notice how, in Figure 15, the positive peaks of the 
+                output wave are relatively flat, whereas the negative peaks are fattened and gently rounded. The precise reasons for this are buried deep within 
+                the implementation of the CA3080. At the point that clipping occurs, the signal is inverted. Clipping at the bottom of the wave (corresponding to the top 
+                of the wave in Figure 15) essentially hits a transistor bias point and flattens out quite sharply with the same sort of shape that a diode clipper 
+                would produce. Clipping at the top of the wave occurs because 
+                the combined operation of the pair of transistors that apply the gain follow an the curve of a hyperbolic tangent function. When operating in linear range, 
+                the curve of the tanh function is so insignificant that the distortion is inaudible. But when they are driven above their linear operating range, 
+                the curvature of the tanh response function increases, leading to the soft rounded curve found at the bottom of the signals in Figure 14. 
+                pair are driven above their linear operating range, which produces a more gradual rounding-off of the waveform. The net effect of this asymmetry 
+                is to produce a distorted signal with prominent odd-order harmonics, and very modest second-order harmonic overtones. If there were a way to 
+                get the Dyna Comp to produce that kind of distortion during sustained tones, it would produce a very pretty overdrive effect. Unfortunately, 
+                the envelope generator seems to prevent that from happening. Once the envelope generator has fully attacked, the OTA will once again be operating 
+                in its linear range again. 
+            </p>
+            <p>
+                If the mystique of the Dyna Comp exists anywhere, it has to be related to the clipping behavior of the Dyna Comp 
+                during picking transients. In Figure 15, the OTA has been driven deeply into clipping during the picking transient (about +25db above the 
+                sustained level were the clipping behavior not present) and it is
+                kept there through most of the envelope attack time. Subjectively, fans of the Dyna Comp describe it as a "squishy" compressor, which 
+                intended to describe how the OTA clips during picking transients. The amount of time spent during the envelope attack in the clipping domain 
+                (attributable to well chosen attack times) in combination  with the very pretty distortion, with attractive odd-order harmonic products 
+                attributable to the asymmetric clipping behavior of the CA3080 would go a long way toward explaining the appeal of the "OTA Compressor" sound.
+            </p>
+            <p>
+                As previously mentioned, when the OTA is clipping, the Dyna Comp will output overvoltage spikes in the output signal of up to +/- 2V.
+                These transient signals may cause further clipping in downstream amps and effects, which may add further complexity to the 
+                sound of the Dyna Comp. 
             </p>
             <div>
                 <a href="./img/DynaComp_480_sin.svg" target="_blank" rel="noopener noreferrer" style={{ display: "flex", justifyContent: "center" }}>
@@ -690,12 +723,14 @@ export default function MxrDynaComp() {
                 <p style={{ textAlign: "center" }}>Figure 15: Spectrum of a sustained -12dBU 480Hz sin wave, with the compression envelope fully attacked,
                     and <em>sensitivity_pos=1.0</em>.</p>
             </div>
-            <p> Figure 15 shows the spectrum of a sustained 480Hz sin wave after the envelope has fully attacked. This provides insight into the harmonic 
-                distortion of the circuit when playing sustained tones. Sidebands below -46dB are considered "excellent" THD; sidebands below -60dB are 
-                considered "transparent". Informal descriptions of the tonal character of the Dyna Comp often describe it as being "warm"&dash;a term usually 
-                reserved for describing the pleasant harmonic distortion that tube amps impart as they approach breakup, consisting primarily of additional perceptible even-order 
-                harmonics. This is in fact, not the case, as the analysis shows. The actual tonal character of the Dyna Comp is closer to "transparent", and 
-                doesn't really show any evidence of "warmth". 
+            <p> Figure 15 shows the spectrum of a sustained 480Hz sin wave after the envelope has fully attacked. This provides insight into the harmonic
+                distortion of the circuit when playing sustained tones. Sidebands below -46dB are considered "excellent" THD; sidebands below -60dB are
+                considered "transparent". Informal descriptions of the tonal character of the Dyna Comp often describe it as being "warm"&dash;a term usually
+                reserved for describing the pleasant harmonic distortion that tube amps impart as they approach breakup, consisting primarily of additional perceptible even-order
+                harmonics. This is in fact, not the case, as the analysis shows. The actual tonal character of the Dyna Comp is closer to "transparent", and
+                doesn't really show any evidence of "warmth". The harmonic distortion that is present is caused by the very slight tanh response curve 
+                of the gain transistors in the center of the CA3080, when they are operating in linear-response range, but are so small that they are 
+                practically audible.
             </p>
             <div>
                 <a href="./img/DynaComp_480_square.svg" target="_blank" rel="noopener noreferrer" style={{ display: "flex", justifyContent: "center" }}>
@@ -706,22 +741,22 @@ export default function MxrDynaComp() {
                     signal are displayed. Spectra have been slightly offset during post-processing to allow side-by-side comparison. </p>
             </div>
             <p>
-                Figure 16 shows the spectral response to a sustained 480Hz square wave. A square wave consists of a chain of odd-order harmonics, which we 
-                can use to confirm prior static AC analysis of the Dyna Comp (with envelope generator disconnected). The spectra of the input and output signal 
-                have been slightly shifted to allow side-by-side comparison. In the original simulation results, both data series have a fundamental at 480hz, 
+                Figure 16 shows the spectral response to a sustained 480Hz square wave. A square wave consists of a chain of odd-order harmonics, which we
+                can use to confirm prior static AC analysis of the Dyna Comp (with envelope generator disconnected). The spectra of the input and output signal
+                have been slightly shifted to allow side-by-side comparison. In the original simulation results, both data series have a fundamental at 480hz,
                 and overtone series that are multiples of 480hz, and thus overlay each other.
-                </p>
-                <p>
-                The output signal (in red) shows added even-order harmonics which are not present in the input signal (in black). They mirror 2nd-order harmonic distortion
-                seen in the sin wave analysis, and are virtually inaudible. Higher odd-order harmonics show the expected roll-off at 8.5kHz which 
-                static AC analysis predicted. There are very slight discrepancies between the expected input and output harmonic magnitudes, which can 
-                perhaps be attributed to interference between odd order harmonics in the original signal, and odd-order harmonics contributed by harmonic distortion 
-                of the OTA. 
             </p>
             <p>
-                The results of transient analysis largely confirm earlier small-signal AC analysis. For sustained tones, 
-                the frequency response of the Dyna Comp circuit slightly darkens the input signal, with a low cut at about 30Hz, and a high cut at about 8.5kHz.
-                Overall harmonic distortion of sustained tones, is negligible. The tonal character of sustained notes would better be characterized as "transparent", 
+                The output signal (in red) shows added even-order harmonics which are not present in the input signal (in black). They mirror 2nd-order harmonic distortion
+                seen in the sin wave analysis, and are virtually inaudible. Higher odd-order harmonics show the expected roll-off at 8.5kHz which
+                static AC analysis predicted. There are very slight discrepancies between the expected input and output harmonic magnitudes, which can
+                perhaps be attributed to interference between odd order harmonics in the original signal, and odd-order harmonics contributed by harmonic distortion
+                of the OTA.
+            </p>
+            <p>
+                The results of transient analysis largely confirm earlier small-signal AC analysis. For sustained tones,
+                the frequency response of the Dyna Comp circuit slightly darkens the input signal, with a low cut at about 60Hz (not demonstrated), and a high cut at about 8.5kHz.
+                Overall harmonic distortion of sustained tones, is negligible. The tonal character of sustained notes would better be characterized as "transparent",
                 not "warm".
             </p>
 
@@ -734,105 +769,230 @@ export default function MxrDynaComp() {
             </div>
             <p>
                 Figure 17 shows the response of the Dyna Comp circuit when fed an actual recorded guitar signal. Panel (b) shows
-                the gain of the OTA (I(abc)) in response to the input. Panel (c) shows the actual compressed output signal. (Sensitivity=1.0, Volume=1.0)
+                the envelope control signal sent to the base of the OTA (I(abc)), which has a linear relationship to gain applied by the OTA. Panel (c) shows the actual compressed output signal. (Sensitivity=1.0, Volume=1.0)
             </p>
             <p>
-                There are several interesting features to note in Figure 17, most of which were identified in prior analysis. 
+                There are several interesting features to note in Figure 17, most of which were identified in prior analysis.
             </p>
             <p>
                 The first is that dynamics (i.e. expressive variations in volume when playing the instrument) in the original signal during sustained
                 portions of the input have been completely eliminated. The Dyna Comp circuitry has a compression ratio of zero. As expected sustained portions
-                of the signal are brought up to a constant volume regardless of the amplitude of the corresponding input. 
+                of the signal are brought up to a constant volume regardless of the amplitude of the corresponding input.
             </p><p>
                 Also interesting is that the dynamics of transients in the output signal do not actually reflect the dynamics of transients in the input signal, but
-                instead reflect the ratio of the loudness of the transient to the loudness of the preceding sustained signal. 
+                instead reflect the ratio of the loudness of the transient to the loudness of the preceding sustained signal.
             </p><p>
                 For players who are running their effects chains or amps with significant overdrive, this doesn't really have significant consequences,
-                because overdrive will kill any dynamics in the input signal anyway. It does mean that the Dyna Comp is unsuitable for use in musical contexts where some 
-                preservation of dynamic expression is desired. But this is a more-or-less generic problem with compression anyway. 
+                because overdrive will kill any dynamics in the input signal anyway. It does mean that the Dyna Comp is unsuitable for use in musical contexts where some
+                preservation of dynamic expression is desired. But this is a more-or-less generic problem with compression anyway.
             </p>
             <p>
                 The Dyna Comp's compression is a bit of a sledgehammer,
-                compared to more elaborate studio compressors which will allow non-zero compression ratios, in order to preserve 
-                expressive dynamics. That being said, a typical compression ratio on a studio compressor applied to a guitar signal 
-                would be often be around 11:1, which, while not completely eliminating dynamics, comes close enough to it that the 
-                difference doesn't matter. And for many musical applications, having a compression ratio of zero is an advantage. 
-                When there are downstream distortion/overdrive effects, or amplifiers, having a completely consistent output volume 
-                helps to ensure that edge-of-breakup effects occur consistently. 
+                compared to more elaborate studio compressors which will allow non-zero compression ratios, in order to preserve
+                expressive dynamics. That being said, a typical compression ratio on a studio compressor applied to a guitar signal
+                would be often be around 11:1, which, while not completely eliminating dynamics, comes close enough to it that the
+                difference doesn't matter. And for many musical applications, having a compression ratio of zero is an advantage.
+                When there are downstream distortion/overdrive effects, or amplifiers, having a completely consistent output volume
+                helps to ensure that edge-of-breakup effects occur consistently.
+            </p>
+            <p>
+                It's probably worth noting at this point that modern versions of the MXR Dyna Comp (the MXR/Dunlop Dyna Comp Deluxe, for example)
+                have a "Clean" control, which allows wet/dry mixing of the input and compressed output signal. This is a quite brilliant 
+                way to address the expressive dynamics problem. The dry signal carries expressive dynamics; the wet signal carries sustained 
+                notes, plus potentially squishy transient attacks. Mixing the two produces a result that is not dissimilar to (and might even 
+                be identical to) a compressor with a non-flat compression ratio. 
+
             </p>
             <p>
                 Of particular interest  are the three large spikes that occur in the output signal during picking
                 transients (at about 0.5s, 1.3s and 1.5s). Two of these spikes reach signal levels of 2V (outside of the displayed X-axis range), and all three indicate
-                that the OTA has clipped on close examination. 
+                that the OTA has clipped on close examination.
             </p>
 
             <p>By the standards of a studio compressor, the MXR Dyna Comp is a peculiar version of a compressor. It has
-                a compression ratio of zero&mdash;compressed signals sustain at the same level, regardless of input level.
+                a compression ratio of "infinite"&mdash;compressed signals sustain at the same level, regardless of input level.
                 And attack rates, release rates, and envelope threshold are all controlled by one single knob: the Sensitivity knob.
             </p>
-            <p>And the lack of an input gain control seems puzzling, and remains unsettling, even when you realize 
-                why it doesn't have to be there. In actual practice, guitarists can use the volume knob on their guitar to trim 
+            <p>And the lack of an input gain control seems puzzling, and remains unsettling, even when you realize
+                why it doesn't have to be there. In actual practice, guitarists can use the volume knob on their guitar to trim
                 input signals to the Dyna Comp, since it will almost always be the first effect in an effect chain.
                 Single-coil pickups typically output lower signal levels than humbuckers, and may be -12dB quieter (or more).
-                As a results, players who use single-coil pickups may need to turn up the Sensitivity pot a bit more than 
-                players who use humbuckers. While this also changes attack and release rates, the single-coil players 
-                probably have enough headroom to make necessary and appropriate adjustments to the envelope release threshold, as long as they 
-                keep to higher Sensitivity settings. 
+                As a results, players who use single-coil pickups may need to turn up the Sensitivity pot a bit more than
+                players who use humbuckers. While this also changes attack and release rates, the single-coil players
+                probably have enough headroom to make necessary and appropriate adjustments to the envelope release threshold, as long as they
+                keep to higher Sensitivity settings.
+            </p>
+
+            <h2>Common Circuit Modifications</h2>
+            <p>
+                    The Ross Compressor, another well-known OTA compressor, in fact provides a quite faithful emulation of the Dyna Comp compressor. 
+                    It adds a couple of extra capacitors around the power rails, but exactly replicates the filter networks before and after the OTA, 
+                    and exactly replicates the envelope generator circuitry. The Ross Compressor uses a TM13700 OTA, which is a modern substitute for the 
+                    now-discontinued CA3080. The TM13700 provides slightly better linear range than the CA3080 does, but it can be degraded to 
+                    match the linear response of the CA3080 by leaving the diode bias pin disconnected. The Ross compressor leaves the diode bias 
+                    pin disconnected.
+            </p>
+            <p>
+                The current production version of the MXR Dyna comp (the MXR/Dunlop MXR Dyna Comp Deluxe), adds two new controls. One is labelled "Clean", 
+                and provides Wet/Dry mix of the effect input and output. This is a very effective solution to the expressive dynamics problem with the original Dyna Comp. 
+                The other knob is labelled "Tone". Presumably this allows some sort of high-frequency boost to the output, in an attempt to 
+                limit the effect of the overall high-cut in the Original Dyna Comp's frequency response, or perhaps slightly extend the 
+                high-frequency cutoff of the original Dyna Comp.
+            </p>
+            <p>
+                Attempts to eliminate the high cut also feature prominently as a theme in hobbyist mods of the Dyna Comp circuit. Such attempts 
+                are going to be necessarily limited. The most important function of the passive filter networks around the OTA are 
+                to provide a second-order linear approximation of an integrator, which is required to convert the OTA's current output signal 
+                into a voltage signal that following transistor circuitry can use. The original high-cut filter was most probably not a a design 
+                feature, but more a practical consequence of the fact that the integrator is only an approximation, which is plausibly accurate only 
+                over a frequency range of 60Hz to 8.5kHz. Any attempts to make major modifications to those filters will provide circuitry that 
+                is no longer recognizable as an relative of a Dyna Comp. So attempts to modify the overall tone of the circuitry will 
+                have to occur very late in the signal chain, after the OTA stage, and probably after the envelope detector stage as well. 
+                It might be possible to extend the flat response of the circuit slightly. Or even to 
+                provide a high frequency boost in the 1kHz to 8.5kHz range. But it seems implausible that the 8.5kHz high-cut can be 
+                substantially eliminated without dramatically altering the overall character of the effect. 
+                That being said, another interesting consequence of providing a Wet/Dry or Clean control is that doing 
+                so will restore some of the high-frequency content that is lost in the compressor circuitry. So providing a "Clean" or 
+                "Wet/Dry" control may be a more effective way to address the high-cut problem. Because overtones die off fairly quickly 
+                in a plucked guitar string, a wet/dry mix will restore high-frequency content in the early part of a plucked note where 
+                it counts, even if it does not restore high-frequency content later on when the compressed sustained node dominates, and the 
+                higher harmonics aren't present anyway.
+            </p>
+            <p>One final prominent theme in hobbyist mods are modifications to the value of R3, which determines the release time of 
+                the compressor envelope. By studio-compressor standards, the release time of the compressor envelope is exceptionally 
+                long, which perhaps contributes to the impression that the Dyna Comp has "smooth" compression. Reducing the value 
+                of R3 will made the envelope release faster, which will mean that the compressor will be much more active during 
+                musical phrases. The most direct effect this will be to increase the amplitude of picking attacks in the 
+                output signal in musical phrases. The compressor will still settle on the same sustained gain (and output volume) regardless of release time, 
+                but may be able to release further in the intervals between notes in a musical phrase. And when it releases further, it means that the 
+                transient spike for the note that follows will be louder. Faster envelope releases would also increases the mystical 
+                "squishiness" of the circuit response. 
+            </p>
+            <h2>Dialing in the Dyna Comp</h2>
+            <p>With knowledge derived from the analysis in hand, we can now recommend a procedure for dialing in settings on the Dyna Comp.</p>
+            <p>
+                The Volume knob should initially be set at mid-point. The Dyna Comp compresses signals to a consistent level 
+                regardless of the input signal, or the setting of the Sensitivity knob. At mid-point, signals from the output will sustain at about 
+                -12dBV(pp) (-9.8dBu), peak at about 0dBV(pp) (+2.2dBU). This is a reasonable level to feed into most downstream effects and amplifiers.
+                You can adjust the volume settings later, once you have the compressor generally dialed in. Increasing the volume may cause downstream non-linear effects 
+                and amps to respond more vigorously to clipped picking attacks.
+            </p>
+            <p>As a starting point, set the Sensitivity pot to maximum value (1.0). Adjust the volume on your guitar, starting at minimum volume, and 
+                bring it up until you start to hear the envelope generator engage (the point at which sustain starts to increases). From there, you can further increase
+                the volume on your guitar until you achieve the sort of sustain you would like. 
+            </p>
+            <p>The sensitivity pot controls (1) the threshold of the envelope generator: the input volume below which the input signal will no longer compress. 
+                One wants the noise floor of your input signal to be below the envelope threshold. Reducing the Sensitivity pot will raise the envelope threshold, and 
+                will reduce the loudness of output noise when you are not playing. Reducing the Sensitivity pot also reduces the amount of "squishiness"
+                in the compression. And increasing sensitivity increases the amount of "squishiness" in the compression, if that is something you want. 
+                If you are struggling with balancing the two, consider adding a noise gate ahead of the compressor, so that you can maximize "squishiness" without 
+                getting appreciable noise while you are not playing. Squishiness mostly disappears with mid-range Sensitivity settings. So if "squishiness" is 
+                not something you want, consider lowering the Sensitivity.
+            </p>
+            <p>Single-coil pickups typically have much lower input volumes than humbuckers do. Guitars with single coil pickups will typically need nigher Sensitivity
+                settings to get effects comparable to guitars with humbuckers, and the very lowest Sensitivity settings increase the envelope threshold to the point 
+                that the compressor doesn't engage at all.
             </p>
 
             <h2>Conclusions</h2>
             <p>Despite its simplicity, the MXR Dyna Comp is a highly effective guitar compressor. It
-                has been used on countless classic recordings.</p>
-            <p> It is notoriously difficult to describe the tonal character of guitar effects pedals. 
-                The Dyna Comp is variously described as having a "smooth" compression, a somewhat "dark" tonal 
-                character, with an overall "warm" feel. Circuit analysis confirms some of those descriptions, and 
-                refutes others. 
+                has been used on countless classic recordings, and remains a popular choice among guitarists. The Ross Compressor 
+                is a similar effect that has a similar following. Although the Ross compressor has only been mentioned in passing, 
+                it should not be a huge surprise that the Ross compressor is in fact functionally identical to the MXR Dyna Comp. 
             </p>
-            <p>Whether the compression effect is smooth or not is largely a matter of opinion. The Sensitivity control 
-                provides limited control over the attack rates, release rates and threshold of the compression envelope. But it 
-                does manage to provide reasonable and musical control over a compression effect that will be used strictly 
-                for compressing guitar signals. The fact that the compression ratio is zero does make the effect somewhat 
-                unusual, and doubtless contributes to its distinctive character.
+            <p> It is notoriously difficult to describe the tonal character of guitar effects pedals. Describing 
+                guitar effects using words is like dancing about architecture.
+                The Dyna Comp is variously described as having a "smooth" compression, a somewhat "dark" tonal
+                character, with an overall "warm" feel. Circuit analysis confirms some of those descriptions, and
+                refutes others.
             </p>
-            <p>The tonal character is not "warm" at all, but is almost (but not quite) "transparent". </p>
-            <p>The overall frequency response of the Dyna Comp applies a 10khz high cut, but is otherwise flat. This is indeed the 
-                opposite of "bright". But it might be wiser to describe the frequency response as "mellow" rather than "dark" 
-                in order to avoid confusions with the use of the term "dark" which has a slightly more complicated meaning in the 
-                when applied to the sound of guitar amplifiers. 
+            <p>Whether the compression effect is smooth or not is largely a matter of opinion. The Sensitivity control
+                provides limited control over the attack rates, release rates and threshold of the compression envelope. But it
+                does manage to provide reasonable and musical control over a compression effect that will be used strictly
+                for compressing electric guitar signals. The fact that the compression ratio is infinite does make the effect somewhat
+                unusual, and doubtless contributes to its distinctive character. And the very long release times of the compression 
+                envelope are particularly well suited for compressing electric guitar input signals.  If the Dyna Comp has "smooth" compression, 
+                it is because the attack and release rates are reasonably well matched to typical guitar playing styles, and 
+                because the compression envelope has an extremely long release time. While it might be nice to have more 
+                direct and explicit control over threshold and attack/release rates, the simple fact is that the Dyna Comp 
+                delivers pretty darned good results with just a single knob. And the attack and release rates you can't get 
+                are more typically used in studio compressors for vocals and drum tracks than they are for compression of electric 
+                guitar signals. Classical guitarists will need to look elsewhere. But classical guitarists pretty much knew that 
+                already. Acoustic guitarists may find useful sounds within the range of effects that the Dyna Comp can deliver; but 
+                I suspect they, too, will find that more flexible compressors are more useful, or that effects boxes targeted for use 
+                with acoustic guitars provide out-of-the-box settings that are more relevant. I don't think that will be a surprise to 
+                acoustic guitarists either.
             </p>
-            <p>It is difficult to quantify or analyze the contribution of non-linear frequency response during transient attacks. There are no 
-                good analytic tools to really investigate this in detail. The Dyna Comp does have non-linear response to picking attacks (although 
-                it has mostly linear response for sustained tones). This is a good thing. However, clipping occurs inconsistently, 
-                particularly when playing musical phrases, and seems to be of limited musical application, as a result. There is an affect. But it is 
-                generally quite subtle in general use, except for the very first note of a musical phrase, whether the compression envelope 
-                has released to mostly-idle state. It is possible that the Dyna Comp produces more dramatic effects on picking transients 
-                for very bright picking noises, or for players who pick very hard. But we were unable to uncover examples of this 
-                during simulation runs. Once again, the Dyna Comp seems to be mostly transparent. 
+            <p>
+                Another commonly used descriptor is that the Dyna Comp's compression is slightly "squishy". This is a term that 
+                Country players, particularly, seem to think is a desirable quality (although opinion is actually sharply divided). 
+                "Squishiness" seems to be valued among funk players as well.
+                The term is  presumably intended to describe 
+                the Dyna Comp's tendency to overdrive, sometimes quite heavily following the initial transient of picking attacks.
+                When the Sensitivity pot is set to a high value, the Dyna Comp will produce significant overdrive
+                during picking attacks, for a period of up to 12ms following while the envelope generator struggles to reduce gain to a 
+                level where the signal will be a clean sustained note again. 
+                "Squishiness" seems like a reasonable term to subjectively describe this phenomenon. This in combination with a 
+                tendency to produce attractive odd-order harmonics during clipping seems likely to be a particular component of 
+                the Dyna Comp sound.
             </p>
-            <p>In short, the Dyna Comp delivers pretty much what it promises: a capable and functional compressor effect, with a 
-                musically meaningful (if not highly flexible) control of the compressor through a single Sensitivity knob, 
-                a slightly mellow frequency response. It is by no means suitable for use in other musical compressor applications, 
-                but does provide a compression effect that is useful specifically for processing guitar signals. The "OTA Compressor"
-                sound, if there is such a thing, is attributable primarily to the somewhat somewhat unusual compression ratio, 
-                and the fact that it delivers sensible, if not flexible attack and decay rates over the full range of the 
-                single Sensitivity control.
+            <p>The harmonic  character is not "warm" at all, but is almost (but not quite) "transparent". THD during sustained notes is 
+                practically non-existent. "Warm" is a misleading description of the Dyna Comp's tonal character. It would suggest that 
+                the circuit produces gentle tube-like breakup, when in fact, it does not.
+            </p>
+            <p>The overall frequency response of the Dyna Comp applies a 10khz high cut, but is otherwise flat. This is indeed the
+                opposite of "bright". It might be wiser to describe the frequency response as "mellow" rather than "dark"
+                in order to avoid confusions with the use of the term "dark" which has a slightly more complicated and nuanced meaning when 
+                applied to the overall response of guitar amplifiers and overdrive/distortion pedals. And it avoids the tendency to 
+                mythicize what is more of a bug in the Dyna Comp than it is a feature. Unromantically speaking, the 
+                Dyna Comp has an 8.5kHz high cut frequency response when sustaining, which it would be better off without. 
+                However, nobody could seriously be faulted for describing the Dyna Comp as "dark" given the lack of more precise 
+                terms in our vocabulary for describing guitar effects.
+            </p>
+            <p>In short, the Dyna Comp delivers pretty much what it promises: a capable and functional compressor effect, specifically designed for 
+                use as a guitar compressor,  with a musically meaningful (if not highly flexible) control of the compressor through a single Sensitivity knob. 
+                The distinctive sound of the Dyna Comp can mostly be attributed to  its atypical infinite compression ratio, 
+                and its tendency to occasionally sharply overdrive picking transients, leading to a slightly "squishy" compression. 
+                The "magic smoke" must surely be attributable to the way the Dyna Comp clips during picking transients, which is a function 
+                of the way the CA3080 OTA clips when driven hard: diode clipping on one half of the waveform with soft and rich tanh-style 
+                clipping on the other half. It lacks flexible control of compression parameters. The bug is that it does not provide 
+                a gentler compression ratio that would reduce but not completely eliminate expressive dynamics.  But feature is that it 
+                does provide very consistent sustained response and breakup if there are non-linear amps or distortion/overdrive effects downstream&mdash;effects 
+                that are going to kill dynamic range anyway.  
+            </p>
+            <p>And it does so in a way that is not quite like 
+                other compressors that aren't clones to begin with. Its simplicity is part of its charm. It doesn't try to be everything to everyone.
+                Overall, it doesn't matter whether these behaviors are decencies or features. What matters is whether the effect delivers 
+                opportunities for creative expression. The MXR Dyna Comp unquestionably does.
+            </p>
+            <p>The author hopes that this analysis has shed some light on what the MXR Dyna Comp does and does not do, why it behaves the way it does, 
+                and more specifically provide insight into how to best dial in the settings that deliver the creative effects that the MXR Dyna Comp 
+                does provide.
             </p>
             <h2>References</h2>
             <ol>
-                <li>"MXR Dyna Comp LtSpice Model". R. E. R. Davies. <a href="xxx">xxx add link</a>
+                <li>
+                    R. E. R. Davies. "MXR Dyna Comp LtSpice Model".  <a href="./downloads/DynaCompLtSpiceFiles.zip">./downloads/DynaCompLtSpiceFiles.zip</a>
                 </li>
-                <li>MXR Dyna Comp Factory Schematic.
+                <li>MXR/Dunlop. "MXR Dyna Comp Factory Schematic."  
                 </li>
                 <li>Texas Instruments. "CA3080, CA3080A Operational Transconductance Amplifiers." Datasheet. <a href="https://www.ti.com/lit/ds/symlink/ca3080.pdf">https://www.ti.com/lit/ds/symlink/ca3080.pdf</a> (accessed December 12, 2025)
                 </li>
                 <li>
-                    "MXR Dyna Comp Analysis." ElectroSmash. <a href="https://www.electrosmash.com/mxr-dyna-comp-analysis">https://www.electrosmash.com/mxr-dyna-comp-analysis</a> (accessed December 12, 2025)
+                    O. Kröning, K. Dempwolf, and U. Zölzer. "Analysis and Simulation of an Analog Guitar Compressor." 
+                    Proceedings of the 14th International Conference on Digital Audio Effects (DAFx-11), Paris, France, September 19-23, 2011.
+                </li>
+                <li>
+                    ElectroSmash. "MXR Dyna Comp Analysis."  <a href="https://www.electrosmash.com/mxr-dyna-comp-analysis">https://www.electrosmash.com/mxr-dyna-comp-analysis</a> (accessed December 12, 2025)
+                </li>
+                <li>
+                    Fuzz Central. "Ross Compressor, Squeeze and Stretch." (Archived version) <a href="https://web.archive.org/web/20250328063014/https://fuzzcentral.ssguitar.com/ross.php">https://web.archive.org/web/20250328063014/https://fuzzcentral.ssguitar.com/ross.php</a>
                 </li>
             </ol>
 
 
             <p style={{ marginTop: 32 }}>
-                <a href="https://github.com/rerdavies/rerdavies.github.io/discussions/3">🗨 COMMENTS</a>
+                <a href="https://github.com/rerdavies/rerdavies.github.io/discussions/4">🗨 COMMENTS</a>
             </p>
 
 
