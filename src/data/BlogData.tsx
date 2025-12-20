@@ -22,11 +22,10 @@
  */
 
 import React from 'react';
+import { articleDataRaw, type Author } from './BlogDataRaw';
 
-export interface Author {
-  name: string;
-  avatar: string;
-};
+export type { Author };
+
 export interface ArticleInfo {
   tag: string;
   thumbnail: string;
@@ -36,8 +35,7 @@ export interface ArticleInfo {
   description: string;
   authors: Author[];
   route: string;
-};
-
+}
 
 export const getArticleInfo = (route: string): ArticleInfo => {
   let result = articleInfo.find((article) => article.route === route);
@@ -47,80 +45,13 @@ export const getArticleInfo = (route: string): ArticleInfo => {
   return result;
 }
 
- const articleInfo: ArticleInfo[] = [
-    /*
-    {
-      tag: 'Development',
-      thumbnail: '/thumb/inferno.jpg',
-      thumbnailAttribution: (
-        <span>
-        <a href="https://commons.wikimedia.org/wiki/File:Ottimo_commento_alla_commedia,_1457,_inferno_I_(bncf_II.I.34)_01.jpg">
-        Francesco Bini via Wikimedia Commons</a>, 
-        <a href="https://creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0</a>, 
-        </span>
-      ),
-      date: "2024-2-5",
-      title: 'The Fiery Crucible of Documentation',
-      description:
-        'Refine your code by writing real documentation.',
-      authors: [
-        { name: 'Robin Davies', avatar: '/static/images/avatar/1.jpg' },
-      ],
-      route: '/FieryCrucible',
+// Convert raw data to ArticleInfo with JSX
+const articleInfo: ArticleInfo[] = articleDataRaw.map(article => ({
+  ...article,
+  thumbnailAttribution: article.thumbnailAttributionText ? 
+    <span>{article.thumbnailAttributionText}</span> : 
+    <span></span>
+}));
 
-    },
-    */
-    {
-        tag: 'Development',
-        thumbnail: '/thumb/DynaCompThumb.jpg',
-        thumbnailAttribution: (<span></span>),
-        
-        date: "2025-12-5",
-        title: "MXR Dyna Comp Circuit Analysis",
-        description:
-          "A circuit analysis of the MXR Dyna Comp.",
-        route: "/MxrDynaComp",
-        authors: [{ name: 'Robin E.R. Davies', avatar: '/static/images/avatar/6.jpg' }],
-              
-    },
-    {
-        tag: 'Development',
-        thumbnail: '/thumb/DialThumb.png',
-        thumbnailAttribution: (<span>Demeter. Albert-Emile Artigue, Public domain, via Wikimedia Commons</span>),
-        
-        date: "2025-5-21",
-        title: "What If There Were No Knobs at All?",
-        description:
-          "Minimalist user interfaces.",
-        route: "/NoKnobs",
-        authors: [{ name: 'Robin E.R. Davies', avatar: '/static/images/avatar/6.jpg' }],
-              
-      },
-      {
-      tag: 'Development',
-      thumbnail: '/thumb/brasserie.jpg',
-      thumbnailAttribution: (<span>Demeter. Albert-Emile Artigue, Public domain, via Wikimedia Commons</span>),
-      
-      date: "2025-2-5",
-      title: "Free Like Air and Sunlight",
-      description:
-        "Why my projects do not use GPL.",
-      route: "/FreeAsInSunlight",
-      authors: [{ name: 'Robin E.R. Davies', avatar: '/static/images/avatar/6.jpg' }],
-            
-    },
-    {
-      tag: 'Product',
-      thumbnail: '/thumb/playbot.jpg',
-      thumbnailAttribution: (<span>Image by Dall-E from OpenAI</span>),
-      date: "2024-10-14",
-      title: 'What PiPedal Is',
-      description:
-        `Successful projects often end up becoming something other than what they started as. This is a feature, not a bug.`,
-      authors: [{ name: 'Robin E.R. Davies', avatar: '/static/images/avatar/6.jpg' }],
-      route: '/WhatPiPedalIs',
-    },
-  ];
-  
+export default articleInfo;
 
-  export default articleInfo;

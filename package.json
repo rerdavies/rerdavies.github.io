@@ -4,8 +4,9 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "build": "react-router build",
+    "build": "tsx scripts/generate-feed.js && react-router build",
     "dev": "react-router dev",
+    "generate-feed": "tsx scripts/generate-feed.js",
     "start": "react-router-serve ./build/server/index.js",
     "typecheck": "react-router typegen && tsc"
   },
@@ -31,8 +32,10 @@
     "eslint": "^9.19.0",
     "eslint-plugin-react-hooks": "^5.0.0",
     "eslint-plugin-react-refresh": "^0.4.18",
+    "feed": "^5.1.0",
     "globals": "^15.14.0",
     "react-router-devtools": "^1.1.0",
+    "tsx": "^4.21.0",
     "typescript": "~5.7.2",
     "typescript-eslint": "^8.21.0",
     "vite": "^6.0.11",

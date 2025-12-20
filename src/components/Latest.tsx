@@ -43,11 +43,16 @@ export default function Latest() {
 
     return (
         <Box sx={{ flex: "1 1 auto", display: 'flex', flexDirection: 'column', marginTop: 0 }}>
-            <h2 className="no_top_padding">
-                Blog
-            </h2>
+            <Box sx={{ display: 'flex', flexDirection: 'row', alignItems: 'center', gap: 2 }}>
+                <h2 style={{flex: '1 1 auto'}}>
+                    Blog
+                </h2>
+                <a href="./feed.xml" style={{ flex: '0 0 auto', display: 'flex', justifyContent: 'center', marginRight: 16 }}>
+                    <img src="./img/rss-icon.svg" alt="RSS Feed" style={{width: 32, height: 32, opacity: 0.5}}/>
+                </a>
+            </Box>
 
-            <Grid container spacing={8} columns={12} sx={{ my: 4 }}>
+            <Grid container spacing={4} columns={12} sx={{ my: 1, marginTop: 3 }}>
                 {articleInfo.map((article, index) => (
                     <Grid key={index} size={{
                         xs: 12, sm: 12
