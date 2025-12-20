@@ -12,4 +12,10 @@ export default defineConfig({
     ssr: {
       noExternal: [/^@mui\//, /^@emotion\//],
     },    
+    build: {
+      outDir: 'build/client'
+    },
+    preview: {
+      port: 4173
+    }    
 })

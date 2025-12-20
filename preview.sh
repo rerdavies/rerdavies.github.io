@@ -1,0 +1,1 @@
+npx vite preview --outDir build/client --host 0.0.0.0 --port 4173

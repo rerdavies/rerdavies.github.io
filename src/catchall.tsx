@@ -27,9 +27,39 @@ import App from "./App";
 
 export default function Component() {
     return (<App >
-        <div>
-            <h1>Page Not Found</h1>
+        <div style={{marginTop: 32, marginLeft: 64, marginRight: 64}}>
+            <h2>Page Not Found</h2>
             <p>Sorry, the page you are looking for does not exist.</p>
+            <p>Please check the URL or return to the <a href="/">home page</a>.</p>
+            <blockquote style={{
+                marginTop: 64,
+                marginLeft: 64,
+                width: 480,
+                height: 320,
+                backgroundImage: 'url(./img/CherryBlossom.jpg)',
+                backgroundSize: 'cover',
+                backgroundPosition: 'center',
+                borderRadius: '24px',
+                fontStyle: 'italic',
+                color: '#666',
+                position: "relative"
+            }}>
+                <div style={{
+                    position: 'absolute',
+                    bottom: 16,
+                    left: 16,
+                    fontSize: '1.2rem',
+                    color: 'white',
+                    width: '100%',
+                    paddingLeft: '1.5em',
+                    paddingRight: '1.5em'
+                }}>
+                You step in the stream,<br/>
+                &nbsp;&nbsp;&nbsp;&nbsp;but the water has moved on.<br/>
+                This page exists now only as<br/> 
+                &nbsp;&nbsp;&nbsp;&nbsp;a memory of a page that once was.
+                </div>
+            </blockquote>
         </div>
     </App>);
 }

@@ -24,11 +24,8 @@ import type { Config } from "@react-router/dev/config";
 import routes from "./src/routes"
 export default {
   appDirectory: "src",
-  // ssr: true,
+  ssr: false,
   async prerender() {
-     for (var rout of routes) {
-
-     }
-     return ["/", "/essays", "MxrDynaComp", "/projects","/about","/FreeAsInSunlight","/WhatPiPedalIs","/NoKnobs"];
+     return ["/", "/essays", "/MxrDynaComp", "/projects", "/about", "/FreeAsInSunlight", "/WhatPiPedalIs", "/NoKnobs", "/FieryCrucible"];
   },
 } satisfies Config;
