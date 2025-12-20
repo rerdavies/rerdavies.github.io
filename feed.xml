@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="feed.xsl"?>
+<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>Robin E.R. Davies</title>
+        <link>https://rerdavies.github.io</link>
+        <description>Technical blog and essays on software development</description>
+        <lastBuildDate>Sat, 20 Dec 2025 09:43:21 GMT</lastBuildDate>
+        <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
+        <generator>Feed for Node.js</generator>
+        <language>en</language>
+        <image>
+            <title>Robin E.R. Davies</title>
+            <url>https://rerdavies.github.io/favicon.png</url>
+            <link>https://rerdavies.github.io</link>
+        </image>
+        <copyright>Copyright 2025 Robin E.R. Davies. All rights reserved.</copyright>
+        <atom:link href="https://rerdavies.github.io/feed.xml" rel="self" type="application/rss+xml"/>
+        <item>
+            <title><![CDATA[MXR Dyna Comp Circuit Analysis]]></title>
+            <link>https://rerdavies.github.io/MxrDynaComp</link>
+            <guid isPermaLink="false">https://rerdavies.github.io/MxrDynaComp</guid>
+            <pubDate>Fri, 05 Dec 2025 00:00:00 GMT</pubDate>
+            <description><![CDATA[A circuit analysis of the MXR Dyna Comp.]]></description>
+            <content:encoded><![CDATA[A circuit analysis of the MXR Dyna Comp.]]></content:encoded>
+            <category>Development</category>
+            <enclosure url="https://rerdavies.github.io/thumb/DynaCompThumb.jpg" length="0" type="image/jpg"/>
+        </item>
+        <item>
+            <title><![CDATA[What If There Were No Knobs at All?]]></title>
+            <link>https://rerdavies.github.io/NoKnobs</link>
+            <guid isPermaLink="false">https://rerdavies.github.io/NoKnobs</guid>
+            <pubDate>Wed, 21 May 2025 00:00:00 GMT</pubDate>
+            <description><![CDATA[Minimalist user interfaces.]]></description>
+            <content:encoded><![CDATA[Minimalist user interfaces.]]></content:encoded>
+            <category>Development</category>
+            <enclosure url="https://rerdavies.github.io/thumb/DialThumb.png" length="0" type="image/png"/>
+        </item>
+        <item>
+            <title><![CDATA[Free Like Air and Sunlight]]></title>
+            <link>https://rerdavies.github.io/FreeAsInSunlight</link>
+            <guid isPermaLink="false">https://rerdavies.github.io/FreeAsInSunlight</guid>
+            <pubDate>Wed, 05 Feb 2025 00:00:00 GMT</pubDate>
+            <description><![CDATA[Why my projects do not use GPL.]]></description>
+            <content:encoded><![CDATA[Why my projects do not use GPL.]]></content:encoded>
+            <category>Development</category>
+            <enclosure url="https://rerdavies.github.io/thumb/brasserie.jpg" length="0" type="image/jpg"/>
+        </item>
+        <item>
+            <title><![CDATA[What PiPedal Is]]></title>
+            <link>https://rerdavies.github.io/WhatPiPedalIs</link>
+            <guid isPermaLink="false">https://rerdavies.github.io/WhatPiPedalIs</guid>
+            <pubDate>Mon, 14 Oct 2024 00:00:00 GMT</pubDate>
+            <description><![CDATA[Successful projects often end up becoming something other than what they started as. This is a feature, not a bug.]]></description>
+            <content:encoded><![CDATA[Successful projects often end up becoming something other than what they started as. This is a feature, not a bug.]]></content:encoded>
+            <category>Product</category>
+            <enclosure url="https://rerdavies.github.io/thumb/playbot.jpg" length="0" type="image/jpg"/>
+        </item>
+    </channel>
+</rss>

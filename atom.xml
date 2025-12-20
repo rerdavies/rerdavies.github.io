@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="atom.xsl"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>https://rerdavies.github.io</id>
+    <title>Robin E.R. Davies</title>
+    <updated>2025-12-20T09:43:21.709Z</updated>
+    <generator>Feed for Node.js</generator>
+    <author>
+        <name>Robin E.R. Davies</name>
+        <email>rerdavies@gmail.com</email>
+        <uri>https://rerdavies.github.io</uri>
+    </author>
+    <link rel="alternate" href="https://rerdavies.github.io"/>
+    <link rel="self" href="https://rerdavies.github.io/atom.xml"/>
+    <subtitle>Technical blog and essays on software development</subtitle>
+    <logo>https://rerdavies.github.io/favicon.png</logo>
+    <icon>https://rerdavies.github.io/favicon.png</icon>
+    <rights>Copyright 2025 Robin E.R. Davies. All rights reserved.</rights>
+    <entry>
+        <title type="html"><![CDATA[MXR Dyna Comp Circuit Analysis]]></title>
+        <id>https://rerdavies.github.io/MxrDynaComp</id>
+        <link href="https://rerdavies.github.io/MxrDynaComp"/>
+        <link rel="enclosure" href="https://rerdavies.github.io/thumb/DynaCompThumb.jpg" type="image/jpg"/>
+        <updated>2025-12-05T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[A circuit analysis of the MXR Dyna Comp.]]></summary>
+        <content type="html"><![CDATA[A circuit analysis of the MXR Dyna Comp.]]></content>
+        <author>
+            <name>Robin E.R. Davies</name>
+        </author>
+        <category label="Development"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[What If There Were No Knobs at All?]]></title>
+        <id>https://rerdavies.github.io/NoKnobs</id>
+        <link href="https://rerdavies.github.io/NoKnobs"/>
+        <link rel="enclosure" href="https://rerdavies.github.io/thumb/DialThumb.png" type="image/png"/>
+        <updated>2025-05-21T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Minimalist user interfaces.]]></summary>
+        <content type="html"><![CDATA[Minimalist user interfaces.]]></content>
+        <author>
+            <name>Robin E.R. Davies</name>
+        </author>
+        <category label="Development"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Free Like Air and Sunlight]]></title>
+        <id>https://rerdavies.github.io/FreeAsInSunlight</id>
+        <link href="https://rerdavies.github.io/FreeAsInSunlight"/>
+        <link rel="enclosure" href="https://rerdavies.github.io/thumb/brasserie.jpg" type="image/jpg"/>
+        <updated>2025-02-05T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Why my projects do not use GPL.]]></summary>
+        <content type="html"><![CDATA[Why my projects do not use GPL.]]></content>
+        <author>
+            <name>Robin E.R. Davies</name>
+        </author>
+        <category label="Development"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[What PiPedal Is]]></title>
+        <id>https://rerdavies.github.io/WhatPiPedalIs</id>
+        <link href="https://rerdavies.github.io/WhatPiPedalIs"/>
+        <link rel="enclosure" href="https://rerdavies.github.io/thumb/playbot.jpg" type="image/jpg"/>
+        <updated>2024-10-14T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Successful projects often end up becoming something other than what they started as. This is a feature, not a bug.]]></summary>
+        <content type="html"><![CDATA[Successful projects often end up becoming something other than what they started as. This is a feature, not a bug.]]></content>
+        <author>
+            <name>Robin E.R. Davies</name>
+        </author>
+        <category label="Product"/>
+    </entry>
+</feed>
