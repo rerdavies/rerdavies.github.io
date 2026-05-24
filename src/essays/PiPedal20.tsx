@@ -95,7 +95,7 @@ export default function PiPedal20() {
 
     return (
         <BlogPage route={route}>
-            <img src="./thumb/PiPedal20Thumb.png" style={styles.floatImageRight} alt="PiPedal 2.0" />
+            <img src="/thumb/PiPedal20Thumb.png" style={styles.floatImageRight} alt="PiPedal 2.0" />
             <p>
                 I am pleased to announce the release of PiPedal 2.0, a major update to the PiPedal
                 guitar effects platform.
