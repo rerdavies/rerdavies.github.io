@@ -38,6 +38,7 @@ import {
     route("FreeAsInSunlight","./essays/FreeAsInSunlight.tsx"),
     route("NoKnobs","./essays/NoKnobs.tsx"),
     route("MxrDynaComp","./essays/MxrDynaComp.tsx"),
+    route("PiPedal20","./essays/PiPedal20.tsx"),
 
     route("*?","catchall.tsx"),
     // pattern ^           ^ module file

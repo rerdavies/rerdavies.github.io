@@ -40,6 +40,17 @@ export interface ArticleDataRaw {
 export const articleDataRaw: ArticleDataRaw[] = [
     {
         tag: 'Development',
+        thumbnail: '/thumb/PiPedal20Thumb.png',
+        thumbnailAttributionText: '',
+        date: "2026-5-24",
+        title: "Announcing PiPedal 2.0!",
+        description:
+          "A major update to PiPedal!",
+        route: "/PiPedal20",
+        authors: [{ name: 'Robin E.R. Davies', avatar: '/static/images/avatar/6.jpg' }],
+    },
+    {
+        tag: 'Development',
         thumbnail: '/thumb/DynaCompThumb.jpg',
         thumbnailAttributionText: '',
         date: "2025-12-5",

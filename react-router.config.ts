@@ -26,6 +26,6 @@ export default {
   appDirectory: "src",
   ssr: false,
   async prerender() {
-     return ["/", "/essays", "/MxrDynaComp", "/projects", "/about", "/FreeAsInSunlight", "/WhatPiPedalIs", "/NoKnobs", "/FieryCrucible"];
+     return ["/", "/essays", "/MxrDynaComp", "/PiPedal20", "/projects", "/about", "/FreeAsInSunlight", "/WhatPiPedalIs", "/NoKnobs", "/FieryCrucible"];
   },
 } satisfies Config;

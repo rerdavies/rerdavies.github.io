@@ -5,7 +5,7 @@
         <title>Robin E.R. Davies</title>
         <link>https://rerdavies.github.io</link>
         <description>Technical blog and essays on software development</description>
-        <lastBuildDate>Sat, 20 Dec 2025 08:49:27 GMT</lastBuildDate>
+        <lastBuildDate>Sun, 24 May 2026 20:29:34 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>Feed for Node.js</generator>
         <language>en</language>
@@ -14,8 +14,18 @@
             <url>https://rerdavies.github.io/favicon.png</url>
             <link>https://rerdavies.github.io</link>
         </image>
-        <copyright>Copyright 2025 Robin E.R. Davies. All rights reserved.</copyright>
+        <copyright>Copyright 2026 Robin E.R. Davies. All rights reserved.</copyright>
         <atom:link href="https://rerdavies.github.io/feed.xml" rel="self" type="application/rss+xml"/>
+        <item>
+            <title><![CDATA[Announcing PiPedal 2.0!]]></title>
+            <link>https://rerdavies.github.io/PiPedal20</link>
+            <guid isPermaLink="false">https://rerdavies.github.io/PiPedal20</guid>
+            <pubDate>Sun, 24 May 2026 04:00:00 GMT</pubDate>
+            <description><![CDATA[A major update to PiPedal!]]></description>
+            <content:encoded><![CDATA[A major update to PiPedal!]]></content:encoded>
+            <category>Development</category>
+            <enclosure url="https://rerdavies.github.io/thumb/PiPedal20Thumb.png" length="0" type="image/png"/>
+        </item>
         <item>
             <title><![CDATA[MXR Dyna Comp Circuit Analysis]]></title>
             <link>https://rerdavies.github.io/MxrDynaComp</link>
