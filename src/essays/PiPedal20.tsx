@@ -101,15 +101,15 @@ export default function PiPedal20() {
                 guitar effects platform.
             </p>
             <p>
-                
+
                 PiPedal is a Guitar Stompbox that runs on a Raspbery Pi, or on x86_64/AMD64 computers running Unbuntu 24.04 or later.
-                It is designed to be used as a live performance tool, with a simple and intuitive user interface. 
-                PiPedal is controlled and configured from a remote web browser. This allows you to control PiPedal from 
+                It is designed to be used as a live performance tool, with a simple and intuitive user interface.
+                PiPedal is controlled and configured from a remote web browser. This allows you to control PiPedal from
                 a phone or tablet, clipped to your microphone stand when you are performing, or recording in a studio.
             </p>
             <p>
                 PiPedal running on a Raspberry Pi 4 or Pi 5 provides stable super-low-latency audio via external USB audio
-                devices, or internal Raspberry Pi audio hats. It runs equally well on x86_64/AMD64 NUCs, laptops, and desktops running 
+                devices, or internal Raspberry Pi audio hats. It runs equally well on x86_64/AMD64 NUCs, laptops, and desktops running
                 Ubuntu 24.04 or later.
             </p>
             <p>
@@ -128,13 +128,16 @@ export default function PiPedal20() {
                 needs: slim down models for lower CPU use, or use full models for the best possible
                 emulation quality.
             </p>
-            <p>PiPiedal is one of the first platforms anywhere that allows you to experience the dramatic benefits 
+            <p>PiPipedal is one of the first platforms anywhere that allows you to experience the dramatic benefits
                 of NAM A2 technology.
             </p>
             <h3>Integration with Tone3000.com services</h3>
             <p>
-                NAM A2 models are available as free downloads from{" "}
-                <a href="https://tone3000.com" target="_blank" rel="noreferrer">Tone3000.com</a>.
+                NAM A2 models are currently available as free downloads from{" "}
+                <a href="https://tone3000.com" target="_blank" rel="noreferrer">Tone3000.com</a>. (Currently only through 
+                PiPedal's integrated Tone3000 browser, but presumable available through the main Tone3000.com website in the very near future as well.)
+            </p>
+            <p>
                 PiPedal 2.0 now integrates with Tone3000.com services, allowing you to download NAM A2
                 models and Cabinet Impulse Response files directly to the PiPedal server from within the PiPedal web app.
                 All existing NAM models on Tone3000.com have been retrained using the new A2
@@ -143,6 +146,10 @@ export default function PiPedal20() {
                 you are looking for free models or premium models, NAM A2 provides the best amp
                 modelling available anywhere.
             </p>
+            <p>
+                Special thanks to the Tone3000 development team, for their collaboration, assistance in integrating the Tone3000 API, and for providing the necessary
+                support for PiPedal's rather unique architectural challenges.
+            </p>
 
             <h3>Channel Routing</h3>
             <p>
@@ -150,7 +157,8 @@ export default function PiPedal20() {
                 Dialog from PiPedal 1.x. You can now globally route auxiliary input channels on your
                 audio device &mdash; such as backing tracks or microphone inputs &mdash; or route a clean
                 unprocessed guitar signal to otherwise-unused output channels for re-amping later in
-                a DAW. These routing settings apply across all existing presets.
+                a DAW. These routing settings apply across all existing presets. Click on the (?) icon in the 
+                Channel Routing dialog for more information about how to use this powerful new feature.
             </p>
 
             <h3>Progressive Web Application</h3>
@@ -179,7 +187,7 @@ export default function PiPedal20() {
 
             <h3>LV2 Plugins and MIDI</h3>
             <p>
-                PiPedal includes a pre-installed selection of LV2 plugins from the ToobAmp collection, which are 
+                PiPedal includes a pre-installed selection of LV2 plugins from the ToobAmp collection, which are
                 specifically designed for use as guitar effects. PiPedal's plugin architecture is not limited to ToobAmp plugins,
                 but it works with most LV2 audio plugins. There are hundreds of free high-quality LV2
                 audio plugins available &mdash; just install them on your PiPedal server and they will appear
