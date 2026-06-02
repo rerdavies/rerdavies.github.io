@@ -42,7 +42,7 @@ export const articleDataRaw: ArticleDataRaw[] = [
         tag: 'Development',
         thumbnail: '/thumb/PiPedal20Thumb.png',
         thumbnailAttributionText: '',
-        date: "2026-5-24",
+        date: "2026-6-2",
         title: "Announcing PiPedal 2.0!",
         description:
           "A major update to PiPedal!",

@@ -114,7 +114,7 @@ export default function PiPedal20() {
             </p>
             <p>
                 <a href="https://rerdavies.github.io/pipedal/download.html" target="_blank" rel="noreferrer">
-                    Download the preview release of PiPedal 2.0 here!
+                    Download PiPedal 2.0 here!
                 </a>
             </p>
 
@@ -129,16 +129,32 @@ export default function PiPedal20() {
                 emulation quality.
             </p>
             <p>PiPipedal is one of the first platforms anywhere that allows you to experience the dramatic benefits
-                of NAM A2 technology.
+                of NAM A2 technology.</p>
+            <p>
+            <a href="https://www.tone3000.com/blog/introducing-neural-amp-modeler-nam-architecture-2-a2">This page</a>, hosted by
+                Tone3000, provides a deep dive into what Neural Amp Modeler A2 technology is, and how it works.
             </p>
-            <h3>Integration with Tone3000.com services</h3>
+            <p>Comprehensive listening tests demonstrate that NAM A2 models are significantly, and measurably better sounding 
+                than competing commercial amp modeling technologies. 
+            </p>
+
+            <img style={{ width: "100%" }} src="img/model_comparison.png" />
+
+            <p style={{ marginLeft: 64, marginRight: 64, fontSize: "0.8em" }}>
+                <strong>Fig 1:</strong> Unscreened ratings from a large-scale blind MUSHRA listening test evaluating
+                NAM A2 amp/effect modeling against other commercial
+                modelers. Data provided by <a href="https://www.tone3000.com" target="_blank" rel="noreferrer">TONE3000</a> and <a href="https://www.neuralampmodeler.com/">Steve Atkinson</a>. 105,842 ratings from
+                1,184 participants across 37 tones.
+                <sup><a id="fnref1" href="#fn1">1</a></sup>
+            </p>
+            <h3>Integration with Tone3000.com Web APIs</h3>
             <p>
                 NAM A2 models are currently available as free downloads from{" "}
-                <a href="https://tone3000.com" target="_blank" rel="noreferrer">Tone3000.com</a>. (Currently only through 
+                <a href="https://tone3000.com" target="_blank" rel="noreferrer">Tone3000.com</a> now!. (Currently only through
                 PiPedal's integrated Tone3000 browser, but presumable available through the main Tone3000.com website in the very near future as well.)
             </p>
             <p>
-                PiPedal 2.0 now integrates with Tone3000.com services, allowing you to download NAM A2
+                PiPedal 2.0 now integrates with Tone3000.com Web APIs, allowing you to download NAM A2
                 models and Cabinet Impulse Response files directly to the PiPedal server from within the PiPedal web app.
                 All existing NAM models on Tone3000.com have been retrained using the new A2
                 architecture and are available right now. There is also a rich ecosystem of
@@ -147,8 +163,8 @@ export default function PiPedal20() {
                 modelling available anywhere.
             </p>
             <p>
-                Special thanks to the Tone3000 development team, for their collaboration, assistance in integrating the Tone3000 API, and for providing the necessary
-                support for PiPedal's rather unique architectural challenges.
+                Special thanks to the Tone3000 development team, for their collaboration, assistance in integrating the Tone3000 API, their openness to 
+                accommodating PiPedal's somewhat unique requirements, and for incredible support while the integration was underway.
             </p>
 
             <h3>Channel Routing</h3>
@@ -157,7 +173,7 @@ export default function PiPedal20() {
                 Dialog from PiPedal 1.x. You can now globally route auxiliary input channels on your
                 audio device &mdash; such as backing tracks or microphone inputs &mdash; or route a clean
                 unprocessed guitar signal to otherwise-unused output channels for re-amping later in
-                a DAW. These routing settings apply across all existing presets. Click on the (?) icon in the 
+                a DAW. These routing settings apply across all existing presets. Click on the (?) icon in the
                 Channel Routing dialog for more information about how to use this powerful new feature.
             </p>
 
@@ -175,14 +191,14 @@ export default function PiPedal20() {
             <h3>Wi-Fi and Remote Control</h3>
             <p>
                 PiPedal can be remotely controlled via a web interface over Ethernet or Wi-Fi. If you
-                don't have access to a Wi-Fi router, PiPedal can be configured to start a Wi-Fi
+                don't have access to a Wi-Fi router, the PiPedal server can be configured to start a Wi-Fi
                 hotspot automatically whenever your Raspberry Pi cannot connect to your home network.
                 Install the{" "}
                 <a href="https://play.google.com/store/apps/details?id=com.twoplay.pipedal" target="_blank" rel="noreferrer">
                     PiPedal Remote Android app
                 </a>{" "}
                 to get one-click access to PiPedal whether you are at home or using the auto-hotspot
-                feature at a gig.
+                feature at a gig, a practice, or in the studio..
             </p>
 
             <h3>LV2 Plugins and MIDI</h3>
@@ -200,12 +216,24 @@ export default function PiPedal20() {
                 To download PiPedal 2.0, visit the{" "}
                 <a href="https://rerdavies.github.io/pipedal/download.html" target="_blank" rel="noreferrer">
                     download page
+                </a>. More information about 
+                PiPedal is <a href="https://rerdavies.github.io/pipedal/Documentation.html" target="_blank" rel="noreferrer"> 
+                 available here.</a>
+            </p>
+            <p>
+            </p>
+            <hr style={{ marginTop: 32, marginLeft: 32, width: "50%" }} />
+            <p id="fn1" style={{ marginLeft: 32, marginRight: 32, fontSize: "1.0em" }}>
+                <sup><a href="#fnref1" aria-label="Back to figure note reference">1</a></sup> TONE3000, &amp; Atkinson, S. (2026). <em>A2 MUSHRA Listening
+                    Test Raw Data</em> [Data set].
+                Tone3000. <a href="https://www.tone3000.com/guides/nam-a2-the-complete-guide" target="_blank" rel="noreferrer">
+                    https://www.tone3000.com/guides/nam-a2-the-complete-guide
                 </a>
-                . Full documentation is available{" "}
-                <a href="https://rerdavies.github.io/pipedal/Documentation.html" target="_blank" rel="noreferrer">
-                    here
+                . Repository:
+                <a href="https://github.com/tone-3000/a2-mushra-data" target="_blank" rel="noreferrer">
+                    https://github.com/tone-3000/a2-mushra-data
                 </a>
-                .
+                . License: CC BY 4.0. <a href="#fnref1" aria-label="Back to figure note reference">↩</a>
             </p>
 
             <p style={{ marginTop: 32 }}>
@@ -213,6 +241,6 @@ export default function PiPedal20() {
             </p>
 
             <CopyrightSlug />
-        </BlogPage>
+        </BlogPage >
     );
 }
