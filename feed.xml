@@ -5,7 +5,7 @@
         <title>Robin E.R. Davies</title>
         <link>https://rerdavies.github.io</link>
         <description>Technical blog and essays on software development</description>
-        <lastBuildDate>Sun, 24 May 2026 23:24:54 GMT</lastBuildDate>
+        <lastBuildDate>Tue, 02 Jun 2026 23:29:50 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>Feed for Node.js</generator>
         <language>en</language>
@@ -20,7 +20,7 @@
             <title><![CDATA[Announcing PiPedal 2.0!]]></title>
             <link>https://rerdavies.github.io/PiPedal20</link>
             <guid isPermaLink="false">https://rerdavies.github.io/PiPedal20</guid>
-            <pubDate>Sun, 24 May 2026 00:00:00 GMT</pubDate>
+            <pubDate>Tue, 02 Jun 2026 00:00:00 GMT</pubDate>
             <description><![CDATA[A major update to PiPedal!]]></description>
             <content:encoded><![CDATA[A major update to PiPedal!]]></content:encoded>
             <category>Development</category>

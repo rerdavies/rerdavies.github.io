@@ -3,7 +3,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://rerdavies.github.io</id>
     <title>Robin E.R. Davies</title>
-    <updated>2026-05-24T23:24:54.190Z</updated>
+    <updated>2026-06-02T23:29:50.188Z</updated>
     <generator>Feed for Node.js</generator>
     <author>
         <name>Robin E.R. Davies</name>
@@ -21,7 +21,7 @@
         <id>https://rerdavies.github.io/PiPedal20</id>
         <link href="https://rerdavies.github.io/PiPedal20"/>
         <link rel="enclosure" href="https://rerdavies.github.io/thumb/PiPedal20Thumb.png" type="image/png"/>
-        <updated>2026-05-24T00:00:00.000Z</updated>
+        <updated>2026-06-02T00:00:00.000Z</updated>
         <summary type="html"><![CDATA[A major update to PiPedal!]]></summary>
         <content type="html"><![CDATA[A major update to PiPedal!]]></content>
         <author>
