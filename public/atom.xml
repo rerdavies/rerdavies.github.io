@@ -17,6 +17,19 @@
     <icon>https://rerdavies.github.io/favicon.png</icon>
     <rights>Copyright 2026 Robin E.R. Davies. All rights reserved.</rights>
     <entry>
+        <title type="html"><![CDATA[The Tone3000 API]]></title>
+        <id>https://rerdavies.github.io/Tone3000Api</id>
+        <link href="https://rerdavies.github.io/Tone3000Api"/>
+        <link rel="enclosure" href="https://rerdavies.github.io/thumb/Tone3000ApiThumb.png" type="image/png"/>
+        <updated>2026-06-10T10:29:34.903Z</updated>
+        <summary type="html"><![CDATA[An brief tour of the Tone3000 API, with examples from PiPedal code.]]></summary>
+        <content type="html"><![CDATA[An brief tour of the Tone3000 API, with examples from PiPedal code.]]></content>
+        <author>
+            <name>Robin E.R. Davies</name>
+        </author>
+        <category label="Development"/>
+    </entry>
+    <entry>
         <title type="html"><![CDATA[Announcing PiPedal 2.0!]]></title>
         <id>https://rerdavies.github.io/PiPedal20</id>
         <link href="https://rerdavies.github.io/PiPedal20"/>
