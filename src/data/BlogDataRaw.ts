@@ -40,6 +40,17 @@ export interface ArticleDataRaw {
 export const articleDataRaw: ArticleDataRaw[] = [
     {
         tag: 'Development',
+        thumbnail: '/thumb/Tone3000ApiThumb.png',
+        thumbnailAttributionText: '',
+        date: "2026-6-10",
+        title: "The Tone3000 Web Apis",
+        description:
+          "Using the Tone3000 Web APIs in PiPedal",
+        route: "/Tone3000Api",
+        authors: [{ name: 'Robin E.R. Davies', avatar: '/static/images/avatar/6.jpg' }],
+    },
+    {
+        tag: 'Development',
         thumbnail: '/thumb/PiPedal20Thumb.png',
         thumbnailAttributionText: '',
         date: "2026-6-2",
