@@ -5,7 +5,7 @@
         <title>Robin E.R. Davies</title>
         <link>https://rerdavies.github.io</link>
         <description>Technical blog and essays on software development</description>
-        <lastBuildDate>Tue, 02 Jun 2026 23:29:50 GMT</lastBuildDate>
+        <lastBuildDate>Fri, 12 Jun 2026 04:08:35 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>Feed for Node.js</generator>
         <language>en</language>
@@ -16,6 +16,16 @@
         </image>
         <copyright>Copyright 2026 Robin E.R. Davies. All rights reserved.</copyright>
         <atom:link href="https://rerdavies.github.io/feed.xml" rel="self" type="application/rss+xml"/>
+        <item>
+            <title><![CDATA[The Tone3000 Web Apis]]></title>
+            <link>https://rerdavies.github.io/Tone3000Api</link>
+            <guid isPermaLink="false">https://rerdavies.github.io/Tone3000Api</guid>
+            <pubDate>Wed, 10 Jun 2026 00:00:00 GMT</pubDate>
+            <description><![CDATA[Using the Tone3000 Web APIs in PiPedal]]></description>
+            <content:encoded><![CDATA[Using the Tone3000 Web APIs in PiPedal]]></content:encoded>
+            <category>Development</category>
+            <enclosure url="https://rerdavies.github.io/thumb/Tone3000ApiThumb.png" length="0" type="image/png"/>
+        </item>
         <item>
             <title><![CDATA[Announcing PiPedal 2.0!]]></title>
             <link>https://rerdavies.github.io/PiPedal20</link>

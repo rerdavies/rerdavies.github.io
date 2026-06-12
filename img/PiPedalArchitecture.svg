@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="5.8628616in"
+   height="3.3956845in"
+   viewBox="0 0 0.061071476 0.035371713"
+   version="1.1"
+   id="svg1"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs1">
+    <marker
+       style="overflow:visible"
+       id="ArrowWideRounded"
+       refX="0"
+       refY="0"
+       orient="auto-start-reverse"
+       markerWidth="1"
+       markerHeight="1"
+       viewBox="0 0 1 1"
+       preserveAspectRatio="xMidYMid">
+      <path
+         style="fill:none;stroke:context-stroke;stroke-width:1;stroke-linecap:round"
+         d="M 3,-3 0,0 3,3"
+         transform="rotate(180,0.125,0)"
+         id="path3" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="ArrowWideRounded-7"
+       refX="0"
+       refY="0"
+       orient="auto-start-reverse"
+       markerWidth="1"
+       markerHeight="1"
+       viewBox="0 0 1 1"
+       preserveAspectRatio="xMidYMid">
+      <path
+         style="fill:none;stroke:context-stroke;stroke-width:1;stroke-linecap:round"
+         d="M 3,-3 0,0 3,3"
+         transform="rotate(180,0.125,0)"
+         id="path3-6" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="ArrowWide-3"
+       refX="0"
+       refY="0"
+       orient="auto-start-reverse"
+       markerWidth="1"
+       markerHeight="1"
+       viewBox="0 0 1 1"
+       preserveAspectRatio="xMidYMid">
+      <path
+         style="fill:none;stroke:context-stroke;stroke-width:1;stroke-linecap:butt"
+         d="M 3,-3 0,0 3,3"
+         transform="rotate(180,0.125,0)"
+         id="path1-1" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="ArrowWideRounded-74"
+       refX="0"
+       refY="0"
+       orient="auto-start-reverse"
+       markerWidth="1"
+       markerHeight="1"
+       viewBox="0 0 1 1"
+       preserveAspectRatio="xMidYMid">
+      <path
+         style="fill:none;stroke:context-stroke;stroke-width:1;stroke-linecap:round"
+         d="M 3,-3 0,0 3,3"
+         transform="rotate(180,0.125,0)"
+         id="path3-1" />
+    </marker>
+  </defs>
+  <rect
+     style="fill:#650e0e;fill-opacity:0.148751;stroke:none;stroke-width:0.000197362;stroke-linejoin:round;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:0.269621"
+     id="rect19"
+     width="0.061071474"
+     height="0.035371713"
+     x="-8.6736174e-19"
+     y="0"
+     ry="0" />
+  <g
+     id="layer1"
+     transform="translate(-0.00396089,-0.00478992)">
+    <rect
+       style="fill:#ddd6f8;stroke:#000000;stroke-width:0.000249204;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+       id="rect1"
+       width="0.019033318"
+       height="0.022716675"
+       x="0.0075153061"
+       y="0.013247961" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:0.00202546px;font-family:Roboto;-inkscape-font-specification:'Roboto, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:center;writing-mode:lr-tb;direction:ltr;text-anchor:middle;fill:#000000;fill-opacity:1;stroke-width:0.00152995;stroke-linejoin:round"
+       x="0.016983505"
+       y="0.033606011"
+       id="text1"><tspan
+         id="tspan17"
+         x="0.016983505"
+         y="0.033606011">PiPedal Client</tspan></text>
+    <rect
+       style="fill:#ddd6f8;stroke:#000000;stroke-width:0.000243396;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+       id="rect2"
+       width="0.018151866"
+       height="0.022722483"
+       x="0.044002932"
+       y="0.013245058" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:0.00202546px;font-family:Roboto;-inkscape-font-specification:'Roboto, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:center;writing-mode:lr-tb;direction:ltr;text-anchor:middle;fill:#000000;fill-opacity:1;stroke-width:0.00152995;stroke-linejoin:round"
+       x="0.052660581"
+       y="0.033743415"
+       id="text2"><tspan
+         id="tspan7"
+         x="0.052660581"
+         y="0.033743415">PiPedal Server</tspan></text>
+    <path
+       style="fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0.00043403;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;marker-start:url(#ArrowWideRounded)"
+       d="m 0.02431599,0.0198062 0.01919406,1.8423e-4"
+       id="path2" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:0.00202547px;font-family:Roboto;-inkscape-font-specification:'Roboto, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;writing-mode:lr-tb;direction:ltr;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.000434028;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+       x="0.027296541"
+       y="0.017583501"
+       id="text3"><tspan
+         id="tspan10"
+         x="0.027296541"
+         y="0.017583501">Static web pages</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:0.00202547px;font-family:Roboto;-inkscape-font-specification:'Roboto, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;writing-mode:lr-tb;direction:ltr;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.000434028;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+       x="0.017903509"
+       y="-0.046984684"
+       id="text3-3"
+       transform="rotate(90)"><tspan
+         id="tspan13"
+         x="0.017903509"
+         y="-0.046984684">Web Server</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:0.00202547px;font-family:Roboto;-inkscape-font-specification:'Roboto, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:center;writing-mode:lr-tb;direction:ltr;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.000434028;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+       x="0.021072533"
+       y="-0.059047554"
+       id="text3-3-3"
+       transform="rotate(90)"><tspan
+         id="tspan14"
+         x="0.021072533"
+         y="-0.059047554">Reatime</tspan><tspan
+         id="tspan15"
+         x="0.021072533"
+         y="-0.056515716">Audio</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:0.00202547px;font-family:Roboto;-inkscape-font-specification:'Roboto, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;writing-mode:lr-tb;direction:ltr;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.000434028;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+       x="0.032384943"
+       y="0.022135414"
+       id="text3-4"><tspan
+         id="tspan4"
+         x="0.032384943"
+         y="0.022135414">HTTP</tspan></text>
+    <path
+       style="fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0.00043403;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;marker-start:url(#ArrowWideRounded-7);marker-end:url(#ArrowWide-3)"
+       d="m 0.02438463,0.02810678 0.01891772,9.211e-5"
+       id="path2-9" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:0.00202547px;font-family:Roboto;-inkscape-font-specification:'Roboto, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;writing-mode:lr-tb;direction:ltr;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.000434028;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+       x="0.027350936"
+       y="0.025791932"
+       id="text3-6"><tspan
+         id="tspan6"
+         x="0.027350936"
+         y="0.025791932">Dynamic content</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:0.00202547px;font-family:Roboto;-inkscape-font-specification:'Roboto, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;writing-mode:lr-tb;direction:ltr;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.000434028;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+       x="0.030008871"
+       y="0.030343845"
+       id="text3-4-1"><tspan
+         id="tspan5"
+         x="0.030008871"
+         y="0.030343845">Websocket</tspan></text>
+    <path
+       style="fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0.00043403;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;marker-start:url(#ArrowWideRounded-74)"
+       d="M 0.05754876,0.01254648 V 0.00685337"
+       id="path2-97" />
+    <path
+       style="fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0.00043403;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;marker-start:url(#ArrowWideRounded-74)"
+       d="M 0.06058697,0.00726878 V 0.01296189"
+       id="path9" />
+    <path
+       style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.00043403;stroke-linejoin:round;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:0.286142"
+       d="M 0.05288907,0.01654412 V 0.02839856"
+       id="path15" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:0.00202546px;font-family:Roboto;-inkscape-font-specification:'Roboto, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:center;writing-mode:lr-tb;direction:ltr;text-anchor:middle;fill:#000000;fill-opacity:1;stroke-width:0.00152995;stroke-linejoin:round"
+       x="0.05351118"
+       y="0.010162273"
+       id="text16"><tspan
+         id="tspan16"
+         x="0.05351118"
+         y="0.010162273">Audio</tspan></text>
+    <rect
+       style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.000217014;stroke-linejoin:round;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="rect17"
+       width="0.013817076"
+       height="0.013817076"
+       x="0.010123428"
+       y="0.016738176"
+       ry="0.0019343906" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:0.00202546px;font-family:Roboto;-inkscape-font-specification:'Roboto, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:center;writing-mode:lr-tb;direction:ltr;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.000217014;stroke-linejoin:round;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       x="0.017086361"
+       y="0.02260692"
+       id="text18"><tspan
+         id="tspan18"
+         style="fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.000217014"
+         x="0.017086361"
+         y="0.02260692">Web</tspan><tspan
+         style="fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.000217014"
+         x="0.017086361"
+         y="0.025138745"
+         id="tspan19">Application</tspan></text>
+  </g>
+</svg>
