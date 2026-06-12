@@ -147,8 +147,8 @@ export default function Tone3000Api() {
             <p><a href="https://www.tone3000.com" target="_blank" rel="noreferrer">Tone3000.com</a> is a website that provides free downloads of tens of thousands
                 of high-quality amp and effect model files for use with Neural Amp Modeler. Models have been created by a huge community of musicians that are
                 using NAM. If you have a favorite amp that you would like to use in PiPedal, chances
-                are very good that you can find a high-quality model of that amp on Tone3000.com. And if you can't, Tone3000.com also provides an online service
-                that allows users to profile and generate models for your own personal amps and effect pedals. Tone3000 provides a central hub for the 
+                are very good that you can find a high-quality model of that amp on Tone3000.com. And if you can't, Tone3000.com also
+                provides an online service that allows users to <a href="https://www.tone3000.com/capture">capture NAM files</a> of your own personal amps and effect pedals. Tone3000 provides a central hub for the 
                 huge community that has developed around NAM A1 originally, and now for NAM A2 as well, moving forward.
             </p>
             <p>
