@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fallacy Bingo</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=IBM+Plex+Mono:wght@400;500;600;700&display=swap');
+
+  :root{
+    --maroon: #6B1E28;
+    --maroon-dark: #431019;
+    --cream: #F3E8D0;
+    --cream-dim: #E7D9B8;
+    --ink: #241D18;
+    --gold: #D9A441;
+    --gold-dim: #B9863A;
+    --stamp: #A62B25;
+  }
+
+  *{ box-sizing: border-box; }
+
+  html,body{
+    margin:0;
+    min-height:100%;
+    background:
+      radial-gradient(ellipse at 50% -10%, #7c2530 0%, var(--maroon) 45%, var(--maroon-dark) 100%);
+    font-family: 'IBM Plex Mono', monospace;
+    color: var(--ink);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding: 28px 14px;
+  }
+
+  .stage{
+    width: 100%;
+    max-width: 560px;
+  }
+
+  .marquee{
+    text-align:center;
+    margin-bottom: 18px;
+  }
+
+  .marquee h1{
+    font-family: 'Alfa Slab One', serif;
+    font-size: clamp(28px, 7vw, 44px);
+    letter-spacing: 2px;
+    color: var(--gold);
+    margin: 0;
+    text-shadow:
+      2px 2px 0 var(--maroon-dark),
+      0 0 18px rgba(217,164,65,0.35);
+  }
+
+  .marquee p{
+    color: var(--cream-dim);
+    font-size: clamp(11px, 2.6vw, 13px);
+    margin: 8px 0 0;
+    letter-spacing: 0.4px;
+  }
+
+  .card{
+    position: relative;
+    background: var(--cream);
+    border-radius: 14px;
+    padding: 16px;
+    transform: rotate(-0.4deg);
+    box-shadow:
+      0 18px 40px rgba(0,0,0,0.35),
+      0 2px 0 rgba(0,0,0,0.15) inset;
+    background-image:
+      repeating-linear-gradient(0deg, rgba(0,0,0,0.015) 0px, rgba(0,0,0,0.015) 1px, transparent 1px, transparent 3px);
+  }
+
+  .balls{
+    display:grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 6px;
+    margin-bottom: 8px;
+  }
+
+  .ball{
+    background: var(--gold);
+    color: var(--ink);
+    font-family: 'Alfa Slab One', serif;
+    text-align:center;
+    border-radius: 10px;
+    padding: 6px 0;
+    font-size: clamp(16px, 4vw, 22px);
+    box-shadow: 0 3px 0 var(--gold-dim), 0 5px 8px rgba(0,0,0,0.25);
+  }
+  .ball:nth-child(odd){ transform: rotate(-1.5deg); }
+  .ball:nth-child(even){ transform: rotate(1.5deg); }
+
+  .grid{
+    display:grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 6px;
+    position: relative;
+  }
+
+  .cell{
+    position: relative;
+    aspect-ratio: 1 / 1;
+    background: #fffcf4;
+    border: 1px solid rgba(36,29,24,0.25);
+    border-radius: 8px;
+    padding: 6px 5px;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    cursor: pointer;
+    font-family: inherit;
+    color: var(--ink);
+    overflow: hidden;
+    transition: background 0.15s ease, transform 0.1s ease;
+  }
+  .cell:hover{ background: #fff8e8; }
+  .cell:active{ transform: scale(0.97); }
+  .cell:focus-visible{ outline: 3px solid var(--gold-dim); outline-offset: 2px; }
+
+  .cell .name{
+    font-weight: 700;
+    font-size: clamp(8.5px, 2.35vw, 11px);
+    line-height: 1.15;
+    text-transform: uppercase;
+    letter-spacing: 0.2px;
+  }
+
+  .cell .tag{
+    margin-top: 4px;
+    font-size: clamp(7px, 1.9vw, 8.6px);
+    font-style: italic;
+    color: #6b5f4f;
+    line-height: 1.2;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  .cell.free{
+    background: var(--gold);
+  }
+  .cell.free .name{ font-family:'Alfa Slab One', serif; font-size: clamp(11px, 3vw, 15px); }
+  .cell.free .tag{ color: var(--maroon-dark); opacity:0.75; }
+
+  .cell.marked .name,
+  .cell.marked .tag{
+    opacity: 0.55;
+  }
+
+  .stamp{
+    position:absolute;
+    inset: 8%;
+    border-radius: 44% 56% 58% 42% / 48% 42% 58% 52%;
+    background: var(--stamp);
+    mix-blend-mode: multiply;
+    opacity: 0;
+    pointer-events: none;
+    transform: scale(0.4) rotate(0deg);
+  }
+  .cell.marked .stamp{
+    animation: stampPop 0.34s cubic-bezier(.2,1.4,.4,1) forwards;
+  }
+  .cell.free .stamp{ display:none; }
+
+  @keyframes stampPop{
+    0%   { opacity:0; transform: scale(1.8) rotate(-18deg); }
+    55%  { opacity: 0.8; transform: scale(0.92) rotate(6deg); }
+    100% { opacity: 0.72; transform: scale(1) rotate(var(--rot, -6deg)); }
+  }
+
+  .cell.win-glow{
+    box-shadow: 0 0 0 2px var(--gold), 0 0 14px rgba(217,164,65,0.7);
+  }
+
+  .controls{
+    display:flex;
+    justify-content:center;
+    margin-top: 18px;
+  }
+
+  .deal-btn{
+    font-family: 'Alfa Slab One', serif;
+    background: var(--gold);
+    color: var(--ink);
+    border: 2px dashed var(--maroon-dark);
+    border-radius: 999px;
+    padding: 10px 26px;
+    font-size: 14px;
+    letter-spacing: 1px;
+    cursor: pointer;
+    box-shadow: 0 4px 0 var(--gold-dim);
+    transition: transform 0.08s ease, box-shadow 0.08s ease;
+  }
+  .deal-btn:hover{ transform: translateY(-1px); }
+  .deal-btn:active{ transform: translateY(2px); box-shadow: 0 2px 0 var(--gold-dim); }
+  .deal-btn:focus-visible{ outline: 3px solid var(--cream); outline-offset: 3px; }
+
+  .banner{
+    position:absolute;
+    left: 50%;
+    top: 40%;
+    transform: translate(-50%,-50%) scale(0.5) rotate(-4deg);
+    background: var(--maroon-dark);
+    color: var(--gold);
+    font-family: 'Alfa Slab One', serif;
+    font-size: clamp(26px, 8vw, 42px);
+    letter-spacing: 3px;
+    padding: 10px 30px;
+    border-radius: 6px;
+    opacity: 0;
+    pointer-events: none;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.45);
+    z-index: 5;
+  }
+  .banner.show{
+    animation: bannerPop 1.9s ease forwards;
+  }
+  @keyframes bannerPop{
+    0%   { opacity: 0; transform: translate(-50%,-50%) scale(0.4) rotate(-6deg); }
+    15%  { opacity: 1; transform: translate(-50%,-50%) scale(1.08) rotate(2deg); }
+    25%  { transform: translate(-50%,-50%) scale(1) rotate(-1deg); }
+    80%  { opacity: 1; }
+    100% { opacity: 0; transform: translate(-50%,-50%) scale(1) rotate(-1deg); }
+  }
+
+  .sr-only{
+    position:absolute; width:1px; height:1px; overflow:hidden;
+    clip:rect(0,0,0,0); white-space:nowrap;
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    .cell, .deal-btn, .stamp, .banner{ animation: none !important; transition: none !important; }
+  }
+</style>
+</head>
+<body>
+
+<div class="stage">
+  <div class="marquee">
+    <h1>FALLACY BINGO</h1>
+    <p>Tap a square when you catch it in the wild. Five in a row calls it.</p>
+  </div>
+
+  <div class="card">
+    <div class="balls" aria-hidden="true">
+      <div class="ball">B</div>
+      <div class="ball">I</div>
+      <div class="ball">N</div>
+      <div class="ball">G</div>
+      <div class="ball">O</div>
+    </div>
+
+    <div class="grid" id="grid"></div>
+    <div class="banner" id="banner">BINGO!</div>
+  </div>
+
+  <div class="controls">
+    <button class="deal-btn" id="dealBtn">🎲 Deal New Card</button>
+  </div>
+
+  <div class="sr-only" role="status" aria-live="polite" id="liveRegion"></div>
+</div>
+
+<script>
+  const FALLACIES = [
+    ["Ad Hominem", "Attack the person, not the point"],
+    ["Straw Man", "Argue against a distorted version"],
+    ["Slippery Slope", "One step leads to disaster"],
+    ["False Dilemma", "Only two options allowed"],
+    ["Appeal to Authority", "They're an expert, so they're right"],
+    ["Bandwagon", "Everyone believes it, so it's true"],
+    ["Red Herring", "Distract with something irrelevant"],
+    ["Hasty Generalization", "One example proves the rule"],
+    ["Circular Reasoning", "The conclusion restates the premise"],
+    ["False Equivalence", "Treating unequal things as equal"],
+    ["Appeal to Emotion", "Feelings stand in for facts"],
+    ["No True Scotsman", "Redefining to dodge the counterexample"],
+    ["Tu Quoque", "\u201cYou do it too!\u201d"],
+    ["Whataboutism", "Deflect by pointing elsewhere"],
+    ["Anecdotal Evidence", "\u201cMy cousin says otherwise\u201d"],
+    ["Moving the Goalposts", "Changing the win condition mid-game"],
+    ["Appeal to Nature", "Natural must mean good"],
+    ["Appeal to Tradition", "We've always done it this way"],
+    ["False Cause", "Correlation treated as causation"],
+    ["Loaded Question", "Guilt baked into the asking"],
+    ["Sunk Cost Fallacy", "We've invested too much to stop now"],
+    ["Appeal to Ignorance", "Unproven means false"],
+    ["Gambler's Fallacy", "Due for a different outcome"],
+    ["Middle Ground", "The truth must sit in between"],
+    ["Genetic Fallacy", "Judged by origin, not merit"],
+    ["Cherry Picking", "Only the favorable evidence counts"],
+    ["Appeal to Fear", "Scare them into agreeing"],
+    ["Black-or-White", "No shades of gray allowed"],
+    ["Texas Sharpshooter", "Draw the target after the shot"],
+    ["Burden of Proof", "Disprove it, or it stands"],
+    ["Personal Incredulity", "\u201cI can't picture it, so it's false\u201d"],
+    ["Composition Fallacy", "What's true of the part fits the whole"],
+    ["Appeal to Popularity", "Majority opinion makes it right"],
+    ["Equivocation", "A sneaky shift in what a word means"]
+  ];
+
+  const gridEl = document.getElementById('grid');
+  const bannerEl = document.getElementById('banner');
+  const liveRegion = document.getElementById('liveRegion');
+  const FREE_INDEX = 12;
+
+  let cellsData = [];
+  let marked = new Array(25).fill(false);
+  let completedLines = new Set();
+
+  const LINES = [
+    [0,1,2,3,4],[5,6,7,8,9],[10,11,12,13,14],[15,16,17,18,19],[20,21,22,23,24],
+    [0,5,10,15,20],[1,6,11,16,21],[2,7,12,17,22],[3,8,13,18,23],[4,9,14,19,24],
+    [0,6,12,18,24],[4,8,12,16,20]
+  ];
+
+  function shuffle(arr){
+    const a = arr.slice();
+    for(let i = a.length - 1; i > 0; i--){
+      const j = Math.floor(Math.random() * (i + 1));
+      [a[i], a[j]] = [a[j], a[i]];
+    }
+    return a;
+  }
+
+  function dealCard(){
+    const pool = shuffle(FALLACIES).slice(0, 24);
+    cellsData = [];
+    marked = new Array(25).fill(false);
+    completedLines = new Set();
+    let p = 0;
+    for(let i = 0; i < 25; i++){
+      if(i === FREE_INDEX){
+        cellsData.push({ name: "FREE", tag: "SPACE", free: true });
+        marked[i] = true;
+      } else {
+        const [name, tag] = pool[p++];
+        cellsData.push({ name, tag, free: false });
+      }
+    }
+    renderGrid();
+    bannerEl.classList.remove('show');
+    liveRegion.textContent = "New card dealt.";
+  }
+
+  function renderGrid(){
+    gridEl.innerHTML = '';
+    cellsData.forEach((data, i) => {
+      const btn = document.createElement('button');
+      btn.className = 'cell' + (data.free ? ' free' : '') + (marked[i] ? ' marked' : '');
+      btn.setAttribute('aria-pressed', marked[i] ? 'true' : 'false');
+      btn.style.setProperty('--rot', (Math.random() * 24 - 12).toFixed(1) + 'deg');
+      btn.innerHTML =
+        '<div class="stamp"></div>' +
+        '<div class="name">' + data.name + '</div>' +
+        '<div class="tag">' + data.tag + '</div>';
+      if(!data.free){
+        btn.addEventListener('click', () => toggleCell(i));
+      }
+      gridEl.appendChild(btn);
+    });
+  }
+
+  function toggleCell(i){
+    marked[i] = !marked[i];
+    renderGrid();
+    if(marked[i]) checkWin();
+  }
+
+  function checkWin(){
+    let newlyCompleted = [];
+    LINES.forEach((line, idx) => {
+      if(completedLines.has(idx)) return;
+      if(line.every(pos => marked[pos])){
+        completedLines.add(idx);
+        newlyCompleted.push(line);
+      }
+    });
+    if(newlyCompleted.length){
+      newlyCompleted.flat().forEach(pos => {
+        const cellEl = gridEl.children[pos];
+        cellEl.classList.add('win-glow');
+        setTimeout(() => cellEl.classList.remove('win-glow'), 2000);
+      });
+      bannerEl.classList.remove('show');
+      void bannerEl.offsetWidth;
+      bannerEl.classList.add('show');
+      liveRegion.textContent = "Bingo!";
+    }
+  }
+
+  document.getElementById('dealBtn').addEventListener('click', dealCard);
+
+  dealCard();
+</script>
+</body>
+</html>
