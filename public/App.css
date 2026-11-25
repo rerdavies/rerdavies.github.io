@@ -1,238 +1,252 @@
 .roboto-900 {
-  font-family: "Inter", system-ui, Helvetica, Arial, sans-serif;
-  font-optical-sizing: auto;
-  font-weight: 700;
-  font-style: normal;
+    font-family: "Inter", system-ui, Helvetica, Arial, sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: normal;
 }
 
 html {
-  background: #F9F9F9;
+    background: #F9F9F9;
 }
 
 
 
 
 :root {
-  font-family: Inter, system-ui, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
-  font-optical-sizing: auto;
-  font-style: normal;
-  
-  font-variation-settings: "wdth" 100;
+    font-family: Inter, system-ui, Helvetica, Arial, sans-serif;
+    line-height: 1.5;
+    font-weight: 400;
+    font-optical-sizing: auto;
+    font-style: normal;
 
-  color-scheme: light;
+    font-variation-settings: "wdth" 100;
 
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+    color-scheme: light;
+
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
+    font-weight: 500;
+    color: #646cff;
+    text-decoration: inherit;
 }
+
 a:hover {
-  color: #535bf2;
+    color: #535bf2;
 }
 
 li {
-  padding-bottom: 0.5rem;
+    padding-bottom: 0.5rem;
 }
+
 ul li {
-  margin-bottom: 0.5rem;
+    margin-bottom: 0.5rem;
 }
 
 body {
-  margin: 0;
-  font-size: 1rem;
-  font-weight: 400;
+    margin: 0;
+    font-size: 1rem;
+    font-weight: 400;
 
-  overflow: hidden;
-  position: absolute;
-  top: 0px; left: 0px; right: 0px; bottom: 0px;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
+    overflow: hidden;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    display: flex;
+    place-items: center;
+    min-width: 320px;
+    min-height: 100vh;
 }
 
 h1 {
-  font-size: 3.2em;
-  line-height: 1.8;
-  font-weight: 400;
-  opacity: 0.6;
-  font-family: 'Inter', sans-serif;
+    font-size: 3.2em;
+    line-height: 1.8;
+    font-weight: 400;
+    opacity: 0.6;
+    font-family: 'Inter', sans-serif;
 }
 
 h2 {
-  font-size: 2.4em;
-  line-height: 1.8;
-  font-weight: 400;
-  opacity: 0.66;
-  font-family: 'Inter', sans-serif;
+    font-size: 2.4em;
+    line-height: 1.8;
+    font-weight: 400;
+    opacity: 0.66;
+    font-family: 'Inter', sans-serif;
 }
+
 h3 {
-  font-size: 24px;
-  line-height: 2.0;
-  font-weight: 400;
-  opacity: 0.80;
-  font-family: 'Inter', sans-serif;
+    font-size: 24px;
+    line-height: 2.0;
+    font-weight: 400;
+    opacity: 0.80;
+    font-family: 'Inter', sans-serif;
 }
 
 no_top_padding {
-  margin-top: 0px;
-  padding-top: 0px;
+    margin-top: 0px;
+    padding-top: 0px;
 }
 
 .project_card_title {
-  margin-top: 0px;
-  margin-top: 0px;
-  font-size: 24px;
-  padding-top: 0px;
-  margin-bottom: 0px;
-  padding-bottom: 8px;
-  line-height: 1.2;
-  font-weight: 700;
-  opacity: 0.6;
-  font-family: 'Inter', sans-serif;
+    margin-top: 0px;
+    margin-top: 0px;
+    font-size: 24px;
+    padding-top: 0px;
+    margin-bottom: 0px;
+    padding-bottom: 8px;
+    line-height: 1.2;
+    font-weight: 700;
+    opacity: 0.6;
+    font-family: 'Inter', sans-serif;
 }
 
 
 p {
-  font-size: 1.3em;
-  line-height: 1.8;
-  font-weight: 400;
-  margin-top: 0.75em;
-  margin-bottom: 0.75em;
-} 
+    font-size: 1.3em;
+    line-height: 1.8;
+    font-weight: 400;
+    margin-top: 0.75em;
+    margin-bottom: 0.75em;
+}
 
 li {
-  font-size: 1.3em;
-  line-height: 1.8;
-  font-weight: 400;
-  margin-top: 0.75em;
-  margin-bottom: 0.75em;
+    font-size: 1.3em;
+    line-height: 1.8;
+    font-weight: 400;
+    margin-top: 0.75em;
+    margin-bottom: 0.75em;
 }
 
 :root {
-  width: 100vw;
-  height: 100vh;
-  overflow: hidden;
-  background-color: #f9f9f9
-
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    background-color: #f9f9f9
 }
 
 a:hover {
-  color: #747bff;
+    color: #747bff;
 }
 
 .AppFrame {
-  position: absolute;
-  top: 0px; right: 0px; left: 0px; bottom: 0px;
-  flex: 0 0 100vh;
-  width: 100vw;
-  display: flex;
-  overflow: hidden;
-  flex-flow: column nowrap;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    left: 0px;
+    bottom: 0px;
+    flex: 0 0 100vh;
+    width: 100vw;
+    display: flex;
+    overflow: hidden;
+    flex-flow: column nowrap;
 }
+
 .AppFrameV {
-  position: absolute;
-  top: 0px; right: 0px; left: 0px; bottom: 0px;
-  flex: 0 0 100vh;
-  width: 100vw;
-  display: flex;
-  overflow: hidden;
-  flex-flow: row nowrap;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    left: 0px;
+    bottom: 0px;
+    flex: 0 0 100vh;
+    width: 100vw;
+    display: flex;
+    overflow: hidden;
+    flex-flow: row nowrap;
 }
 
 .AppFrame-header {
-  flex: 0 0 54px;
-  display: flex;
-  flex-flow: row nowrap;
-  z-index: 5;
-  box-shadow: 0px 0px 0px 0px #0002;
+    flex: 0 0 54px;
+    display: flex;
+    flex-flow: row nowrap;
+    z-index: 5;
+    box-shadow: 0px 0px 0px 0px #0002;
 
 }
+
 .AppFrame-vHeader {
-  flex: 0 0 auto;
-  display: flex;
-  flex-flow: row nowrap;
-  z-index: 5;
-  padding-top: 88px;
-  box-shadow: 0px 2px 8px 2px #0002;
+    flex: 0 0 auto;
+    display: flex;
+    flex-flow: row nowrap;
+    z-index: 5;
+    padding-top: 88px;
+    box-shadow: 0px 2px 8px 2px #0002;
 
 }
 
 
 .AppFrame-header-x {
-  flex: 0 0 54px;
-  display: flex;
-  flex-flow: row nowrap;
-  z-index: 5;
-  box-shadow: 0px 2px 4px 3px #0002;
+    flex: 0 0 54px;
+    display: flex;
+    flex-flow: row nowrap;
+    z-index: 5;
+    box-shadow: 0px 2px 4px 3px #0002;
 
 }
 
 .AppFrame-content {
-  flex: 1 1 1px;
-  overflow: auto;
+    flex: 1 1 1px;
+    overflow: auto;
 }
 
 .AppFrame-footer {
-  flex: 0 0 auto;
-  display: flex;
-  flex-flow: row nowrap;
+    flex: 0 0 auto;
+    display: flex;
+    flex-flow: row nowrap;
 }
 
 
 .image_attribution {
-  font-size: 0.8rem;
-  color: #666;
-  margin-top: 0px;
-  margin-bottom: 0px;
-  padding-top: 0px;
-  align-self: flex-end;
+    font-size: 0.8rem;
+    color: #666;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    padding-top: 0px;
+    align-self: flex-end;
 }
 
 .mono {
-  font-family: 'Courier New', Courier, monospace;
-  font-weight: 700;
-  font-size: 0.95em;
-  color: #333;
-  background: #D0D0D0
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: 700;
+    font-size: 0.95em;
+    color: #333;
+    background: #D0D0D0
 }
 
 
 .quote {
-  padding-left: 16px;
-  padding-right: 16px;
-  padding-top: 8px;
-  padding-bottom: 8px;
-  margin-left: 64px;
-  margin-right: 64px;
-}
-@media (max-width: 470px) {
-  .quote {
     padding-left: 16px;
-    padding-right: 0px;
+    padding-right: 16px;
     padding-top: 8px;
     padding-bottom: 8px;
-    margin-left: 0px;
-    margin-right: 0px;
-  }
+    margin-left: 64px;
+    margin-right: 64px;
+}
+
+@media (max-width: 470px) {
+    .quote {
+        padding-left: 16px;
+        padding-right: 0px;
+        padding-top: 8px;
+        padding-bottom: 8px;
+        margin-left: 0px;
+        margin-right: 0px;
+    }
 }
 
 
 .x-imgLoad {
-  opacity: 0;
-  transition: all 0.75s ease;
-  -webkit-transition: all 0.75s ease; 
-  -moz-transition: all 0.75s ease; 
-  -ms-transition: all 0.75s ease; 
-  -o-transition: all 0.75s ease; 
+    opacity: 0;
+    transition: all 0.75s ease;
+    -webkit-transition: all 0.75s ease;
+    -moz-transition: all 0.75s ease;
+    -ms-transition: all 0.75s ease;
+    -o-transition: all 0.75s ease;
 }
 
 .mobile-only-img {
@@ -244,6 +258,7 @@ a:hover {
         display: block;
     }
 }
+
 .not-mobile-img {
     display: block;
 }
@@ -255,3 +270,45 @@ a:hover {
 }
 
 
+/* 1. Initialize the counter on a shared parent */
+.cclist-container {
+    counter-reset: my-continuous-list;
+}
+
+/* 2. Remove default list numbers */
+.cclist-container ol {
+    list-style-type: none;
+    padding-left: 2.0rem;
+}
+
+/* 3. Increment and display the counter for every list item */
+.cclist-container ol li {
+    counter-increment: my-continuous-list;
+    position: relative;
+}
+
+.cclist-container ol li::before {
+    content: counter(my-continuous-list) ". ";
+    position: absolute;
+    left: -2.0rem;
+    color: "#F88"
+}
+
+/* 4. Leval 2 ol's are a) b) c)... */
+
+.cclist-container ol ol {
+    counter-reset: my-continuous-list-l2;
+    list-style-type: none;
+}
+
+.cclist-container ol ol li {
+    font-size: 1.0em;
+    counter-increment: my-continuous-list-l2;
+    position: relative;
+}
+
+.cclist-container ol ol li::before {
+    content: counter(my-continuous-list-l2, lower-alpha) ") ";
+    position: absolute;
+    left: -2.0rem;
+}

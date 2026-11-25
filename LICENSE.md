@@ -5,7 +5,7 @@ Content is dual-licensed under either an MIT License, or under a CC BY 4.0 Creat
 
 MIT License
 -----------
-Copyright 2021-2024 Robin E. R. Davies
+Copyright (C) Robin E. R. Davies
 
 Permission is hereby granted, free of charge, to any person obtaining 
 a copy of this software and associated documentation files (the "Software"), 
